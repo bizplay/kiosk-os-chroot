@@ -1,4 +1,6 @@
 #!/bin/bash
+exit 0
+
 . /etc/webc/functions.sh
 . /etc/webc/webc.conf
 server="http://ping.webconverger.org/"
