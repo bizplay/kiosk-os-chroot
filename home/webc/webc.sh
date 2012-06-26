@@ -193,15 +193,15 @@ do
 
 		if cmdline_has noptirun || ! pidof bumblebeed
 		then
-			logs "FF (re)start"
-			/opt/firefox/firefox $(echo $homepage | 
+			logs "Chrome (re)start"
+			google-chrome --kiosk $(echo $homepage |
 			sed "s,MACID,$mac,g" | 
 			sed "s,WEBCID,$webc_id,g" | 
 			sed "s,WEBCVERSION,$webc_version,g" | 
 			sed "s,USBID,$usbid,g" )
 		else
-			logs "FF optirun (re)start"
-			optirun /opt/firefox/firefox $(echo $homepage | 
+			logs "Chrome (re)start"
+			optirun google-chrome --kiosk $(echo $homepage |
 			sed "s,MACID,$mac,g" | 
 			sed "s,WEBCID,$webc_id,g" | 
 			sed "s,WEBCVERSION,$webc_version,g" | 
