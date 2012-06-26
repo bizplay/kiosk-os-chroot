@@ -198,9 +198,19 @@ do
 		logs Launching with "${homepage}"
 		if cmdline_has instantupdate
 		then
-			export rhomepage="$(/usr/bin/webc-wsc /opt/firefox/firefox $(echo $homepage | sed "s,MACID,$mac,g" | sed "s,WEBCID,$webc_id,g" | sed "s,WEBCVERSION,$webc_version,g" | sed "s,USBID,$usbid,g" ))"
+			logs "Chrome (re)start"
+			google-chrome --kiosk $(echo $homepage |
+			sed "s,MACID,$mac,g" | 
+			sed "s,WEBCID,$webc_id,g" | 
+			sed "s,WEBCVERSION,$webc_version,g" | 
+			sed "s,USBID,$usbid,g" )
 		else
-			/opt/firefox/firefox $(echo $homepage | sed "s,MACID,$mac,g" | sed "s,WEBCID,$webc_id,g" | sed "s,WEBCVERSION,$webc_version,g" | sed "s,USBID,$usbid,g" )
+			logs "Chrome (re)start"
+			optirun google-chrome --kiosk $(echo $homepage |
+			sed "s,MACID,$mac,g" | 
+			sed "s,WEBCID,$webc_id,g" | 
+			sed "s,WEBCVERSION,$webc_version,g" | 
+			sed "s,USBID,$usbid,g" )
 		fi
 
 	fi
