@@ -196,7 +196,10 @@ do
 		logs rhomepage: $rhomepage homepage: $homepage
 		homepage="$(echo ${rhomepage:-$homepage} | sed 's,%20, ,g')"
 		logs Launching with "${homepage}"
-		if cmdline_has instantupdate
+		mkdir -p /home/webc/.config/google-chrome
+		touch /home/webc/.config/google-chrome/First\ Run
+
+		if cmdline_has noptirun || ! pidof bumblebeed
 		then
 			logs "Chrome (re)start"
 			google-chrome --kiosk $(echo $homepage |
