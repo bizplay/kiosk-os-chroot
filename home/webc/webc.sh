@@ -191,6 +191,9 @@ do
 		done
 		fi
 
+		mkdir -p /home/webc/.config/google-chrome
+		touch /home/webc/.config/google-chrome/First\ Run
+
 		if cmdline_has noptirun || ! pidof bumblebeed
 		then
 			logs "Chrome (re)start"
