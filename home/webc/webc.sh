@@ -203,6 +203,9 @@ do
 			done
 		fi
 
+		logs rhomepage: $rhomepage homepage: $homepage
+		homepage="$(echo ${rhomepage:-$homepage} | sed 's,%20, ,g')"
+		logs Launching with "${homepage}"
 		mkdir -p /home/webc/.config/google-chrome
 		touch /home/webc/.config/google-chrome/First\ Run
 
