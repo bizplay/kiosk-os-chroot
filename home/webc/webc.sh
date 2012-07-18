@@ -192,14 +192,14 @@ do
 		if cmdline_has noptirun || ! pidof bumblebeed
 		then
 			logs "Chrome (re)start"
-			google-chrome --kiosk $(echo $homepage |
+			google-chrome --disable-translate --kiosk $(echo $homepage |
 			sed "s,MACID,$mac,g" | 
 			sed "s,WEBCID,$webc_id,g" | 
 			sed "s,WEBCVERSION,$webc_version,g" | 
 			sed "s,USBID,$usbid,g" )
 		else
 			logs "Chrome (re)start"
-			optirun google-chrome --kiosk $(echo $homepage |
+			optirun google-chrome --disable-translate --kiosk $(echo $homepage |
 			sed "s,MACID,$mac,g" | 
 			sed "s,WEBCID,$webc_id,g" | 
 			sed "s,WEBCVERSION,$webc_version,g" | 
