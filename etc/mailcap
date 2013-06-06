@@ -35,6 +35,13 @@ application/pdf; epdfview %s; test=test -n "$DISPLAY"; nametemplate=%s.pdf
 application/x-pdf; epdfview %s; test=test -n "$DISPLAY"; nametemplate=%s.pdf
 application/x-troff-man; /usr/bin/nroff -mandoc -Tutf8; copiousoutput; print=/usr/bin/nroff -mandoc -Tutf8 | print text/plain:-
 text/plain; more %s; needsterminal
+text/html; /usr/bin/google-chrome-stable --incognito %s; test=test -n "$DISPLAY"
+text/xml; /usr/bin/google-chrome-stable --incognito %s; test=test -n "$DISPLAY"
+application/xhtml_xml; /usr/bin/google-chrome-stable --incognito %s; test=test -n "$DISPLAY"
+image/webp; /usr/bin/google-chrome-stable --incognito %s; test=test -n "$DISPLAY"
+x-scheme-handler/http; /usr/bin/google-chrome-stable --incognito %s; test=test -n "$DISPLAY"
+x-scheme-handler/https; /usr/bin/google-chrome-stable --incognito %s; test=test -n "$DISPLAY"
+x-scheme-handler/ftp; /usr/bin/google-chrome-stable --incognito %s; test=test -n "$DISPLAY"
 text/plain; vim %s; needsterminal
 text/plain; view %s; edit=vim %s; compose=vim %s; test=test -x /usr/bin/vim; needsterminal
 text/plain; view %s; edit=vi %s; compose=vi %s; needsterminal

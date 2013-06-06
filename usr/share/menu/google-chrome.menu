@@ -1,0 +1,6 @@
+?package(google-chrome):needs="x11" \
+  section="Applications/Network/Web Browsing" \
+  hints="Web browsers" \
+  title="Google Chrome" \
+  icon="/opt/google/chrome/product_logo_32.xpm" \
+  command="/opt/google/chrome/google-chrome"
