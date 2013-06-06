@@ -1565,6 +1565,31 @@ Description: utility classes to deal with printing
  This package is part of the KDE Development Platform libraries module.
 Homepage: http://www.kde.org/
 
+Package: libgconf-2-4
+Priority: optional
+Section: libs
+Installed-Size: 564
+Maintainer: Josselin Mouette <joss@debian.org>
+Architecture: i386
+Multi-Arch: same
+Source: gconf
+Version: 3.2.5-1+build1
+Depends: libc6 (>= 2.4), libdbus-1-3 (>= 1.0.2), libdbus-glib-1-2 (>= 0.78), libglib2.0-0 (>= 2.31.0), gconf2-common (= 3.2.5-1+build1)
+Pre-Depends: multiarch-support
+Recommends: gconf-service
+Breaks: gconf2 (<< 3.2.3-2), libgconf2-4 (<< 3.2.3-2)
+Conflicts: libbonobo2-0 (<< 2.24)
+Size: 416102
+Description: GNOME configuration database system (shared libraries)
+ GConf is a configuration database system for storing application
+ preferences. It supports default or mandatory settings set by the
+ administrator, and changes to the database are instantly applied to all
+ running applications. It is written for the GNOME desktop but doesn't
+ require it.
+ .
+ This package contains the shared libraries.
+Homepage: http://projects.gnome.org/gconf/
+
 Package: iceweasel-l10n-ast
 Priority: optional
 Section: localization
@@ -4179,6 +4204,29 @@ Description: X11 miscellaneous extension library
  This module can be found at
  git://anongit.freedesktop.org/git/xorg/lib/libXext
 
+Package: libgconf2-4
+Priority: optional
+Section: oldlibs
+Installed-Size: 369
+Maintainer: Josselin Mouette <joss@debian.org>
+Architecture: i386
+Multi-Arch: same
+Source: gconf
+Version: 3.2.5-1+build1
+Depends: libgconf-2-4 (= 3.2.5-1+build1), gconf-service
+Breaks: gconf2 (<< 3.2.3-2)
+Size: 352568
+Description: GNOME configuration database system (dummy package)
+ GConf is a configuration database system for storing application
+ preferences. It supports default or mandatory settings set by the
+ administrator, and changes to the database are instantly applied to all
+ running applications. It is written for the GNOME desktop but doesn't
+ require it.
+ .
+ This package is here to ensure smooth upgrades. It can be removed when
+ you see fit.
+Homepage: http://projects.gnome.org/gconf/
+
 Package: libusb-1.0-0
 Priority: optional
 Section: libs
@@ -4813,6 +4861,28 @@ Description: X.Org X server -- evdev input driver
  <URL:http://www.X.org>
  .
  This package is built from the X.org xf86-input-evdev driver module.
+
+Package: gconf2-common
+Priority: optional
+Section: libs
+Installed-Size: 6783
+Maintainer: Josselin Mouette <joss@debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: gconf
+Version: 3.2.5-1+build1
+Depends: ucf
+Breaks: libgconf2-4 (<< 3.2.3-2)
+Size: 1023100
+Description: GNOME configuration database system (common files)
+ GConf is a configuration database system for storing application
+ preferences. It supports default or mandatory settings set by the
+ administrator, and changes to the database are instantly applied to all
+ running applications. It is written for the GNOME desktop but doesn't
+ require it.
+ .
+ This package contains the default configuration and localization files.
+Homepage: http://projects.gnome.org/gconf/
 
 Package: libthai-data
 Priority: optional
@@ -6107,22 +6177,25 @@ Homepage: http://www.cups.org
 Package: libsqlite3-0
 Priority: standard
 Section: libs
-Installed-Size: 772
-Maintainer: Progress Developers <progress-devel@lists.progress-linux.org>
-Bugs: mailto:progress-bugs@lists.progress-linux.org
+Installed-Size: 840
+Maintainer: Progress Linux Maintainers <maintainers@lists.progress-linux.org>
+Bugs: mailto:bugs@lists.progress-linux.org
 Architecture: i386
+Multi-Arch: same
 Source: sqlite3
-Version: 3.7.12.1-1~artax1
+Version: 3.7.16.2-1~baureo1
 Depends: libc6 (>= 2.3.6-6~)
+Pre-Depends: dpkg-lzip, multiarch-support
 Filename: pool/main/s/sqlite3/libsqlite3-0_3.7.3-1_i386.deb
-Size: 438472
+Size: 424386
 MD5sum: cb0ac869c7070496d2f1cba7792581c3
 Description: SQLite 3 shared library
  SQLite is a C library that implements an SQL database engine.
  Programs that link with the SQLite library can have SQL database
  access without running a separate RDBMS process.
 Homepage: http://www.sqlite.org/
-Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.hu>
+Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Uploaders: Daniel Baumann <daniel.baumann@progress-linux.org>
 
 Package: libtext-iconv-perl
 Priority: required
@@ -9073,6 +9146,22 @@ Description: command-line programs providing a simple interface to inotify
  of each inotify event.
 Homepage: https://github.com/rvoicilas/inotify-tools/wiki/
 
+Package: google-chrome-stable
+Priority: optional
+Section: web
+Installed-Size: 137700
+Maintainer: Chrome Linux Team <chromium-dev@chromium.org>
+Architecture: i386
+Version: 27.0.1453.110-r202711
+Replaces: google-chrome
+Provides: google-chrome, www-browser
+Depends: libasound2 (>> 1.0.22), libatk1.0-0 (>= 1.29.3), libbz2-1.0, libc6 (>= 2.11), libcairo2 (>= 1.6.0), libcups2 (>= 1.4.0), libdbus-1-3 (>= 1.2.14), libexpat1 (>= 1.95.8), libfontconfig1 (>= 2.8.0), libfreetype6 (>= 2.3.9), libgcc1 (>= 1:4.1.1), libgconf2-4 (>= 2.27.0), libgcrypt11 (>= 1.4.2), libglib2.0-0 (>= 2.20.0), libgtk2.0-0 (>= 2.18.0), libnspr4-0d (>= 4.7.3-0ubuntu1~) | libnspr4 (>= 4.8.7-0ubuntu1), libnss3-1d (>= 3.12.3), libpango1.0-0 (>= 1.22.0), libstdc++6 (>= 4.4.0), libudev0 (>= 147) | libudev1 (>= 198), libx11-6 (>= 0), libxcomposite1 (>= 1:0.3-1), libxdamage1 (>= 1:1.1), libxext6 (>= 0), libxfixes3 (>= 1:4.0.1), libxrandr2 (>= 2:1.2.0), libxrender1, libxss1, ca-certificates, libcurl3, lsb-base (>= 3.2), xdg-utils (>= 1.0.2), wget
+Pre-Depends: dpkg (>= 1.14.0)
+Conflicts: google-chrome
+Size: 39885812
+Description: The web browser from Google
+ Google Chrome is a browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
+
 Package: net-tools
 Priority: important
 Section: net
@@ -9224,6 +9313,36 @@ Original-Maintainer: Maintainers of Mozilla-related packages <pkg-mozilla-mainta
 Original-Uploaders: Mike Hommey <glandium@debian.org>
 Original-Vcs-Browser: http://git.debian.org/?p=pkg-mozilla/iceweasel.git
 Original-Vcs-Git: git://git.debian.org/git/pkg-mozilla/iceweasel.git
+
+Package: xdg-utils
+Priority: optional
+Section: utils
+Installed-Size: 300
+Maintainer: Per Olofsson <pelle@debian.org>
+Architecture: all
+Version: 1.1.0~rc1+git20111210-6
+Recommends: libfile-mimeinfo-perl, libnet-dbus-perl, libx11-protocol-perl, x11-utils, x11-xserver-utils
+Suggests: gvfs-bin
+Size: 83664
+Description: desktop integration utilities from freedesktop.org
+ xdg-utils contains utilities for integrating applications with the
+ desktop environment, regardless of which desktop environment is used.
+ They are part of freedesktop.org's Portland project.
+ .
+ The following utilities are included:
+ .
+  * xdg-desktop-menu - Install desktop menu items
+  * xdg-desktop-icon - Install icons on the user's desktop
+  * xdg-icon-resource - Install icon resources
+  * xdg-mime - Gather MIME information about a file
+  * xdg-open - Open a URL in the user's preferred application that
+               handles the respective URL or file type
+  * xdg-email - Open the user's preferred email client, potentially with
+                subject and other info filled in
+  * xdg-screensaver - Enable, disable, or suspend the screensaver
+  * xdg-settings - get various settings (default web browser) from
+                   the desktop environment
+Homepage: http://portland.freedesktop.org/
 
 Package: libfs6
 Priority: optional
@@ -9574,26 +9693,20 @@ Description: Linux console font and keytable utilities
  in the “console-data” package.
 
 Package: libnss3-1d
-Priority: optional
-Section: libs
-Installed-Size: 2840
-Maintainer: Progress Developers <progress-devel@lists.progress-linux.org>
-Bugs: mailto:progress-issues@lists.progress-linux.org
+Priority: extra
+Section: oldlibs
+Installed-Size: 86
+Maintainer: Maintainers of Mozilla-related packages <pkg-mozilla-maintainers@lists.alioth.debian.org>
 Architecture: i386
+Multi-Arch: same
 Source: nss
-Version: 3.13.4-1~artax1
-Depends: libc6 (>= 2.3.6-6~), libnspr4-0d (>= 4.8.6), libsqlite3-0 (>= 3.5.9), zlib1g (>= 1:1.1.4)
-Size: 1174014
-Description: Network Security Service libraries
- This is a set of libraries designed to support cross-platform development
- of security-enabled client and server applications. It can support SSLv2
- and  v4, TLS, PKCS #5, #7, #11, #12, S/MIME, X.509 v3 certificates and
- other security standards.
+Version: 2:3.14.3-1
+Depends: libnss3 (= 2:3.14.3-1)
+Size: 19916
+Description: Network Security Service libraries - transitional package
+ This is a transitional package to ensure smooth transition of all packages
+ to libnss3.
 Homepage: http://www.mozilla.org/projects/security/pki/nss/
-Original-Maintainer: Maintainers of Mozilla-related packages <pkg-mozilla-maintainers@lists.alioth.debian.org>
-Original-Uploaders: Mike Hommey <glandium@debian.org>
-Original-Vcs-Browser: http://git.debian.org/?p=pkg-mozilla/nss.git
-Original-Vcs-Git: git://git.debian.org/git/pkg-mozilla/nss.git
 
 Package: libcurl3
 Priority: optional
@@ -10820,6 +10933,30 @@ Description: JasPer JPEG-2000 runtime library
  JPEG-2000 format defined in ISO/IEC 15444-1:2000.
  .
  This package contains the shared library.
+
+Package: gconf-service
+Priority: optional
+Section: libs
+Installed-Size: 565
+Maintainer: Josselin Mouette <joss@debian.org>
+Architecture: i386
+Multi-Arch: foreign
+Source: gconf
+Version: 3.2.5-1+build1
+Replaces: gconf2-common (<< 3.2.3-2)
+Depends: libc6 (>= 2.4), libdbus-1-3 (>= 1.0.2), libdbus-glib-1-2 (>= 0.78), libgconf-2-4 (= 3.2.5-1+build1), libglib2.0-0 (>= 2.31.0), libldap-2.4-2 (>= 2.4.7), libxml2 (>= 2.7.4), gconf2-common (= 3.2.5-1+build1)
+Breaks: gconf2-common (<< 3.2.3-2)
+Size: 406822
+Description: GNOME configuration database system (D-Bus service)
+ GConf is a configuration database system for storing application
+ preferences. It supports default or mandatory settings set by the
+ administrator, and changes to the database are instantly applied to all
+ running applications. It is written for the GNOME desktop but doesn't
+ require it.
+ .
+ This package contains the D-Bus enabled daemon that is used internally
+ by the GConf library to access configuration data.
+Homepage: http://projects.gnome.org/gconf/
 
 Package: iceape-browser
 Priority: optional
@@ -13248,6 +13385,26 @@ Description: library for full-featured text search engine (runtime)
  This package contains the files necessary for running applications that
  use the libclucene library.
 Homepage: http://clucene.sourceforge.net
+
+Package: libnss3
+Priority: optional
+Section: libs
+Installed-Size: 3271
+Maintainer: Maintainers of Mozilla-related packages <pkg-mozilla-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Multi-Arch: same
+Source: nss
+Version: 2:3.14.3-1
+Depends: libc6 (>= 2.7), libnspr4 (>= 2:4.9-2~) | libnspr4-0d (>= 4.8.6), libsqlite3-0 (>= 3.5.9), zlib1g (>= 1:1.1.4)
+Pre-Depends: multiarch-support
+Conflicts: libnss3-1d (<< 2:3.13.4-2)
+Size: 1044114
+Description: Network Security Service libraries
+ This is a set of libraries designed to support cross-platform development
+ of security-enabled client and server applications. It can support SSLv2
+ and  v4, TLS, PKCS #5, #7, #11, #12, S/MIME, X.509 v3 certificates and
+ other security standards.
+Homepage: http://www.mozilla.org/projects/security/pki/nss/
 
 Package: iceweasel-l10n-ja
 Priority: optional
