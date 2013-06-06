@@ -1,6 +1,7 @@
-a3f0d14235d67b7f89ef52eb4fca7a63  usr/lib/i386-linux-gnu/libdbusmenu-gtk.so.4.0.13
-48cb3a584675029af2e475ab66f05f6e  usr/share/doc/libdbusmenu-gtk4/AUTHORS
+370d5cfeaedc30ec4ab5f9c11e7cc119  usr/lib/i386-linux-gnu/libdbusmenu-gtk.so.4.0.12
+03b2d0a2b6ee424f1706fb2f0c9ca212  usr/share/doc/libdbusmenu-gtk4/AUTHORS
+5d01015f2fd68c1d6c71e46e1824fdec  usr/share/doc/libdbusmenu-gtk4/NEWS.gz
 516075a87cd293451249e6d55bc28e87  usr/share/doc/libdbusmenu-gtk4/README
-123a1506401da38ebfbddad6185f3112  usr/share/doc/libdbusmenu-gtk4/changelog.Debian.gz
-5d742252c837ab92d9af7d5a0a964e47  usr/share/doc/libdbusmenu-gtk4/changelog.gz
-a3c9f81889c8580e51d32fec09ae3203  usr/share/doc/libdbusmenu-gtk4/copyright
+33229066986cc2420fffa7b38f5e66db  usr/share/doc/libdbusmenu-gtk4/changelog.Debian.gz
+474dbf24db50b0ca1025bb808441fc9d  usr/share/doc/libdbusmenu-gtk4/changelog.gz
+001e71b1212e8a806d5aab25a252cf5d  usr/share/doc/libdbusmenu-gtk4/copyright
