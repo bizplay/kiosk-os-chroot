@@ -6,4 +6,8 @@
 #
 # This file should contain exactly one non-comment line, which is
 # inserted into the "append" line of the bootloader config.
-boot=live skipconfig quiet splash noconfig noupgrade noblank
+<<<<<<< HEAD
+boot=live skipconfig quiet splash noconfig noupgrade noblank xrandr=-s%201280x720
+=======
+boot=live skipconfig vga=771 quiet splash noconfig noupgrade noblank xrandr=-s%201280x720
+>>>>>>> added command to command line to force 720p resolution, this parameter will probably also be added to the PlugNPlayr
