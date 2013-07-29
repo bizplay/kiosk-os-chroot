@@ -179,6 +179,16 @@ usbid=$( usb_serials | head -n1 )
 while true
 do
 
+	# Append ?player_id=... or &player_id=..., depending on if there
+	# is already an ? in the url
+	case "$homepage" in
+		*\?*)
+			homepage="${homepage}&" ;;
+		*)
+			homepage="${homepage}?" ;;
+	esac
+	homepage="${homepage}player_id=${webc_id}"
+
 	if test -x /opt/firefox/firefox
 	then
 
@@ -193,15 +203,6 @@ do
 			done
 		fi
 
-		logs rhomepage: $rhomepage homepage: $homepage
-		homepage="$(echo ${rhomepage:-$homepage} | sed 's,%20, ,g')"
-		logs Launching with "${homepage}"
-		if cmdline_has instantupdate
-		then
-			export rhomepage="$(/usr/bin/webc-wsc /opt/firefox/firefox $(echo $homepage | sed "s,MACID,$mac,g" | sed "s,WEBCID,$webc_id,g" | sed "s,WEBCVERSION,$webc_version,g" | sed "s,USBID,$usbid,g" ))"
-		else
-			/opt/firefox/firefox $(echo $homepage | sed "s,MACID,$mac,g" | sed "s,WEBCID,$webc_id,g" | sed "s,WEBCVERSION,$webc_version,g" | sed "s,USBID,$usbid,g" )
-		fi
-
+		bash /home/webc/playr-loader/start-chrome-for-playr.sh "$homepage"
 	fi
 done
