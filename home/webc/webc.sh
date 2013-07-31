@@ -192,7 +192,7 @@ do
 		if cmdline_has noptirun || ! pidof bumblebeed
 		then
 			logs "Chrome (re)start"
-			google-chome --disable-translate --kiosk $(echo $homepage |
+			google-chrome --disable-translate --kiosk $(echo $homepage |
 			sed "s,MACID,$mac,g" | 
 			sed "s,WEBCID,$webc_id,g" | 
 			sed "s,WEBCVERSION,$webc_version,g" | 
