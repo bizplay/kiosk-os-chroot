@@ -1,3 +1,4 @@
+#!/bin/bash
 # The path to the page that will check internet connection 
 # before loading the playr channel
 playr_loader_file="/home/webc/playr_loader/playr_loader.html"
