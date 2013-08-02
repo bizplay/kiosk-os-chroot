@@ -20,4 +20,4 @@ else
 	reload_url=file://$2
 fi
 
-google-chrome --disable-translate --kiosk file://${playr_loader_file}?channel=${channel}&reload_url=${reload_url}
+google-chrome --disable-translate --kiosk "file://"${playr_loader_file}"?channel="${channel}"&reload_url="${reload_url}
