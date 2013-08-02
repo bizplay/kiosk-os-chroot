@@ -197,14 +197,14 @@ do
 		if cmdline_has noptirun || ! pidof bumblebeed
 		then
 			logs "Chrome (re)start"
-			/home/webc/playr-loader/start-chrome-for-playr.sh $(echo $homepage |
+			bash /home/webc/playr-loader/start-chrome-for-playr.sh $(echo $homepage |
 			sed "s,MACID,$mac,g" | 
 			sed "s,WEBCID,$webc_id,g" | 
 			sed "s,WEBCVERSION,$webc_version,g" | 
 			sed "s,USBID,$usbid,g" )
 		else
 			logs "Chrome (re)start"
-			optirun /home/webc/playr-loader/start-chrome-for-playr.sh $(echo $homepage |
+			optirun bash /home/webc/playr-loader/start-chrome-for-playr.sh $(echo $homepage |
 			sed "s,MACID,$mac,g" | 
 			sed "s,WEBCID,$webc_id,g" | 
 			sed "s,WEBCVERSION,$webc_version,g" | 
