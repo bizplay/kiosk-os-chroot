@@ -12,4 +12,8 @@ else
 	channel=$1
 fi
 
-google-chrome --disable-translate --kiosk "file://${playr_loader_file}?channel=${channel}"
+# Escape special characters (?=&) so any parameters inside channel won't
+# escape and be passed to player_loader_file instead
+channel=$(echo "$channel" | sed 's:%:%25:g;s:?:%3F:g;s:&:%26:g;s:=:%3D:g')
+
+google-chrome --kiosk --disable-translate "file://${playr_loader_file}?channel=${channel}"
