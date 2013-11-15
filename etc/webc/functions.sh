@@ -131,8 +131,13 @@ get_bootparams()
 	# given rootfs / revision.
 	local rootfs_bootparams=$(git --git-dir "${git_repo}" show "${git_revision}:etc/webc/boot-cmdline" | grep -v "^#" | head -n 1)
 
+	local keep_bootparams=""
+	for param in $(cmdline_get_all keep_append); do
+		keep_bootparams="${keep_bootparams} ${param} keep_append=${param}"
+	done
+
 	# The bootparams to pass
-	echo "${rootfs_bootparams} $(cmdline_get_all boot_append) git-revision=${git_revision}"
+	echo "${rootfs_bootparams} ${keep_bootparams} $(cmdline_get_all boot_append) git-revision=${git_revision}"
 }
 
 # Extract a kernel and generate a bootloader configuration for a live boot of
