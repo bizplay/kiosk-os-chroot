@@ -173,6 +173,16 @@ do
 	mac=$( mac_address )
 	usbid=$( usb_serials | head -n1 )
 
+	# Append ?player_id=... or &player_id=..., depending on if there
+	# is already an ? in the url
+	case "$homepage" in
+		*\?*)
+			homepage="${homepage}&" ;;
+		*)
+			homepage="${homepage}?" ;;
+	esac
+	homepage="${homepage}player_id=${webc_id}"
+
 	if test -x /opt/firefox/firefox
 	then
 
@@ -192,18 +202,10 @@ do
 		if cmdline_has noptirun || ! pidof bumblebeed
 		then
 			logs "Chrome (re)start"
-			bash /home/webc/playr-loader/start-chrome-for-playr.sh $(echo $homepage%3F%3Dplayer_id%3DWEBCID |
-			sed "s,MACID,$mac,g" | 
-			sed "s,WEBCID,$webc_id,g" | 
-			sed "s,WEBCVERSION,$webc_version,g" | 
-			sed "s,USBID,$usbid,g" )
+			bash /home/webc/playr-loader/start-chrome-for-playr.sh "$homepage"
 		else
 			logs "Chrome (re)start"
-			optirun bash /home/webc/playr-loader/start-chrome-for-playr.sh $(echo $homepage%3F%3Dplayer_id%3DWEBCID |
-			sed "s,MACID,$mac,g" | 
-			sed "s,WEBCID,$webc_id,g" | 
-			sed "s,WEBCVERSION,$webc_version,g" | 
-			sed "s,USBID,$usbid,g" )
+			optirun bash /home/webc/playr-loader/start-chrome-for-playr.sh "$homepage"
 		fi
 	fi
 done
