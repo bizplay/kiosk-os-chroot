@@ -30,8 +30,6 @@
 /usr/share/locale/uk/LC_MESSAGES/gnupg.mo
 /usr/share/locale/sk/LC_MESSAGES/gnupg.mo
 /usr/share/locale/ru/LC_MESSAGES/gnupg.mo
-/usr/share/locale/en@boldquot
-/usr/share/locale/en@boldquot/LC_MESSAGES
 /usr/share/locale/en@boldquot/LC_MESSAGES/gnupg.mo
 /usr/share/locale/gl/LC_MESSAGES/gnupg.mo
 /usr/share/locale/el/LC_MESSAGES/gnupg.mo
@@ -46,8 +44,6 @@
 /usr/share/locale/ca/LC_MESSAGES/gnupg.mo
 /usr/share/locale/pl/LC_MESSAGES/gnupg.mo
 /usr/share/locale/ja/LC_MESSAGES/gnupg.mo
-/usr/share/locale/en@quot
-/usr/share/locale/en@quot/LC_MESSAGES
 /usr/share/locale/en@quot/LC_MESSAGES/gnupg.mo
 /usr/share/locale/be/LC_MESSAGES/gnupg.mo
 /usr/share/locale/eo/LC_MESSAGES/gnupg.mo

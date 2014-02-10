@@ -1,0 +1,4 @@
+a27e8df80fb47e5ae7e3003b01ff111c  usr/lib/i386-linux-gnu/libLLVM-3.3.so.1
+c753df705f378a5f1afed4491c7cb25f  usr/share/doc/libllvm3.3/changelog.Debian.gz
+063e0448ac11bde832bec75b88775293  usr/share/doc/libllvm3.3/copyright
+304cd265294b2e8ddcf393695deab643  usr/share/lintian/overrides/libllvm3.3

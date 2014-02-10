@@ -42,8 +42,6 @@
 /usr/share/locale/ru/LC_MESSAGES/bash.mo
 /usr/share/locale/es/LC_MESSAGES/bash.mo
 /usr/share/locale/pl/LC_MESSAGES/bash.mo
-/usr/share/locale/en@boldquot
-/usr/share/locale/en@boldquot/LC_MESSAGES
 /usr/share/locale/en@boldquot/LC_MESSAGES/bash.mo
 /usr/share/locale/fr/LC_MESSAGES/bash.mo
 /usr/share/locale/sk/LC_MESSAGES/bash.mo
@@ -55,8 +53,6 @@
 /usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
 /usr/share/locale/id/LC_MESSAGES/bash.mo
 /usr/share/locale/vi/LC_MESSAGES/bash.mo
-/usr/share/locale/en@quot
-/usr/share/locale/en@quot/LC_MESSAGES
 /usr/share/locale/en@quot/LC_MESSAGES/bash.mo
 /usr/share/locale/fi/LC_MESSAGES/bash.mo
 /usr/share/locale/zh_CN/LC_MESSAGES/bash.mo

@@ -178,6 +178,27 @@ Original-Vcs-Browser: http://git.debian.org/?p=pkg-xorg/xserver/xorg-server.git
 Original-Vcs-Git: git://git.debian.org/git/pkg-xorg/xserver/xorg-server
 Uploaders: Daniel Baumann <daniel.baumann@progress-linux.org>
 
+Package: libelf1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 1031
+Maintainer: Kurt Roeckx <kurt@roeckx.be>
+Architecture: i386
+Multi-Arch: same
+Source: elfutils
+Version: 0.157-3
+Depends: libc6 (>= 2.4)
+Pre-Depends: multiarch-support
+Description: library to read and write ELF files
+ The libelf1 package provides a shared library which allows reading and
+ writing ELF files on a high level.  Third party programs depend on
+ this package to read internals of ELF files.  The programs of the
+ elfutils package use it also to generate new ELF files.
+ .
+ This library is part of elfutils.
+Homepage: https://fedorahosted.org/elfutils/
+
 Package: dash
 Essential: yes
 Status: install ok installed
@@ -264,19 +285,21 @@ Package: libgl1-mesa-dri
 Status: install ok installed
 Priority: optional
 Section: libs
-Installed-Size: 88963
+Installed-Size: 56454
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Architecture: i386
 Multi-Arch: same
 Source: mesa
-Version: 8.0.5-4
+Version: 9.2.2-1
 Replaces: libgl1-mesa-dri-experimental (<< 7.11.1), xlibmesa-dri (<< 1:7.0.0)
-Depends: libc6 (>= 2.3.6-6~), libdrm-intel1 (>= 2.4.27), libdrm-nouveau1a (>= 2.4.23), libdrm-radeon1 (>= 2.4.17), libdrm2 (>= 2.4.3), libexpat1 (>= 2.0.1), libffi5 (>= 3.0.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.6)
+Depends: libc6 (>= 2.17), libdrm-intel1 (>= 2.4.38), libdrm-nouveau2 (>= 2.4.34), libdrm-radeon1 (>= 2.4.31), libdrm2 (>= 2.4.3), libelf1 (>= 0.142), libexpat1 (>= 2.0.1), libffi6 (>= 3.0.4), libgcc1 (>= 1:4.1.1), libllvm3.3, libstdc++6 (>= 4.6)
+Pre-Depends: multiarch-support
+Recommends: libtxc-dxtn-s2tc0 | libtxc-dxtn0
 Suggests: libglide3
 Breaks: libgl1-mesa-dri-experimental (<< 7.11.1), libgl1-mesa-glx (<< 7.10.2-4), libgl1-mesa-glx-no-multiarch, xserver-xorg-core (<< 2:1.10.2-2), xserver-xorg-core-no-multiarch
 Conflicts: xlibmesa-dri (<< 1:7.0.0)
 Conffiles:
- /etc/drirc d15fba4431b546ad63e47278828d9ea0
+ /etc/drirc 526b5d35c3078218d543fb998a5e18c2
 Description: free implementation of the OpenGL API -- DRI modules
  This version of Mesa provides GLX and DRI capabilities: it is capable of
  both direct and indirect rendering.  For direct rendering, it can use DRI
@@ -814,6 +837,23 @@ Multi-Arch: same
 Source: libffi
 Version: 3.0.10-3
 Depends: libc6 (>= 2.1.3)
+Pre-Depends: multiarch-support
+Description: Foreign Function Interface library runtime
+ A foreign function interface is the popular name for the interface that
+ allows code written in one language to call code written in another
+ language.
+
+Package: libffi6
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 65
+Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
+Architecture: i386
+Multi-Arch: same
+Source: libffi
+Version: 3.0.13-12
+Depends: libc6 (>= 2.4)
 Pre-Depends: multiarch-support
 Description: Foreign Function Interface library runtime
  A foreign function interface is the popular name for the interface that
@@ -1420,6 +1460,26 @@ Description: GNOME configuration database system (shared libraries)
  .
  This package contains the shared libraries.
 Homepage: http://projects.gnome.org/gconf/
+
+Package: libllvm3.3
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 23304
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: i386
+Multi-Arch: same
+Source: llvm-toolchain-3.3
+Version: 1:3.3-16
+Depends: libc6 (>= 2.15), libffi6 (>= 3.0.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.6)
+Pre-Depends: multiarch-support
+Description: Modular compiler and toolchain technologies, runtime library
+ LLVM is a collection of libraries and tools that make it easy to build
+ compilers, optimizers, just-in-time code generators, and many other
+ compiler-related programs.
+ .
+ This package contains the LLVM runtime library.
+Homepage: http://www.llvm.org/
 
 Package: libqtgui4
 Status: deinstall ok config-files
@@ -4753,7 +4813,7 @@ Description: X C Binding
 Homepage: http://xcb.freedesktop.org
 
 Package: locales
-Status: install ok installed
+Status: deinstall ok config-files
 Priority: standard
 Section: localization
 Installed-Size: 15118
@@ -4761,6 +4821,7 @@ Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
 Architecture: all
 Source: eglibc
 Version: 2.13-37
+Config-Version: 2.13-37
 Replaces: base-config, lliurex-belocs-locales-data
 Depends: glibc-2.13-1, debconf (>= 0.5) | debconf-2.0
 Conflicts: base-config, belocs-locales-bin, belocs-locales-data
@@ -8245,6 +8306,24 @@ Description: Graphical Boot Animation and Logger
 Homepage: http://www.freedesktop.org/wiki/Software/Plymouth
 Original-Maintainer: Daniel Baumann <daniel.baumann@progress-technologies.net>
 Uploaders: Daniel Baumann <daniel.baumann@progress-linux.org>
+
+Package: libdrm-nouveau2
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 51
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: i386
+Multi-Arch: same
+Source: libdrm
+Version: 2.4.52-1
+Depends: libc6 (>= 2.3.4), libdrm2 (>= 2.4.38)
+Pre-Depends: multiarch-support
+Description: Userspace interface to nouveau-specific kernel DRM services -- runtime
+ This library implements the userspace interface to the nouveau-specific kernel
+ DRM services. DRM stands for "Direct Rendering Manager", which is the
+ kernelspace portion of the "Direct Rendering Infrastructure" (DRI). The DRI is
+ currently used on Linux to provide hardware-accelerated OpenGL drivers.
 
 Package: kbd
 Status: install ok installed
@@ -12168,18 +12247,18 @@ Package: libc6
 Status: install ok installed
 Priority: required
 Section: libs
-Installed-Size: 8546
+Installed-Size: 8899
 Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
 Architecture: i386
 Multi-Arch: same
 Source: eglibc
-Version: 2.13-38
+Version: 2.17-97
 Replaces: libc6-i386
-Provides: glibc-2.13-1
-Depends: libc-bin (= 2.13-38), libgcc1
+Provides: glibc-2.17-1
+Depends: libgcc1
 Recommends: libc6-i686
 Suggests: glibc-doc, debconf | debconf-2.0, locales
-Breaks: locales (<< 2.13), locales-all (<< 2.13), nscd (<< 2.13)
+Breaks: hurd (<< 1:0.5.git20130928-2), locales (<< 2.17), locales-all (<< 2.17), nscd (<< 2.17)
 Conflicts: prelink (<= 0.0.20090311-1), tzdata (<< 2007k-1), tzdata-etch
 Conffiles:
  /etc/ld.so.conf.d/i486-linux-gnu.conf de72af11e0f4e741c2cca3e0e87b7af4

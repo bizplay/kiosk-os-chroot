@@ -9,3 +9,6 @@ deb http://cdn.archive.progress-linux.org/packages/ baureo main contrib non-free
 deb http://cdn.archive.progress-linux.org/packages/ baureo-security main contrib non-free
 deb http://cdn.archive.progress-linux.org/packages/ baureo-updates main contrib non-free
 deb http://cdn.archive.progress-linux.org/packages/ baureo-backports main contrib non-free
+
+# Debian test
+deb http://ftp.debian.org/debian/ jessie main contrib non-free
