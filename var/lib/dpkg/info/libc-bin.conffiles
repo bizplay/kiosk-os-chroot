@@ -1,4 +1,5 @@
 /etc/gai.conf
 /etc/default/nss
 /etc/ld.so.conf.d/libc.conf
+/etc/ld.so.conf
 /etc/bindresvport.blacklist

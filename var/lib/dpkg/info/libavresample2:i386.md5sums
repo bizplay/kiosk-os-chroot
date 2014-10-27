@@ -1,0 +1,7 @@
+0bb79f0ffd4825817e568f00d7ec4690  usr/lib/i386-linux-gnu/i686/cmov/libavresample.so.2.1.0
+78522f438dc4c084929fbc7e7dd70038  usr/lib/i386-linux-gnu/libavresample.so.2.1.0
+7906be10ad1a6590b1828dca02678003  usr/share/doc/libavresample2/NEWS.Debian.gz
+a4b6113bb17f0443f68b558e890e6a90  usr/share/doc/libavresample2/changelog.Debian.gz
+c99ad9efa0bec536b4bf87760388a2ea  usr/share/doc/libavresample2/changelog.gz
+323125fc98bc748defccc624b74fd752  usr/share/doc/libavresample2/copyright
+00b5c6506376db8ba568de2d5b0a3f6a  usr/share/lintian/overrides/libavresample2

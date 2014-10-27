@@ -1,0 +1,6 @@
+/etc/pam.d/cups
+/etc/logrotate.d/cups-daemon
+/etc/init.d/cups
+/etc/ufw/applications.d/cups
+/etc/apparmor.d/usr.sbin.cupsd
+/etc/cups/cups-files.conf

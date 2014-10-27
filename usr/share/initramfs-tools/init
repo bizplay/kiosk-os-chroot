@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Loading, please wait..."
+
 [ -d /dev ] || mkdir -m 0755 /dev
 [ -d /root ] || mkdir -m 0700 /root
 [ -d /sys ] || mkdir /sys
@@ -52,7 +54,7 @@ export panic=
 export blacklist=
 export resume=
 export resume_offset=
-export init_option=
+export drop_caps=
 
 # Bring in the main config
 . /conf/initramfs.conf
@@ -132,12 +134,19 @@ for x in $(cat /proc/cmdline); do
 		;;
 	resume=*)
 		RESUME="${x#resume=}"
+		case $RESUME in
+	        UUID=*)
+			RESUME="/dev/disk/by-uuid/${RESUME#UUID=}"
+		esac
 		;;
 	resume_offset=*)
 		resume_offset="${x#resume_offset=}"
 		;;
 	noresume)
 		noresume=y
+		;;
+	drop_capabilities=*)
+		drop_caps="-d ${x#drop_capabilities=}"
 		;;
 	panic=*)
 		panic="${x#panic=}"
@@ -149,7 +158,6 @@ for x in $(cat /proc/cmdline); do
 		;;
 	quiet)
 		quiet=y
-		init_option=quiet
 		;;
 	ro)
 		readonly=y
@@ -294,7 +302,7 @@ fi
 maybe_break init
 
 # don't leak too much of env - some init(8) don't clear it
-# (keep init, rootmnt)
+# (keep init, rootmnt, drop_caps)
 unset debug
 unset MODPROBE_OPTIONS
 unset DPKG_ARCH
@@ -320,10 +328,10 @@ mount -n -o move /sys ${rootmnt}/sys
 mount -n -o move /proc ${rootmnt}/proc
 
 # Chain to real filesystem
-if command -v switch_root >/dev/null 2>&1; then
-	exec switch_root ${rootmnt} ${init} ${init_option} "$@" <${rootmnt}/dev/console >${rootmnt}/dev/console
+if [ -z "$drop_caps" ] && command -v switch_root >/dev/null 2>&1; then
+	exec switch_root ${rootmnt} ${init} "$@" <${rootmnt}/dev/console >${rootmnt}/dev/console
 elif command -v run-init >/dev/null 2>&1; then
-	exec run-init ${rootmnt} ${init} ${init_option} "$@" <${rootmnt}/dev/console >${rootmnt}/dev/console
+	exec run-init ${drop_caps} ${rootmnt} ${init} "$@" <${rootmnt}/dev/console >${rootmnt}/dev/console
 fi
 echo "Something went badly wrong in the initramfs."
 panic "Please file a bug on initramfs-tools."

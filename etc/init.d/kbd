@@ -236,7 +236,6 @@ case "$1" in
                 log_action_msg "Setting console screen modes and fonts"
         fi
         setup
-	[ -z "$HAVE_SETUPCON" ] || log_action_msg "Skipping font and keymap setup (handled by console-setup)"
         ;;
     stop)
         ;;

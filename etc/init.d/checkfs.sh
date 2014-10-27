@@ -3,7 +3,7 @@
 # Provides:          checkfs
 # Required-Start:    checkroot
 # Required-Stop:
-# Should-Start:      mtab
+# Should-Start:
 # Default-Start:     S
 # Default-Stop:
 # X-Interactive:     true
@@ -18,6 +18,7 @@ FSCK_LOGFILE=/var/log/fsck/checkfs
 . /lib/init/vars.sh
 
 . /lib/lsb/init-functions
+. /lib/init/mount-functions.sh
 . /lib/init/swap-functions.sh
 
 do_start () {
@@ -42,7 +43,7 @@ do_start () {
 	BAT=""
 	fscheck="yes"
 
-	if [ -f /fastboot ] || grep -s -w -i "fastboot" /proc/cmdline
+	if is_fastboot_active
 	then
 		[ "$fscheck" = yes ] && log_warning_msg "Fast boot enabled, so skipping file system check."
 		fscheck=no

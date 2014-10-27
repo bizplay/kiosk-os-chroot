@@ -1,0 +1,10 @@
+[Unit]
+Description=Regular background program processing daemon
+Documentation=man:cron(8)
+
+[Service]
+ExecStart=/usr/sbin/cron -f
+IgnoreSIGPIPE=false
+
+[Install]
+WantedBy=multi-user.target

@@ -96,7 +96,6 @@
 /usr/share/man/man1/git-merge-base.1.gz
 /usr/share/man/man1/git-diff-tree.1.gz
 /usr/share/man/man1/git-upload-pack.1.gz
-/usr/share/man/man1/git-p4.1.gz
 /usr/share/man/man1/git-stash.1.gz
 /usr/share/man/man1/git-request-pull.1.gz
 /usr/share/man/man1/git-add.1.gz
@@ -163,6 +162,7 @@
 /usr/share/man/man1/git-ls-remote.1.gz
 /usr/share/man/man1/git-symbolic-ref.1.gz
 /usr/share/man/man1/git-web--browse.1.gz
+/usr/share/man/man1/git-verify-commit.1.gz
 /usr/share/man/man1/git-pack-redundant.1.gz
 /usr/share/man/man1/git-prune.1.gz
 /usr/share/man/man1/git-format-patch.1.gz

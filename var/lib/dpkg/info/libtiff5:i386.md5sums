@@ -1,0 +1,9 @@
+753717bbd055d61a799d6e61ad948324  usr/lib/i386-linux-gnu/libtiff.so.5.2.0
+70c042602c0c4a02e7f57c60e64182fd  usr/share/doc/libtiff5/README
+4ebda78850536a22e89ad81783a3414b  usr/share/doc/libtiff5/README.Debian
+9e73fd6a26d07e76fa7edf76312bfda2  usr/share/doc/libtiff5/TODO
+a636a5649a8466f93c492a06e99d81f1  usr/share/doc/libtiff5/changelog.Debian.gz
+df3b6c58d901c5eacb8ce1efb8a2e5d5  usr/share/doc/libtiff5/changelog.Debian.i386.gz
+ed01298c5e6f7077d30382f67e37280c  usr/share/doc/libtiff5/changelog.gz
+695ae31c6ddc61ea38050467e1214369  usr/share/doc/libtiff5/copyright
+bef9327009992eff52f279c04d2fbfd0  usr/share/lintian/overrides/libtiff5

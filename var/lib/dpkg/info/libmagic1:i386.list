@@ -1,7 +1,7 @@
 /.
 /etc
-/etc/magic
 /etc/magic.mime
+/etc/magic
 /usr
 /usr/lib
 /usr/lib/i386-linux-gnu

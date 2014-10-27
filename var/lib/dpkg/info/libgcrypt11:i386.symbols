@@ -57,7 +57,7 @@ libgcrypt.so.11 libgcrypt11 #MINVER#
  gcry_cipher_setiv@GCRYPT_1.2 1.4.5
  gcry_cipher_setkey@GCRYPT_1.2 1.4.5
  gcry_cipher_unregister@GCRYPT_1.2 1.4.5
- gcry_control@GCRYPT_1.2 1.4.5
+ gcry_control@GCRYPT_1.2 1.5.1
  gcry_create_nonce@GCRYPT_1.2 1.4.5
  gcry_err_code_from_errno@GCRYPT_1.2 1.4.5
  gcry_err_code_to_errno@GCRYPT_1.2 1.4.5

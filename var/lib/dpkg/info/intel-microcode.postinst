@@ -19,36 +19,53 @@ set -e
 
 case "$1" in
     configure)
-	# try to load the microcode module just in case.  If we succeed,
-	# it will trigger a microcode update by itself
-	if modprobe -q --first-time microcode ; then
-	    echo "Updating microcode on all online processors..." >&2
+	# See Debian bug #716917.  We'd like to blacklist all non-LTS/non-Debian kernel versions
+	# before kernel 3.4 that don't have all microcode fixes as of 2013-07-17, but
+	# the way Debian/ubuntu version distro kernels get in the way, and dealing with it is
+	# non-trivial and error-prone.  Blacklist entire kernel branches, instead.
+	# Known broken kernels on AMD: 2.6.38, 3.5.2.
+	kversion=$(uname -r)
+	if dpkg --compare-versions ${kversion} le 3.4 && \
+	    { dpkg --compare-versions ${kversion} lt 2.6.32 || \
+	    { dpkg --compare-versions ${kversion} ge 2.6.33 && dpkg --compare-versions ${kversion} lt 3.0 ; } || \
+	     { dpkg --compare-versions ${kversion} ge 3.1 && dpkg --compare-versions ${kversion} lt 3.2 ; } || \
+	     dpkg --compare-versions ${kversion} ge 3.3 ; \
+	    }; then
+		echo "W: intel-microcode: unsupported kernel version ${kversion}" >&2
 	else
-	    # we have to trigger the microcode update manually
-	    if [ -e /sys/devices/system/cpu/microcode/reload ] ; then
-		echo "Updating microcode on all online processors..." >&2
-		echo 1 > /sys/devices/system/cpu/microcode/reload || {
-		    echo "Kernel reported failure while updating microcode!" >&2
+	    grep -q "^vendor_id[[:blank:]]*:[[:blank:]]*.*GenuineIntel" /proc/cpuinfo && {
+		# try to load the microcode module just in case.  If we succeed,
+		# it will trigger a microcode update by itself
+		if modprobe -q --first-time microcode ; then
+		    echo "Updating microcode on all online processors..." >&2
+		else
+		    # we have to trigger the microcode update manually
+		    if [ -e /sys/devices/system/cpu/microcode/reload ] ; then
+			echo "Updating microcode on all online processors..." >&2
+			echo 1 > /sys/devices/system/cpu/microcode/reload || {
+			    echo "Kernel reported failure while updating microcode!" >&2
+			}
+		    else
+			# Try all online processors, broken kernels need this,
+			# fixed kernels will accept it only on the BSP and update
+			# all processors anyway, and -EINVAL all others... but we
+			# don't know which one is the BSP, so we try all of them
+			# and hide errors, the kernel will log any real problem.
+			echo "Using per-core interface to update microcode on online processors..." >&2
+			find /sys/devices/system/cpu -noleaf -type f -path '/sys/devices/system/cpu/cpu*/microcode/reload' | \
+			    while read i ; do echo -n 1 2>/dev/null >"$i" || true ; done
+		    fi
+		fi
+		# do it like udev and firmware-linux-*
+		if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then
+			update-initramfs -u
+		fi
+		ls /usr/share/misc/intel-microcode* >/dev/null 2>&1 && {
+		    echo "WARNING: /usr/share/misc/intel-microcode* installed to the initramfs" >&2
+		    echo "If this is undesired, remove /usr/share/misc/intel-microcode* and run 'update-initramfs -u'" >&2
 		}
-	    else
-		# Try all online processors, broken kernels need this,
-		# fixed kernels will accept it only on the BSP and update
-		# all processors anyway, and -EINVAL all others... but we
-		# don't know which one is the BSP, so we try all of them
-		# and hide errors, the kernel will log any real problem.
-		echo "Using per-core interface to update microcode on online processors..." >&2
-		find /sys/devices/system/cpu -noleaf -type f -path '/sys/devices/system/cpu/cpu*/microcode/reload' | \
-		    while read i ; do echo -n 1 2>/dev/null >"$i" || true ; done
-	    fi
-	fi
-	# do it like udev and firmware-linux-*
-	if [ -x /usr/sbin/update-initramfs -a -e /etc/initramfs-tools/initramfs.conf ] ; then
-		update-initramfs -u
-	fi
-	ls /usr/share/misc/intel-microcode* >/dev/null 2>&1 && {
-	    echo "WARNING: /usr/share/misc/intel-microcode* installed to the initramfs" >&2
-	    echo "If this is undesired, remove /usr/share/misc/intel-microcode* and run 'update-initramfs -u'" >&2
-	}
+	    }
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

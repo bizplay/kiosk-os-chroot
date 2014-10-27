@@ -1,5 +1,6 @@
-9c0a2aeb252e46129d38554118f7fe2b  usr/lib/libgs.so.9.05
+9f1537934394fa00c9ac87b873e19952  usr/lib/libgs.so.9.06
 79e5f6b38929618ddd270e11f690ded3  usr/share/doc/libgs9/NEWS.Debian.gz
-8d91c1e49956d7c68629c0a5f6f52a66  usr/share/doc/libgs9/buildinfo_i386.gz
-c5011cf3f1ac5f323b98f914bd51e87d  usr/share/doc/libgs9/changelog.Debian.gz
-273ee76339cee1d9069beeb945d74670  usr/share/doc/libgs9/copyright
+652b8ae4f5a4d6e3ba5c560ebce9b0e6  usr/share/doc/libgs9/buildinfo_i386.gz
+982e635be9403e5609d23d18e3149902  usr/share/doc/libgs9/changelog.Debian.gz
+5fc94ea50c0c02b37614bcf79b3d016b  usr/share/doc/libgs9/changelog.Debian.i386.gz
+75bf12471aa068ce25b63971ac40bc1d  usr/share/doc/libgs9/copyright

@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libudev1
+/usr/share/doc/libudev1/changelog.Debian.gz
+/usr/share/doc/libudev1/changelog.Debian.i386.gz
+/usr/share/doc/libudev1/copyright
+/lib
+/lib/i386-linux-gnu
+/lib/i386-linux-gnu/libudev.so.1.5.0
+/lib/i386-linux-gnu/libudev.so.1

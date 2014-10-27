@@ -10,6 +10,16 @@ catenate_cpiogz() {
 	cat "${1}" >>"${__TMPCPIOGZ}"
 }
 
+prepend_earlyinitramfs() {
+	# Sanity check
+	if [ ! -e "${1}" ]; then
+		echo "W: prepend_earlyinitramfs: arg1='${1}' does not exist." >&2
+		return
+	fi
+
+	cat "${1}" >>"${__TMPEARLYCPIO}"
+}
+
 # force_load module [args...]
 force_load()
 {
@@ -79,19 +89,6 @@ manual_add_modules()
 				# Only warn about missing firmware if
 				# /proc/modules exists
 				if [ ! -e /proc/modules ] ; then
-					continue
-				fi
-
-				# the devicenumber/inode pair of / are not the same as that of /sbin/init's
-				# root, so we're in a chroot.
-				if [ "${verbose}" != "y" ] \
-				&& [ "$(stat -c %d/%i /)" != "$(stat -Lc %d/%i /proc/1/root 2>/dev/null)" ]; then
-					continue
-				fi
-
-				# this is a cgroup set, so we're in a container.
-				if [ "${verbose}" != "y" ] \
-				&& ! grep -qs ':/$' /proc/1/cgroup; then
 					continue
 				fi
 
@@ -360,6 +357,11 @@ dep_add_modules()
 		block=${root#/dev/}
 		block=${block%%p[0-9]*}
 
+	# nbd root /dev/nbdXpX
+	elif [ "${root#/dev/nbd}" != "${root}" ]; then
+		block=${root#/dev/}
+		block=${block%%p[0-9]*}
+
 	# DAC960 - good old mylex raid - root dev format /dev/rd/cXdXpX
 	elif [ "${root#/dev/rd/c}" != "${root}" ]; then
 		block="rd!c${root#/dev/rd/c}"
@@ -369,6 +371,11 @@ dep_add_modules()
 	elif [ "${root#/dev/etherd/}" != "${root}" ]; then
 		block=${root#/dev/etherd/*}
 		block="etherd!${block%p*}"
+	# i2o raid device
+	elif [ "${root#/dev/i2o/}" != "${root}" ]; then
+		block=${root#/dev/i2o/}
+		block=${block%%[0-9]*}
+		block='i2o!'$block
 	# classical root device
 	else
 		block=${root#/dev/}
@@ -402,7 +409,7 @@ dep_add_modules()
 	fi
 
 	if [ -e /sys/bus/virtio ] ; then
-		modules="$modules virtio_pci"
+		modules="$modules virtio_pci virtio_mmio"
 	fi
 
 	if [ -e /sys/bus/i2o/devices/ ]; then
@@ -435,12 +442,13 @@ auto_add_modules()
 	for arg in "$@" ; do
 		case "$arg" in
 		base)
-			modules="$modules ehci-pci ehci-hcd ohci-hcd uhci-hcd usbhid"
+			modules="$modules ehci-pci ehci-orion ehci-hcd ohci-hcd ohci-pci uhci-hcd usbhid"
 			modules="$modules xhci xhci-hcd"
 			modules="$modules btrfs ext2 ext3 ext4 ext4dev "
 			modules="$modules isofs jfs reiserfs udf xfs"
 			modules="$modules nfs nfsv2 nfsv3 nfsv4"
-			modules="$modules af_packet atkbd i8042 virtio_pci"
+			modules="$modules af_packet atkbd i8042"
+			modules="$modules virtio_pci virtio_mmio"
 
 			# Include all HID drivers unless we're sure they
 			# don't support keyboards.  hid-*ff covers various
@@ -514,7 +522,9 @@ auto_add_modules()
 hidden_dep_add_modules()
 {
 	local modules=
-	for dep in "lib/libcrc32c crc32c" "fs/ubifs/ubifs deflate zlib lzo"; do
+	for dep in "lib/libcrc32c crc32c" \
+			"fs/ubifs/ubifs deflate zlib lzo" \
+			"fs/btrfs/btrfs crc32c"; do
 		set -- $dep
 		if [ -f "${DESTDIR}/lib/modules/${version}/kernel/$1.ko" ]; then
 			shift

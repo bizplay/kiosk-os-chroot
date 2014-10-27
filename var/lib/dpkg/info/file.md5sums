@@ -1,9 +1,9 @@
-19abd80c4faaff80fad66063ed8f5568  usr/bin/file
+8e5374d0fb548e98adfe9f0bb2206775  usr/bin/file
 8ef93f51cd6f0f15b49d64a0f0f8d551  usr/share/bug/file/control
-86338d587bc8b91b83fbac7fd6e1e91f  usr/share/bug/file/presubj
-76a4cf3dc7873524a68f375a990b4285  usr/share/doc/file/README.Debian
-4463d0e5ce6ca817cd499ae345a0d69f  usr/share/doc/file/README.gz
-08bb8a43b7ad32bb8085ed1eca0abb35  usr/share/doc/file/changelog.Debian.gz
-8c611bf10a0fd5824072f0f9ae9c17a9  usr/share/doc/file/changelog.gz
-d7bf3745ef7f37111b15c74b2b182484  usr/share/doc/file/copyright
-a29a45ffa08d6c2396a87212e96d9cb5  usr/share/man/man1/file.1.gz
+2aec18e703e06a77d1669661d663a299  usr/share/bug/file/presubj
+3b8c40c3456f846c7f4cc0da3801f8e6  usr/share/doc/file/README.Debian
+0a3225582b9a478d8a0f44f691035427  usr/share/doc/file/README.gz
+ea52535ec5fa1a23b7f6a8f689487dad  usr/share/doc/file/changelog.Debian.gz
+a1ed425e7d89e763aedee35bec68cba3  usr/share/doc/file/changelog.gz
+9f6bba13f80512dc0daecf57862c4391  usr/share/doc/file/copyright
+32a1e23c1bc1f0a0e740ba31734dc504  usr/share/man/man1/file.1.gz

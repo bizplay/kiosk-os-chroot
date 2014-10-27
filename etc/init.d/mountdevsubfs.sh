@@ -28,7 +28,7 @@ KERNEL="$(uname -s)"
 . /lib/init/mount-functions.sh
 
 # May be run several times, so must be idempotent.
-# $1: Mount mode, to allow for remounting and mtab updating
+# $1: Mount mode, to allow for remounting
 mount_filesystems () {
 	MNTMODE="$1"
 
@@ -54,9 +54,6 @@ case "$1" in
 	;;
   start)
 	mount_filesystems mount_noupdate
-	;;
-  mtab)
-	mount_filesystems mtab
 	;;
   restart|reload|force-reload)
 	mount_filesystems remount
