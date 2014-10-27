@@ -143,6 +143,7 @@ setup_unionfs ()
 				#ulimit -c unlimited # enable core dumps
 				#openvt -c 2 -- sh -c "git-fs -d -o allow_other${noforget_opt} \"${image}\" \"${mpoint}\" 2>&1 | tee /git-fs.log"
 				#sleep 2 # wait for git-fs to be mounted, since openvt returns immediately
+				modprobe fuse
 				git-fs -o allow_other${gitfs_opt} "${image}" "${mpoint}"
 
 				log_end_msg
