@@ -1,0 +1,7 @@
+override ARCH = x86
+override KERNELRELEASE = 3.16-3-686-pae
+CCACHE = ccache
+CC = $(if $(DEBIAN_KERNEL_USE_CCACHE),$(CCACHE)) $(CROSS_COMPILE)gcc-4.8
+ifneq ($(DEB_BUILD_ARCH),$(DEB_HOST_ARCH))
+override CROSS_COMPILE = $(DEB_HOST_GNU_TYPE)-
+endif
