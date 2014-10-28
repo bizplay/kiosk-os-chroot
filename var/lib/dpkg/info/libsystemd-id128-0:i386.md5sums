@@ -1,3 +1,4 @@
-e72ca066b9e9b32f5971d838d3d633ce  lib/i386-linux-gnu/libsystemd-id128.so.0.0.3
-3362b392b1997985829293d3a9a46f53  usr/share/doc/libsystemd-id128-0/changelog.Debian.gz
-99d5913588fcc16e07224bf166562ad8  usr/share/doc/libsystemd-id128-0/copyright
+dc525ed26a5e7dbb8ec8219e65362fb0  lib/i386-linux-gnu/libsystemd-id128.so.0.0.28
+2722ef9c057ce43a1310bbeb253d84ae  usr/share/doc/libsystemd-id128-0/changelog.Debian.gz
+f3903079cfaaae7681b89db168518163  usr/share/doc/libsystemd-id128-0/changelog.Debian.i386.gz
+9b44da71731b94cb1b136501d33a2e23  usr/share/doc/libsystemd-id128-0/copyright

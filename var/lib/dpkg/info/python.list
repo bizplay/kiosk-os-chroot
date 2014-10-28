@@ -28,6 +28,7 @@
 /usr/share/doc/python/python-policy.html/ap-upgrade.html
 /usr/share/doc/python/python-policy.html/index.html
 /usr/share/doc/python/python-policy.html/ch-python.html
+/usr/share/doc/python/python-policy.html/ch-python3.html
 /usr/share/doc/python/copyright
 /usr/share/doc/python/python-policy.txt.gz
 /usr/share/doc/python/changelog.Debian.gz
@@ -37,6 +38,7 @@
 /usr/share/lintian/overrides
 /usr/share/lintian/overrides/python
 /usr/share/python
+/usr/share/python/dh_python2
 /usr/share/python/runtime.d
 /usr/share/python/runtime.d/public_modules.rtremove
 /usr/share/python/runtime.d/public_modules.rtinstall

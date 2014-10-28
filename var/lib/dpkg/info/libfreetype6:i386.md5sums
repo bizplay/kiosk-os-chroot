@@ -1,9 +1,9 @@
-e1c8ef7ba23cf7c8823ab5b1e7d859b2  usr/lib/i386-linux-gnu/libfreetype.so.6.8.1
-dd0774edab1d087f926e8442ccd3bc5c  usr/share/doc/libfreetype6/CHANGES.gz
+40d32984b16ac9b47aa02b7aa758a5d4  usr/lib/i386-linux-gnu/libfreetype.so.6.11.1
+4d9c152c2befd5bdd209f22aad249162  usr/share/doc/libfreetype6/CHANGES.gz
 b151de82cf1c4372024399e145de382a  usr/share/doc/libfreetype6/FTL.TXT.gz
 d1b0952ac68ff77f64da7140dc5bbae0  usr/share/doc/libfreetype6/TODO
-51e5001bc0d86244832e999b831dcce6  usr/share/doc/libfreetype6/changelog.Debian.gz
-97f858bc1dc29b201e78bbf11294a7a9  usr/share/doc/libfreetype6/changelog.gz
+f3ce0118f9f99ed316a439845cff7719  usr/share/doc/libfreetype6/changelog.Debian.gz
+d767aae2b2a7609c72e797b622a77aad  usr/share/doc/libfreetype6/changelog.gz
 2919603802bcd2fba75b2e77d59701b2  usr/share/doc/libfreetype6/copyright
-66894a5c474c9d7c685d96d5ec4d16bc  usr/share/doc/libfreetype6/ft2faq.html
-5c03efb0f6c3d1f47958369b065a4c08  usr/share/doc/libfreetype6/pcf/README
+963b071f53ab0104e62ad676acce4bd1  usr/share/doc/libfreetype6/ft2faq.html
+118e06ed92eb2c4264855375715b3515  usr/share/doc/libfreetype6/pcf/README

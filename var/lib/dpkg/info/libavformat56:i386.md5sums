@@ -1,0 +1,8 @@
+c98a80ffba980b9ece54ef6d2d25f5eb  usr/lib/i386-linux-gnu/i686/cmov/libavformat.so.56.1.0
+0a6129026be1899f3774a97a42393ae1  usr/lib/i386-linux-gnu/libavformat.so.56.1.0
+7906be10ad1a6590b1828dca02678003  usr/share/doc/libavformat56/NEWS.Debian.gz
+a4b6113bb17f0443f68b558e890e6a90  usr/share/doc/libavformat56/changelog.Debian.gz
+c99ad9efa0bec536b4bf87760388a2ea  usr/share/doc/libavformat56/changelog.gz
+323125fc98bc748defccc624b74fd752  usr/share/doc/libavformat56/copyright
+249898c237b1703d60df33101c16be5f  usr/share/doc/libavformat56/formats-i386.txt.gz
+f4545a9f5b0b8fc2bafcca455cb46d3e  usr/share/lintian/overrides/libavformat56

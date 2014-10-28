@@ -1,2 +1,4 @@
-/etc/init.d/hwclock.sh
+/etc/pam.d/runuser-l
+/etc/pam.d/runuser
 /etc/default/hwclock
+/etc/init.d/hwclock.sh

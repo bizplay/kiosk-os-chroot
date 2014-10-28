@@ -6,7 +6,7 @@
 /usr/share
 /usr/share/doc
 /usr/share/doc/libxdamage1
-/usr/share/doc/libxdamage1/changelog.Debian.gz
-/usr/share/doc/libxdamage1/copyright
 /usr/share/doc/libxdamage1/changelog.gz
+/usr/share/doc/libxdamage1/copyright
+/usr/share/doc/libxdamage1/changelog.Debian.gz
 /usr/lib/i386-linux-gnu/libXdamage.so.1

@@ -43,10 +43,12 @@ panic()
 		echo "Rebooting automatically due to panic= boot argument"
 		sleep ${panic}
 		reboot
+		return
 	fi
 	modprobe -v i8042 || true
 	modprobe -v atkbd || true
 	modprobe -v ehci-pci || true
+	modprobe -v ehci-orion || true
 	modprobe -v ehci-hcd || true
 	modprobe -v uhci-hcd || true
 	modprobe -v ohci-hcd || true
@@ -260,14 +262,7 @@ load_modules()
 			if [ "$com" = "#" ]; then
 				continue
 			fi
-
-			if [ "$quiet" = "y" ]
-			then
-				# workaround for modules behaving not well (e.g. i915 with intel_ips)
-				modprobe -q $m > /dev/null 2>&1
-			else
-				modprobe -q $m
-			fi
+			modprobe $m
 		done
 	fi
 }
@@ -313,6 +308,7 @@ get_fstype ()
 
 	# blkid has a more complete list of file systems,
 	# but fstype is more robust
+	FSTYPE="unknown"
 	eval $(fstype "${FS}" 2> /dev/null)
 	if [ "$FSTYPE" = "unknown" ] &&  command -v blkid >/dev/null 2>&1 ; then
 		FSTYPE=$(blkid -o value -s TYPE "${FS}")
@@ -402,7 +398,7 @@ configure_networking()
 			# grab device entry from ip option
 			NEW_DEVICE=${IP#*:*:*:*:*:*}
 			if [ "${NEW_DEVICE}" != "${IP}" ]; then
-				NEW_DEVICE=${NEW_DEVICE%:*}
+				NEW_DEVICE=${NEW_DEVICE%%:*}
 			else
 				# wrong parse, possibly only a partial string
 				NEW_DEVICE=

@@ -3947,10 +3947,6 @@ sub flatten {
                 approximate (($coord | 0x08), $metasyms[$ascii], 1);
                 approximate (($coord | 0x04), $controlsyms[$ascii], 1);
                 approximate (($coord | 0x0c), $metacontrolsyms[$ascii], 1);
-            } elsif ($is_special) { # this includes being 'NoSymbol'
-                approximate (($coord | 0x08), $kernelkeysym, 2);
-                approximate (($coord | 0x04), $kernelkeysym, 2);
-                approximate (($coord | 0x0c), $kernelkeysym, 2);
             }
 	}
     }
@@ -3962,10 +3958,17 @@ sub flatten {
                         $quality[$coord] + $mask << 2);
         }
     }
+    for my $x (2..3) {
+        my $mask = 1 << $x;
+        for my $coord (0..63) {
+            next if (! defined $vector[$coord]);
+            approximate($coord | $mask, $vector[$coord],
+                        $quality[$coord] + $mask << 2);
+        }
+    }
     for my $coord (0..16) {
         next if (! defined $vector[$coord]);
-        for my $x (1..3) {
-            my $mask = $x << 4;
+        for my $mask (1<<4, 2<<4, 3<<4) {
             approximate($coord | $mask, $vector[$coord],
                         $quality[$coord] + 1 << 6);
         }

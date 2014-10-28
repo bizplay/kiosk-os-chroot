@@ -1,8 +1,8 @@
-e4afd8caec3975a896209f204d822a9a  usr/lib/i386-linux-gnu/libmagic.so.1.0.0
+0737ca64c1a6c711404ab9903373a9dc  usr/lib/i386-linux-gnu/libmagic.so.1.0.0
 8ef93f51cd6f0f15b49d64a0f0f8d551  usr/share/bug/libmagic1/control
-891e25bc611b3f3bee6570261856a49f  usr/share/bug/libmagic1/presubj
-08bb8a43b7ad32bb8085ed1eca0abb35  usr/share/doc/libmagic1/changelog.Debian.gz
-8c611bf10a0fd5824072f0f9ae9c17a9  usr/share/doc/libmagic1/changelog.gz
-d7bf3745ef7f37111b15c74b2b182484  usr/share/doc/libmagic1/copyright
-15984645e3f69bd207a917b4f944a8b2  usr/share/file/magic.mgc
-b449836b53f5681ee3a005e5904ad5d2  usr/share/man/man5/magic.5.gz
+2aec18e703e06a77d1669661d663a299  usr/share/bug/libmagic1/presubj
+ea52535ec5fa1a23b7f6a8f689487dad  usr/share/doc/libmagic1/changelog.Debian.gz
+a1ed425e7d89e763aedee35bec68cba3  usr/share/doc/libmagic1/changelog.gz
+9f6bba13f80512dc0daecf57862c4391  usr/share/doc/libmagic1/copyright
+36d6b18a46f860c686ae74f570181bb7  usr/share/file/magic.mgc
+df4f6f6a9fbb560d408f21fa4e83b305  usr/share/man/man5/magic.5.gz

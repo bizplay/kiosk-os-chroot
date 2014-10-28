@@ -25,6 +25,10 @@
 <TD><INPUT TYPE="HIDDEN" NAME="PRINTER_LOCATION" VALUE="{printer_location}">{printer_location}</TD>
 </TR>
 <TR>
+<TH CLASS="label">Color Calibration Mode:</TH>
+<TD><INPUT TYPE="HIDDEN" NAME="PRINTER_IS_CM_CALIBRATING" VALUE="{?printer_is_cm_calibrating}">{?printer_is_cm_calibrating=?Not:{?printer_is_cm_calibrating=0?Not:}} Enabled</TD>
+</TR>
+<TR>
 <TH CLASS="label">Connection:</TH>
 <TD><INPUT TYPE="HIDDEN" NAME="DEVICE_URI" VALUE="{device_uri}">{device_uri}</TD>
 </TR>

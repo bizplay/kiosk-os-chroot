@@ -54,6 +54,9 @@ for initramfs in "$@" ; do
 			bzip2 -c -d "$initramfs" | cpio ${cpio_args}
 		elif lzop -t "$initramfs" >/dev/null 2>&1 ; then
 			lzop -c -d "$initramfs" | cpio ${cpio_args}
+		elif file "$initramfs" 2>/dev/null | grep -q "cpio archive" ; then
+			echo "lsinitramfs does not yet support cpio archive initramfs files." >&2
+			echo "See http://bugs.debian.org/717805 for more information." >&2
 		fi
 
 	fi

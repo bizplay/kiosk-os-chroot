@@ -44,13 +44,14 @@
 /usr/share/doc/libgnutls26/NEWS.Debian.gz
 /usr/share/doc/libgnutls26/THANKS.gz
 /usr/share/doc/libgnutls26/NEWS.gz
+/usr/share/doc/libgnutls26/TODO
 /usr/share/doc/libgnutls26/README.gz
 /usr/share/doc/libgnutls26/copyright
 /usr/share/doc/libgnutls26/changelog.Debian.gz
 /usr/share/doc/libgnutls26/changelog.gz
 /usr/lib
 /usr/lib/i386-linux-gnu
-/usr/lib/i386-linux-gnu/libgnutls.so.26.22.4
-/usr/lib/i386-linux-gnu/libgnutls-extra.so.26.22.4
+/usr/lib/i386-linux-gnu/libgnutls-extra.so.26.22.6
+/usr/lib/i386-linux-gnu/libgnutls.so.26.22.6
 /usr/lib/i386-linux-gnu/libgnutls-extra.so.26
 /usr/lib/i386-linux-gnu/libgnutls.so.26

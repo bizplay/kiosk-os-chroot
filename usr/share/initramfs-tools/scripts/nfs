@@ -66,7 +66,8 @@ mountroot()
 
 	# loop until nfsmount succeeds
 	do_nfsmount
-	while [ ${retry_nr} -lt ${delay} ] && [ ! -e ${rootmnt}${init} ]; do
+	while [ ${retry_nr} -lt ${delay} ] \
+		&& ! chroot "${rootmnt}" test -x "${init}" ; do
 		[ "$quiet" != "y" ] && log_begin_msg "Retrying nfs mount"
 		/bin/sleep 1
 		do_nfsmount
