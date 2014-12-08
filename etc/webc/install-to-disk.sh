@@ -109,7 +109,7 @@ install_extlinux() {
 	local disk="$3"
 
 	_logs "installing mbr to ${disk}"
-	dd if=/usr/lib/EXTLINUX/mbr.bin of="${disk}" bs=440 count=1 2> /dev/null
+	dd if=/usr/lib/EXTLINUX/mbr.bin of="${disk}" bs=440 count=1
 
 	_logs "installing extlinux to ${dir}/boot/extlinux"
 	mkdir -p "${dir}/boot/extlinux"
