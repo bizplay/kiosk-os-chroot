@@ -1,1 +1,8 @@
-/lib/systemd/system/install.target
+[Unit]
+Description=Webconverger install mode
+Requires=basic.target install.service getty.target
+After=basic.target install.service
+AllowIsolate=yes
+
+[Install]
+Alias=kbrequest.target

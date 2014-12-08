@@ -1,9 +1,0 @@
-[Unit]
-Description=Manages X and replaces getty
-
-[Service]
-ExecStart=/etc/webc/startx.sh
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
