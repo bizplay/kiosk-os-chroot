@@ -214,6 +214,14 @@ do
 			logs "Chrome (re)start"
 			optirun bash /home/webc/playr-loader/start-chrome-for-playr.sh "$homepage"
 		# removed instant update logic for now
+		#logs rhomepage: $rhomepage homepage: $homepage
+		#homepage="$(echo ${rhomepage:-$homepage} | sed 's,%20, ,g')"
+		#logs Launching with "${homepage}"
+		#if cmdline_has instantupdate
+		#then
+			#export rhomepage="$(/usr/bin/webc-wsc /opt/firefox/firefox $(echo $homepage | sed "s,MACID,$mac,g" | sed "s,WEBCID,$webc_id,g" | sed "s,WEBCVERSION,$webc_version,g" | sed "s,USBID,$usbid,g" ))"
+		#else
+			#/opt/firefox/firefox $(echo $homepage | sed "s,MACID,$mac,g" | sed "s,WEBCID,$webc_id,g" | sed "s,WEBCVERSION,$webc_version,g" | sed "s,USBID,$usbid,g" )
 		fi
 
 	fi
