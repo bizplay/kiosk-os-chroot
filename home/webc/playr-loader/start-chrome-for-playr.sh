@@ -7,7 +7,7 @@ if [[ $1 == "" ]]
 then
 	# enter the channel url below so it is equal to the 
 	# Playback Address on your dashboard
-	channel="http://playr.biz/xxxx/yyyy"
+	channel="http://play.playr.biz/"
 else
 	channel=$1
 fi
