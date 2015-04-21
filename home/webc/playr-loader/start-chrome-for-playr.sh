@@ -16,4 +16,4 @@ fi
 # escape and be passed to player_loader_file instead
 channel=$(echo "$channel" | sed 's:%:%25:g;s:?:%3F:g;s:&:%26:g;s:=:%3D:g')
 
-google-chrome --kiosk --disable-translate "file://${playr_loader_file}?channel=${channel}"
+google-chrome --disable-translate --disable-first-run-ui --no-default-browser-check "file://${playr_loader_file}?channel=${channel}"
