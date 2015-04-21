@@ -43,7 +43,7 @@ done
 
 # get the $webc_id
 . "/etc/webc/webc.conf"
-homepage="$install_qa_url" # default homepage
+homepage="http://play.playr.biz/" # default homepage
 
 mkfifo "$live_config_pipe"
 read answer < "$live_config_pipe" # blocking till live-config is finished
