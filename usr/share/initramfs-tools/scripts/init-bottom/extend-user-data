@@ -1,0 +1,116 @@
+#!/bin/sh
+
+# initramfs-tools header
+case "${1}" in
+	prereqs)
+		# No prereqs
+		exit 0
+		;;
+esac
+
+# set variables
+# target size of the persistent partition in GB
+second_partition_target_size=$((3*1024*1024*1024))
+
+echo "Start extend_user_data now: $(date +"%T") since startup: $(cat /proc/uptime)" > ${rootmnt}/extend_user_data.log 
+# find the drive that contains the partition that needs to be used for persistence
+# by looking for the label 'persistence'
+disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /persistence/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "ls EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+echo "Disk: sd${disk_letter} partition: sd${disk_letter}2" >> ${rootmnt}/extend_user_data.log
+# if no partition with the label persistence was found, stop execution
+if [ -z ${disk_letter} ]
+then
+	echo "No partition found" >> ${rootmnt}/extend_user_data.log
+	exit 0
+fi
+# write info of the partition before possible resize to log file
+echo "Information initial situation:" >> ${rootmnt}/extend_user_data.log
+echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "#lines with Free Space: $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+if [ ! -d "${rootmnt}/mnt" ]
+then
+	echo "ERROR: ${rootmnt}/mnt does not exist" >> ${rootmnt}/extend_user_data.log
+	exit 0
+fi
+if [ ! -d ${rootmnt}/mnt/persistent ]
+then
+	# create the directory where the persistency partition will be mounted
+	mkdir ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir ${rootmnt}/mnt/persistent  EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	# make sure all users (and applications) can write to the directory/partition
+	#chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	chown -R 1000 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod -R 1000 ${rootmnt}/mnt/persistent EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+
+else
+	echo "Directory ${rootmnt}/mnt/persistent already exists: $(ls -ld ${rootmnt}/mnt/persistent)" >> ${rootmnt}/extend_user_data.log
+fi
+file_system=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /^2$/ { print $6 }'`
+echo "Filesystem of /dev/sd${disk_letter}2: ${file_system}" >> ${rootmnt}/extend_user_data.log
+if [ $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
+then
+	# Check size of second partition.
+	# We have to do this second check because of USB devices greater than 4GB; 
+	# they will have two Free Space entries in the parted print list (the second is the free space after the 
+	# resized persistent partition). If the partition has been resized but not to the second_partition_target_size it will
+	# be done to a size that filled the available free space and therefore the above Free Space check will
+	# have failed.
+	# NOTE: it can happen that the resize does not use all the available free space (even when the resize was 
+	# done to 100%), to prevent re-resizing in these cases the second part of the below check compares the second
+	# partition size to the second free space, if the free space is smaller than the second partition it is
+	# assumed that the second free space is a small remainder that was left after the resize.
+	free_space_size=`parted --script /dev/sd${disk_letter} unit B print free | awk '$4 ~ /^Free$/ {if(++i==2) {gsub(/.$/,"",$3); print $3}}0'` >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	second_partition_actual_size=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /^2$/ {gsub(/.$/,"",$4); print $4}'`
+	echo "second partition actual size ${second_partition_actual_size}" >> ${rootmnt}/extend_user_data.log
+	echo "second free space actual size (free_space_size) ${free_space_size}" >> ${rootmnt}/extend_user_data.log
+	if [ ${second_partition_actual_size} -lt ${second_partition_target_size} ] && [ ${second_partition_actual_size} -lt ${free_space_size} ]
+	then
+		# extend the user_data partition by deleting the user_data partition
+		# and creating a new one at the same start position
+		# if partition is mounted umout
+		#   TODO implement unmount, not needed for now
+		# delete second parttion and create it again but now to fill all free space after the partition
+		second_partition_start=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /^2$/ {gsub(/.$/,"",$2); print $2}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+		second_partition_end=$((${second_partition_start} + ${second_partition_target_size}))
+		echo "second_partition_target_size ${second_partition_target_size}" >> ${rootmnt}/extend_user_data.log
+		echo "second_partition_start ${second_partition_start}" >> ${rootmnt}/extend_user_data.log
+		echo "second_partition_end  ${second_partition_end}" >> ${rootmnt}/extend_user_data.log
+		parted --script /dev/sd${disk_letter} rm 2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted rm -2 EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+		if [ ${second_partition_target_size} -gt ${free_space_size} ]
+		then
+			second_partition_target_size=${free_space_size}
+			second_partition_end=$((${second_partition_start} + ${second_partition_target_size}))
+			echo "second_partition_target_size ${second_partition_target_size}" >> ${rootmnt}/extend_user_data.log
+			echo "second_partition_end  ${second_partition_end} (100%)" >> ${rootmnt}/extend_user_data.log
+			parted --script /dev/sd${disk_letter} mkpart primary ext2 ${second_partition_start}B 100% >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted mkpart ext2 EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+		else	
+			parted --script /dev/sd${disk_letter} mkpart primary ext2 ${second_partition_start}B ${second_partition_end}B >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted mkpart ext2 EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+		fi
+		# check the filesystem
+		e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log  
+		# resize the filesystem
+		resize2fs -f /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "resize2fs EXIT ${?}" >> ${rootmnt}/extend_user_data.log 
+	else	
+		echo "Resize has already been executed; no resize executed" >> ${rootmnt}/extend_user_data.log
+	fi
+else
+	echo "No free space available; no resize executed" >> ${rootmnt}/extend_user_data.log
+	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+fi
+# mount the persistent partition
+mount -t ${file_system} /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount -t ${file_system} /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+echo "Information final situation:" >> ${rootmnt}/extend_user_data.log
+echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
+echo "End extend_user_data now: $(date +"%T") since startup: $(cat /proc/uptime)" >> ${rootmnt}/extend_user_data.log
