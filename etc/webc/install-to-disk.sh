@@ -84,14 +84,18 @@ find_disk() {
 partition_disk() {
 	local disk="$1"
 	_logs "partitioning ${disk}"
-	/sbin/sfdisk $disk <<EOF
-,,L,*
+	# Create a 4GB partition for the system, and allocate the rest
+	# for a data partition
+	/sbin/sfdisk -u M $disk <<EOF
+,4096,L,*
+,,L,
 EOF
 }
 verify_partition() {
 	local disk="$1"
 	_logs "verifying partitions on ${disk}"
 	test -e ${disk}1
+	test -e ${disk}2
 	# /sbin/sfdisk -V -q $disk  # never times out when 0 partitions exist
 }	
 md5() { md5sum | awk '{ print $1 }'; }
@@ -145,6 +149,28 @@ setup_root() {
 	cp -r ${git_repo} ${mount}/live/
 }
 
+setup_data() {
+	local mount=$1
+	local partition=$2
+	_logs "building filesystem on $partition"
+	mke2fs -L persistence -j $partition
+
+	_logs "mounting $partition on $mount"
+	test -d $mount || mkdir $mount
+	mount $partition $mount
+
+	_logs "configuring ${mount}"
+	# create persistent directory for the live-build persistence magic as defined in th persistence.conf
+	mkdir -p "${mount}/persistent"
+	# sudo chown webc: "${mount}/persistent"
+	# change owner of mount dir so data can be written to this directory rather than having to use
+	# the persistent directory within the persistent directory
+	sudo chown -R 1000 "${mount}"
+	# Let /mnt/persistent in the booted system be a bindmount
+	# to ${mount}/persistent.
+	echo "/mnt/persistent source=persistent" > "${mount}/persistence.conf"
+}
+
 # Trap any shell exits with the failed handler
 trap failed_install EXIT
 
@@ -152,9 +178,12 @@ clear_screen
 disk=$( find_disk )
 root_partition=${disk}1
 root_mount=/mnt/root
+data_partition=${disk}2
+data_mount=/mnt/data
 partition_disk $disk
 verify_partition $disk
 setup_root $root_mount $root_partition
+setup_data $data_mount $data_partition
 install_extlinux $root_mount $root_partition $disk
 verify_extlinux_mbr $disk
 
