@@ -230,11 +230,11 @@ extend_user_data()
 		e2fsck -f /dev/sda2
 		resize2fs /dev/sda2a
 		# mount the partition
-		if [ ! -d "/mnt/data" ] ; then
-			mkdir /mnt/data
+		if [ ! -d "/mnt/persistent" ] ; then
+			mkdir /mnt/persistent/
 		fi
-		mount /dev/sda2 /mnt/data
+		mount /dev/sda2 /mnt/persistent/
 		# make sure the partition is mounted from now on
-		echo "/dev/sda2	/mnt/data	ext3	defaults	0	0" >> /etc/fstab
+		echo "/dev/sda2	/mnt/persistent	ext3	defaults	0	0" >> /etc/fstab
 	fi
 }
