@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 9830c7ce9b88101ba993f337e4b85a529b44797f  /boot/initrd.img-3.16.0-4-686-pae
 =======
 d3066105195ca6c763acb5c695535e4fa87db25b  /boot/initrd.img-3.16.0-4-686-pae
 >>>>>>> 99e45d2... files updated after update-initramfs -u -k all
+=======
+eb268bf3b92c083eb112536bcc2fc25fc5b0a27e  /boot/initrd.img-3.16.0-4-686-pae
+>>>>>>> b49f22c... renewed update-initramfs -u -k all
