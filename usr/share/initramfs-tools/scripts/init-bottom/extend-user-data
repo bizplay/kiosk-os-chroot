@@ -1,0 +1,64 @@
+#!/bin/sh -e
+
+PREREQS=""
+
+prereqs() { echo "$PREREQS"; }
+
+case "$1" in
+    prereqs)
+    prereqs
+    exit 0
+    ;;
+esac
+
+echo "$(parted --script /dev/sda unit B print free)" > ${rootmnt}/user_data_info
+echo "$(parted --script /dev/sda unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/user_data_info
+#log_begin_msg ">>> START EXTEND_USER_DATA"
+#echo ">>> START EXTEND_USER_DATA"
+# find user_data partition
+#   we take the boot USB to be sda1/2
+# check that the partition needs to be/can be extended
+#if [ ! -d "${rootmnt}/mnt/persistent" ] 
+#then
+#log_warning_msg ">>> EXTEND_USER_DATA - create persistent directory"
+# create the directory where the persistency partition will be mounted
+mkdir --parents ${rootmnt}/mnt/persistent/ > ${rootmnt}/user_data_info_1 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_1  
+# make sure all users (and applications) can write to the directory/partition
+chmod 777 ${rootmnt}/mnt/persistent/ > ${rootmnt}/user_data_info_1_1 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_1_1
+#fi
+if [ $(parted --script /dev/sda unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
+then
+#log_warning_msg ">>> EXTEND_USER_DATA - inside if"
+# extend the user_data partition by deleting the user_data partition
+# and creating a new one at the same start position
+# if partition is mounted umout
+#   TODO implement unmount, not needed for now
+# delete second parttion and create it again but now to fill all free space after the partition
+second_partition_start=`parted --script /dev/sda unit B print | awk '$1 ~ /2/ {gsub(/.$/,"",$2); print $2}'`> ${rootmnt}/user_data_info_1_1 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_1_1; \
+#echo "second_partition_start ${second_partition_start}" > ${rootmnt}/user_data_info_3; \
+#echo "which parted $(which parted)" > ${rootmnt}/user_data_info_3_1; \
+echo "${second_partition_start}" > ${rootmnt}/user_data_info_2; \
+parted --script /dev/sda rm 2 >> ${rootmnt}/user_data_info_2 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_2 ; \
+parted --script /dev/sda mkpart primary ${second_partition_start}B 100% > ${rootmnt}/user_data_info_3 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_3  
+# check the filesystem
+e2fsck -pf /dev/sda2 > ${rootmnt}/user_data_info_4 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_4  
+echo ">>>" > /dev/console
+echo ">>>" > /dev/console
+echo ">>> BEFORE RESIZE2FS" > /dev/console
+echo ">>>" > /dev/console
+echo ">>>" > /dev/console
+# resize the filesystem
+resize2fs -f /dev/sda2 > ${rootmnt}/user_data_info_5 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_5 
+echo ">>> RESIZE2FS EXIT CODE: ${$?}"
+exit 0
+# since this resizing might hang the boot proecess reboot the system
+#sudo shutdown -r now
+#exit 0
+fi
+# mount the persistent partition
+mount /dev/sda2 ${rootmnt}/mnt/persistent/ > ${rootmnt}/user_data_info_6 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_6
+echo "all done" > ${rootmnt}/mnt/persistent/done.txt
+#echo "end" > ${rootmnt}/user_data_info_9
+#log_end_msg "\n\n\n\n\n>>>\n>>>\n>>> END EXTEND_USER_DATA\n>>>\n>>>\n\n\n\n"
+#echo "\n\n\n\n\n>>>\n>>>\n>>> END EXTEND_USER_DATA\n>>>\n>>>\n\n\n\n"
+#exit 0

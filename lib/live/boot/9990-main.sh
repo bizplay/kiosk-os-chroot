@@ -212,29 +212,3 @@ Live ()
 	kill ${tailpid}
 	[ -w "${rootmnt}/var/log/" ] && mkdir -p "${rootmnt}/var/log/live" && cp boot.log "${rootmnt}/var/log/live" 2>/dev/null
 }
-
-extend_user_data()
-{
-	# find user_data partition
-	#   we take the boot USB to be sda1/2
-	# check that the partition can be extended
-	if [ `sudo parted --script /dev/loop0 unit B print free | grep 'Free Space' | wc -l` > 1 ]
-	then
-		# extend the user_data partition by deleting the user_data partition
-		# and creating a new one at the same start position
-		# if partition is mounted umout here
-		second_partition_start=`parted --script binary.img unit B print | awk '$2 ~ /1/ {gsub(/.$/,"",$3); print $3}'`; \
-		parted --script /dev/sda rm 2; \
-		parted --script /dev/sda mkpart primary ${second_partition_start}B 100%
-		# resize the filesystem
-		e2fsck -f /dev/sda2
-		resize2fs /dev/sda2a
-		# mount the partition
-		if [ ! -d "/mnt/persistent" ] ; then
-			mkdir /mnt/persistent/
-		fi
-		mount /dev/sda2 /mnt/persistent/
-		# make sure the partition is mounted from now on
-		echo "/dev/sda2	/mnt/persistent	ext3	defaults	0	0" >> /etc/fstab
-	fi
-}
