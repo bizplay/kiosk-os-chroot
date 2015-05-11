@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 9830c7ce9b88101ba993f337e4b85a529b44797f  /boot/initrd.img-3.16.0-4-686-pae
 =======
 d3066105195ca6c763acb5c695535e4fa87db25b  /boot/initrd.img-3.16.0-4-686-pae
@@ -7,3 +8,6 @@ d3066105195ca6c763acb5c695535e4fa87db25b  /boot/initrd.img-3.16.0-4-686-pae
 =======
 eb268bf3b92c083eb112536bcc2fc25fc5b0a27e  /boot/initrd.img-3.16.0-4-686-pae
 >>>>>>> b49f22c... renewed update-initramfs -u -k all
+=======
+ca7989337f54b899aa1f537a2f6e9dc3554e1d6d  /boot/initrd.img-3.16.0-4-686-pae
+>>>>>>> 43b22d0... changed > in -gt which is needed for comparing numeric values in most shells
