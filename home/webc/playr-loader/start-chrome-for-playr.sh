@@ -4,7 +4,7 @@
 playr_loader_file="/home/webc/playr-loader/playr_loader.html"
 # gpu_options="--ignore-gpu-blacklist --enable-experimental-canvas-features --enable-gpu-rasterization --enable-threaded-gpu-rasterization"
 gpu_options=""
-persitency_options="--user-data-dir=/mnt/persistent"
+persistency_options="--user-data-dir=/mnt/persistent"
 no_nagging_options="--disable-translate --disable-first-run-ui --no-default-browser-check"
 
 if [[ $1 == "" ]]

@@ -1420,6 +1420,32 @@ Description: Binary firmware for Realtek wired and wireless network adapters
   * Realtek RTL8821AE firmware (rtlwifi/rtl8821aefw.bin)
 Homepage: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
 
+Package: libparted2
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 548
+Maintainer: Parted Maintainer Team <parted-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Multi-Arch: same
+Source: parted
+Version: 3.2-7
+Replaces: libparted0 (<< 2.2-4), libparted1 (<< 2.2), libparted1.4 (<< 1.4.24-2)
+Provides: libparted
+Depends: libblkid1 (>= 2.17.2), libc6 (>= 2.8), libdevmapper1.02.1 (>= 2:1.02.90), libuuid1 (>= 2.16)
+Pre-Depends: multiarch-support
+Suggests: parted, libparted-dev, libparted-i18n (= 3.2-7)
+Breaks: python-parted (<< 3.6-5)
+Conflicts: libparted1 (<< 2.2), parted (<< 1.4.13+14pre1)
+Description: disk partition manipulator - shared library
+ GNU Parted is a program that allows you to create, destroy, resize,
+ move, and copy disk partitions. This is useful for creating space
+ for new operating systems, reorganizing disk usage, and copying data
+ to new hard disks.
+ .
+ This package contains the shared library.
+Homepage: http://www.gnu.org/software/parted
+
 Package: less
 Status: install ok installed
 Priority: important
@@ -6455,6 +6481,41 @@ Description: X acceleration library -- runtime
  .
  XA is intended to be used by the vmware driver for virtualized X acceleration.
 Homepage: http://mesa3d.sourceforge.net/
+
+Package: parted
+Status: install ok installed
+Priority: optional
+Section: admin
+Installed-Size: 306
+Maintainer: Parted Maintainer Team <parted-maintainers@lists.alioth.debian.org>
+Architecture: i386
+Version: 3.2-7
+Replaces: fsresize, parted1.6
+Depends: libc6 (>= 2.11), libparted2 (= 3.2-7), libreadline6 (>= 6.0), libtinfo5
+Suggests: parted-doc
+Conflicts: fsresize, parted1.6
+Description: disk partition manipulator
+ GNU Parted is a program that allows you to create, destroy, resize,
+ move, and copy disk partitions. This is useful for creating space
+ for new operating systems, reorganizing disk usage, and copying data
+ to new hard disks.
+ .
+ This package contains the binary and manual page. Further
+ documentation is available in parted-doc.
+ .
+ Parted currently supports DOS, Mac, Sun, BSD, GPT, MIPS, and PC98
+ partitioning formats, as well as a "loop" (raw disk) type which
+ allows use on RAID/LVM. It can detect and remove ASFS/AFFS/APFS,
+ Btrfs, ext2/3/4, FAT16/32, HFS, JFS, linux-swap, UFS, XFS, and ZFS
+ file systems. Parted also has the ability to create and modify file
+ systems of some of these types, but using it to perform file system
+ operations is now deprecated.
+ .
+ The nature of this software means that any bugs could cause massive
+ data loss. While there are no such bugs known at the moment, they
+ could exist, so please back up all important files before running
+ it, and do so at your own risk.
+Homepage: http://www.gnu.org/software/parted
 
 Package: coreutils
 Essential: yes
