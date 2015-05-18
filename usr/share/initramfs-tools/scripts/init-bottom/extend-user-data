@@ -11,8 +11,11 @@ case "$1" in
     ;;
 esac
 
+disk_letter=`ls -l /dev/disk/by-label | awk $9 ~ /user_data/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}`
 echo "$(parted --script /dev/sda unit B print free)" > ${rootmnt}/user_data_info
 echo "$(parted --script /dev/sda unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/user_data_info
+echo "${disk_letter} sd${disk_letter}" >> ${rootmnt}/user_data_info
+exit 0
 #log_begin_msg ">>> START EXTEND_USER_DATA"
 #echo ">>> START EXTEND_USER_DATA"
 # find user_data partition
