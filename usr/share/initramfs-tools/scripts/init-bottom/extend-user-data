@@ -11,16 +11,10 @@ case "$1" in
     ;;
 esac
 
-echo ">>>" > /dev/console
-echo ">>>" > /dev/console
-echo ">>> START EXTEND USER DATA" > /dev/console
-echo ">>>" > /dev/console
-echo ">>>" > /dev/console
-echo "Start" > ${rootmnt}/start.txt
 disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /user_data/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}'`> ${rootmnt}/user_data_info 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info 
 echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/user_data_info
 echo "$(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/user_data_info
-echo "${disk_letter} sd${disk_letter}" > ${rootmnt}/user_data_disk
+echo "${disk_letter} sd${disk_letter}" >> ${rootmnt}/user_data_info
 #log_begin_msg ">>> START EXTEND_USER_DATA"
 #echo ">>> START EXTEND_USER_DATA"
 # find user_data partition
@@ -30,7 +24,7 @@ echo "${disk_letter} sd${disk_letter}" > ${rootmnt}/user_data_disk
 #then
 #log_warning_msg ">>> EXTEND_USER_DATA - create persistent directory"
 # create the directory where the persistency partition will be mounted
-mkdir --parents ${rootmnt}/mnt/persistent/ > ${rootmnt}/user_data_info_1 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_1  
+mkdir --parents ${rootmnt}/mnt/persistent/ > ${rootmnt}/user_data_info_1 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_1
 # make sure all users (and applications) can write to the directory/partition
 chmod 777 ${rootmnt}/mnt/persistent/ > ${rootmnt}/user_data_info_1_1 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_1_1
 #fi
@@ -50,16 +44,9 @@ parted --script /dev/sd${disk_letter} rm 2 >> ${rootmnt}/user_data_info_2 2>&1; 
 parted --script /dev/sd${disk_letter} mkpart primary ${second_partition_start}B 100% > ${rootmnt}/user_data_info_3 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_3  
 # check the filesystem
 e2fsck -pf /dev/sd${disk_letter}2 > ${rootmnt}/user_data_info_4 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_4  
-echo ">>>" > /dev/console
-echo ">>>" > /dev/console
-echo ">>> BEFORE RESIZE2FS" > /dev/console
-echo ">>>" > /dev/console
-echo ">>>" > /dev/console
 exit 0
 # resize the filesystem
 resize2fs -f /dev/sd${disk_letter}2 > ${rootmnt}/user_data_info_5 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_5 
-echo ">>> RESIZE2FS EXIT CODE: ${$?}"
-exit 0
 # since this resizing might hang the boot proecess reboot the system
 #sudo shutdown -r now
 #exit 0
