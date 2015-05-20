@@ -10,22 +10,35 @@ case "${1}" in
 esac
 
 # include functions to be able to log
-. /scripts/live-functions
+#. /scripts/live-functions
 
 # set variables
 second_partition_size=$((2*1024*1024*1024))
 
 #log_begin_msg ">>> Start extend_user_data"
-echo "Start" > ${rootmnt}/extend_user_data.log 
+echo "Start extend_user_data now: $(date + "%T") since startup: $(cat /proc/uptime)" > ${rootmnt}/extend_user_data.log 
 disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /user_data/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "ls EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
-echo "$(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/extend_user_data.log
+echo . >> ${rootmnt}/extend_user_data.log
+echo "#lines with Free Space: $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/extend_user_data.log
+echo . >> ${rootmnt}/extend_user_data.log
+echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo . >> ${rootmnt}/extend_user_data.log
+echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo . >> ${rootmnt}/extend_user_data.log
+echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
+echo . >> ${rootmnt}/extend_user_data.log
 echo "Disk sd${disk_letter}" >> extend_user_data.log
 # find user_data partition
 #   we take the boot USB to be sda1/2
 # check that the partition needs to be/can be extended
 #if [ ! -d "${rootmnt}/mnt/persistent" ] 
 #then
+if [ ! -d "${rootmnt}/mnt" ]
+then
+	echo "ERROR: ${rootmnt}/mnt does not yet exist" >> extend_user_data.log
+	#exit 0
+fi
 # create the directory where the persistency partition will be mounted
 mkdir --parents ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 # make sure all users (and applications) can write to the directory/partition
@@ -34,29 +47,28 @@ chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; ech
 if [ $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
 then
 #log_warning_msg ">>> EXTEND_USER_DATA - inside if"
-# extend the user_data partition by deleting the user_data partition
-# and creating a new one at the same start position
-# if partition is mounted umout
-#   TODO implement unmount, not needed for now
-# delete second parttion and create it again but now to fill all free space after the partition
-second_partition_start=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /2/ {gsub(/.$/,"",$2); print $2}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
-#echo "second_partition_start ${second_partition_start}" > ${rootmnt}/user_data_info_3; \
-second_partition_end=$((${second_partition_start} + ${second_partition_size}))
-#echo "which parted $(which parted)" > ${rootmnt}/user_data_info_3_1; \
-echo "second_partition_size ${second_partition_size}" >> ${rootmnt}/extend_user_data.log
-echo "second_partition_start ${second_partition_start}" >> ${rootmnt}/extend_user_data.log
-echo "second_partition_end  ${second_partition_end}" >> ${rootmnt}/extend_user_data.log
-parted --script /dev/sd${disk_letter} rm 2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
-#parted --script /dev/sd${disk_letter} mkpart primary ${second_partition_start}B 100% > ${rootmnt}/user_data_info_3 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_3  
-parted --script /dev/sd${disk_letter} mkpart primary ${second_partition_start}B ${second_partition_end}B >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
-# check the filesystem
-e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log  
-# resize the filesystem
-resize2fs -f /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "resize2fs EXIT ${?}" >> ${rootmnt}/extend_user_data.log 
-echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
-# since this resizing might hang the boot proecess reboot the system
-#sudo shutdown -r now
-#exit 0
+	# extend the user_data partition by deleting the user_data partition
+	# and creating a new one at the same start position
+	# if partition is mounted umout
+	#   TODO implement unmount, not needed for now
+	# delete second parttion and create it again but now to fill all free space after the partition
+	second_partition_start=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /2/ {gsub(/.$/,"",$2); print $2}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	#echo "second_partition_start ${second_partition_start}" > ${rootmnt}/user_data_info_3; \
+	second_partition_end=$((${second_partition_start} + ${second_partition_size}))
+	#echo "which parted $(which parted)" > ${rootmnt}/user_data_info_3_1; \
+	echo "second_partition_size ${second_partition_size}" >> ${rootmnt}/extend_user_data.log
+	echo "second_partition_start ${second_partition_start}" >> ${rootmnt}/extend_user_data.log
+	echo "second_partition_end  ${second_partition_end}" >> ${rootmnt}/extend_user_data.log
+	parted --script /dev/sd${disk_letter} rm 2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	#parted --script /dev/sd${disk_letter} mkpart primary ${second_partition_start}B 100% > ${rootmnt}/user_data_info_3 2>&1; echo "EXIT ${$?}" >> ${rootmnt}/user_data_info_3  
+	parted --script /dev/sd${disk_letter} mkpart primary ${second_partition_start}B ${second_partition_end}B >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	# check the filesystem
+	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log  
+	# resize the filesystem
+	resize2fs -f /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "resize2fs EXIT ${?}" >> ${rootmnt}/extend_user_data.log 
+	echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
+else
+	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log  
 fi
 # mount the persistent partition
 mount /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
@@ -65,6 +77,6 @@ echo . >> ${rootmnt}/extend_user_data.log
 echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
 echo . >> ${rootmnt}/extend_user_data.log
 echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
-echo "all done" >> ${rootmnt}/extend_user_data.log
+echo "End extend_user_data" >> ${rootmnt}/extend_user_data.log
 #log_end_msg ">>> End extend_user_data"
 #exit 0
