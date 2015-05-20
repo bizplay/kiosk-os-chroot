@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 9830c7ce9b88101ba993f337e4b85a529b44797f  /boot/initrd.img-3.16.0-4-686-pae
 =======
 d3066105195ca6c763acb5c695535e4fa87db25b  /boot/initrd.img-3.16.0-4-686-pae
@@ -39,3 +40,6 @@ ca7989337f54b899aa1f537a2f6e9dc3554e1d6d  /boot/initrd.img-3.16.0-4-686-pae
 =======
 408da69ee9edc7a688a3e3f47596af38dc5ad05c  /boot/initrd.img-3.16.0-4-686-pae
 >>>>>>> ecb291e... back to ext2 since ext4 does not get mounted correctly when booting, it degrades to ext2
+=======
+e7042763cc684918b68129b2e9c1898ffedbd17f  /boot/initrd.img-3.16.0-4-686-pae
+>>>>>>> 627883e... changed prereq logic and introduced partition size variable

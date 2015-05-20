@@ -1,18 +1,19 @@
-#!/bin/sh -e
+#!/bin/sh
 
-PREREQS=""
+# initramfs-tools header
 
-prereqs() { echo "$PREREQS"; }
-
-case "$1" in
-    prereqs)
-    prereqs
-    exit 0
-    ;;
+case "${1}" in
+	prereqs)
+		# No prereqs
+		exit 0
+		;;
 esac
 
+# include functions to be able to log
+. /scripts/live-functions
+
+# set variables
 second_partition_size=$((2*1024*1024*1024))
-#. /scripts/live-functions
 
 #log_begin_msg ">>> Start extend_user_data"
 echo "Start" > ${rootmnt}/extend_user_data.log 
