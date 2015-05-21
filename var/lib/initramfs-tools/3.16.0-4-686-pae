@@ -11,6 +11,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 9830c7ce9b88101ba993f337e4b85a529b44797f  /boot/initrd.img-3.16.0-4-686-pae
 =======
 d3066105195ca6c763acb5c695535e4fa87db25b  /boot/initrd.img-3.16.0-4-686-pae
@@ -51,3 +52,6 @@ cbf6624ed33e7e4ba6a00eaf9e82338a6adca2b7  /boot/initrd.img-3.16.0-4-686-pae
 =======
 89f252188ecd710e7c122b74e1000f8f352fa9ff  /boot/initrd.img-3.16.0-4-686-pae
 >>>>>>> 31f363c... make sure the second (persistent) partition is not larger than the available free space
+=======
+9dc280b43fb887715766aaee45e126b597fff4dc  /boot/initrd.img-3.16.0-4-686-pae
+>>>>>>> 12cf899... small improvement TODO change the criteria for doing resize since there possibly always a free space after the persistent partition, if second_partition_size is set to 0 all free space should be used for persistence
