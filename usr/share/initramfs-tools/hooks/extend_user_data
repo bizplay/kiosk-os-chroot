@@ -1,0 +1,31 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs()
+{
+	echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+	prereqs
+	exit 0
+	;;
+esac
+
+# Check presence of packages
+if [ ! -x /sbin/parted ]; then
+	echo "parted is missing. Please install the 'parted' package."
+	exit 0
+fi
+
+if [ ! -x /sbin/e2fsck ]; then
+	echo "e2fsck is missing. Please install the 'e2fsprogs' package."
+	exit 0
+fi
+
+. /usr/share/initramfs-tools/hook-functions
+copy_exec /sbin/e2fsck
+

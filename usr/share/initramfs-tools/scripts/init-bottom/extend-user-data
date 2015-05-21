@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# initramfs-tools header
+
+case "${1}" in
+	prereqs)
+		# No prereqs
+		exit 0
+		;;
+esac
+
+# set variables
+
+echo "Start extend_user_data now: $(date +"%T") since startup: $(cat /proc/uptime)" > ${rootmnt}/extend_user_data.log 
+disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /user_data/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "ls EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "#lines with Free Space: $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "Disk sd${disk_letter}" >> extend_user_data.log
+# check that the partition needs to be/can be extended
+#if [ ! -d "${rootmnt}/mnt/persistent" ] 
+#then
+if [ ! -d "${rootmnt}/mnt" ]
+then
+	echo "ERROR: ${rootmnt}/mnt does not exist" >> ${rootmnt}/extend_user_data.log
+	#exit 0
+fi
+# create the directory where the persistency partition will be mounted
+mkdir --parents ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+# make sure all users (and applications) can write to the directory/partition
+chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+#fi
+e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log  
+# mount the persistent partition as ext2 (same as type that was used to create the filesystem in the Makefile)
+mount -t ext2 /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
+echo "End extend_user_data now: $(date +"%T") since startup: $(cat /proc/uptime)" >> ${rootmnt}/extend_user_data.log
+#exit 0
