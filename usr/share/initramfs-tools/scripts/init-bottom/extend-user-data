@@ -42,6 +42,12 @@ mkdir --parents ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>
 # make sure all users (and applications) can write to the directory/partition
 chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 #fi
+#
+#
+# TODO change the detection of whether the persistent partition needs to be resized (since 
+# the partition can be limited in size free space will remain after the partition).
+#
+#
 if [ $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
 then
 #log_warning_msg ">>> EXTEND_USER_DATA - inside if"
@@ -75,8 +81,8 @@ then
 else
 	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log  
 fi
-# mount the persistent partition
-mount /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+# mount the persistent partition as ext2 (same as type that was used to create the filesystem in the Makefile)
+mount -t ext2 /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log

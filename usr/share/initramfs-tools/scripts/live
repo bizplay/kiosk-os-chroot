@@ -10,5 +10,4 @@ mountroot ()
 {
 	# initramfs-tools entry point for live-boot is mountroot(); function
 	Live
-	extend_user_data
 }
