@@ -28,7 +28,7 @@ cp /home/webc/bg-orig${neon}.png /home/webc/bg.png
 if ! has_network
 then
 	update_background /etc/webc/no-net${neon}.png
-	while ! has_network && ! cmdline_has debug; do
+	while ! has_network; do
 		sleep 1
 	done
 fi
