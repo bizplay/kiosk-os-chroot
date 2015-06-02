@@ -40,7 +40,7 @@ fi
 # create the directory where the persistency partition will be mounted
 mkdir --parents ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 # make sure all users (and applications) can write to the directory/partition
-#chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 #fi
 #
 #
