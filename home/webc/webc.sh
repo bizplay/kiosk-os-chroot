@@ -209,6 +209,9 @@ do
 		mkdir -p /home/webc/.config/google-chrome
 		touch /home/webc/.config/google-chrome/First\ Run
 
+		# make sure that if Chrome crashed we don get a endless loop of quickly
+		# restarting Chrome sessions which would hang the whole system
+		sleep 10s
 		if cmdline_has noptirun || ! pidof bumblebeed
 		then
 			logs "Chrome (re)start"
