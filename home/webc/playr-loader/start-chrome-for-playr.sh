@@ -20,4 +20,7 @@ fi
 # escape and be passed to player_loader_file instead
 channel=$(echo "$channel" | sed 's:%:%25:g;s:?:%3F:g;s:&:%26:g;s:=:%3D:g')
 
+# prevent "Chrome didn shut down correclty" overlay on the screen
+sed -i 's/exit_type\"\:\"Crashed/exit_type\"\:\"normal/g' /mnt/persistent/Default/Preferences
+
 google-chrome ${gpu_options} ${persistency_options} ${no_nagging_options} --kiosk "file://${playr_loader_file}?channel=${channel}"
