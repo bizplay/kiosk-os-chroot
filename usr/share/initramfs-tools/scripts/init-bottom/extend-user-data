@@ -46,12 +46,11 @@ chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; ech
 #
 if [ $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
 then
-	echo "actual size second partition $(parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /2/ {gsub(/.$/,"",$4); print $4}')" >> ${rootmnt}/extend_user_data.log
 	# check size of second partition. We have to dop this second check because of USB devices greater than 4GB; 
 	# they will have two Free Space entries in the parted print list (the second is the free space after the 
 	# persistent partition). If the partition has been resized but not to the second_partition_size it will
 	# be done to a size that filled the available free space and therefore the Free Space check will have failed.	
-	if [ $(parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /2/ {gsub(/.$/,"",$4); print $4}') -eq second_partition_size ]
+	if [ $(parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /2/ {gsub(/.$/,"",$4); print $4}') -lt ${second_partition_size} ]
 	then
 		# extend the user_data partition by deleting the user_data partition
 		# and creating a new one at the same start position
