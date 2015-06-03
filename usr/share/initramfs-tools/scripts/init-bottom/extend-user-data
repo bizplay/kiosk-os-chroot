@@ -46,6 +46,7 @@ chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; ech
 #
 if [ $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
 then
+	echo "actual size second partition $(parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /2/ {gsub(/.$/,"",$4); print $4}')" >> ${rootmnt}/extend_user_data.log
 	# check size of second partition. We have to dop this second check because of USB devices greater than 4GB; 
 	# they will have two Free Space entries in the parted print list (the second is the free space after the 
 	# persistent partition). If the partition has been resized but not to the second_partition_size it will
@@ -103,6 +104,8 @@ mount -t ext2 /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/ex
 echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
+echo "" >> ${rootmnt}/extend_user_data.log
+echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
 echo "End extend_user_data now: $(date +"%T") since startup: $(cat /proc/uptime)" >> ${rootmnt}/extend_user_data.log
