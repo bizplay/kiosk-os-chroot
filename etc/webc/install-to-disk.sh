@@ -160,8 +160,12 @@ setup_data() {
 	mount $partition $mount
 
 	_logs "configuring ${mount}"
+	# create persistent directory for the live-build persistence magic as defined in th persistence.conf
 	mkdir -p "${mount}/persistent"
-	sudo chown webc: "${mount}/persistent"
+	# sudo chown webc: "${mount}/persistent"
+	# change owner of mount dir so data can be written to this directory rather than having to use
+	# the persistent directory within the persistent directory
+	sudo chown -R 1000 "${mount}"
 	# Let /mnt/persistent in the booted system be a bindmount
 	# to ${mount}/persistent.
 	echo "/mnt/persistent source=persistent" > "${mount}/persistence.conf"
