@@ -47,8 +47,8 @@ then
 	# assumed that the second free space is a small remainder that was left after the resize.
 	free_space_size=`parted --script /dev/sd${disk_letter} unit B print free | awk '$4 ~ /^Free$/ {if(++i==2) {gsub(/.$/,"",$3); print $3}}0'` >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 	second_partition_actual_size=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /^2$/ {gsub(/.$/,"",$4); print $4}'`
-	echo "2nd partition actual size ${second_partition_actual_size}" >> ${rootmnt}/extend_user_data.log
-	echo "2nd free space actual size ${free_space_size}" >> ${rootmnt}/extend_user_data.log
+	echo "second partition actual size ${second_partition_actual_size}" >> ${rootmnt}/extend_user_data.log
+	echo "second free space actual size (free_space_size) ${free_space_size}" >> ${rootmnt}/extend_user_data.log
 	if [ ${second_partition_actual_size} -lt ${second_partition_target_size} ] && [ ${second_partition_actual_size} -lt ${free_space_size} ]
 	then
 		# extend the user_data partition by deleting the user_data partition
@@ -58,11 +58,10 @@ then
 		# delete second parttion and create it again but now to fill all free space after the partition
 		second_partition_start=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /^2$/ {gsub(/.$/,"",$2); print $2}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "parted EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 		second_partition_end=$((${second_partition_start} + ${second_partition_target_size}))
-		parted --script /dev/sd${disk_letter} rm 2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted rm -2 EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 		echo "second_partition_target_size ${second_partition_target_size}" >> ${rootmnt}/extend_user_data.log
 		echo "second_partition_start ${second_partition_start}" >> ${rootmnt}/extend_user_data.log
 		echo "second_partition_end  ${second_partition_end}" >> ${rootmnt}/extend_user_data.log
-		echo "free_space_size ${free_space_size}" >> ${rootmnt}/extend_user_data.log
+		parted --script /dev/sd${disk_letter} rm 2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "parted rm -2 EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 		if [ ${second_partition_target_size} -gt ${free_space_size} ]
 		then
 			second_partition_target_size=${free_space_size}
@@ -78,10 +77,11 @@ then
 		# resize the filesystem
 		resize2fs -f /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "resize2fs EXIT ${?}" >> ${rootmnt}/extend_user_data.log 
 	else	
-		echo "No resize needed" >> ${rootmnt}/extend_user_data.log  
+		echo "Resize has already been executed; no resize executed" >> ${rootmnt}/extend_user_data.log
 	fi
 else
-	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log  
+	echo "No free space available; no resize executed" >> ${rootmnt}/extend_user_data.log
+	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 fi
 # mount the persistent partition as ext2 (same as type that was used to create the filesystem in the Makefile)
 mount -t ext2 /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
