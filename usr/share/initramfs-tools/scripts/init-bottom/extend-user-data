@@ -13,7 +13,17 @@ esac
 second_partition_target_size=$((3*1024*1024*1024))
 
 echo "Start extend_user_data now: $(date +"%T") since startup: $(cat /proc/uptime)" > ${rootmnt}/extend_user_data.log 
-disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /user_data/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "ls EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+# find the drive that contains the partition that needs to be used for persistence
+# by looking for the label 'persistence'
+disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /persistence/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "ls EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+
+# if no partition with the label persistence was found, stop execution
+if [ -z ${disk_letter} ]
+then
+		exit 0
+fi
+
+# write info of the partition before possible resize to log file
 echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "#lines with Free Space: $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/extend_user_data.log
@@ -83,8 +93,8 @@ else
 	echo "No free space available; no resize executed" >> ${rootmnt}/extend_user_data.log
 	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 fi
-# mount the persistent partition as ext2 (same as type that was used to create the filesystem in the Makefile)
-mount -t ext2 /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+# mount the persistent partition
+mount /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
