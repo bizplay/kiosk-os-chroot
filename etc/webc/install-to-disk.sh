@@ -161,7 +161,8 @@ setup_data() {
 
 	_logs "configuring ${mount}"
 	mkdir -p "${mount}/persistent"
-	sudo chown webc: "${mount}/persistent"
+	#sudo chown webc: "${mount}/persistent"
+	sudo chown -R 1000 "${mount}/persistent"
 	# Let /mnt/persistent in the booted system be a bindmount
 	# to ${mount}/persistent.
 	echo "/mnt/persistent source=persistent" > "${mount}/persistence.conf"
