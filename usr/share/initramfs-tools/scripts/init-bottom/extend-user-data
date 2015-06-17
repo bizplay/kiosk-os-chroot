@@ -16,6 +16,7 @@ echo "Start extend_user_data now: $(date +"%T") since startup: $(cat /proc/uptim
 # find the drive that contains the partition that needs to be used for persistence
 # by looking for the label 'persistence'
 disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /persistence/ {gsub(/[0-9]*$/,"",$11); gsub(/.*sd/,"",$11); print $11}'`>> ${rootmnt}/extend_user_data.log 2>&1; echo "ls EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+echo "Disk: sd${disk_letter} partition: sd${disk_letter}2" >> ${rootmnt}/extend_user_data.log
 # if no partition with the label persistence was found, stop execution
 if [ -z ${disk_letter} ]
 then
@@ -23,6 +24,7 @@ then
 	exit 0
 fi
 # write info of the partition before possible resize to log file
+echo "Information initial situation:" >> ${rootmnt}/extend_user_data.log
 echo "$(parted --script /dev/sd${disk_letter} unit B print free)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "#lines with Free Space: $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l)" >> ${rootmnt}/extend_user_data.log
@@ -33,7 +35,6 @@ echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "$(dumpe2fs -h /dev/sd${disk_letter}2)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
-echo "Disk sd${disk_letter}" >> ${rootmnt}/extend_user_data.log
 if [ ! -d "${rootmnt}/mnt" ]
 then
 	echo "ERROR: ${rootmnt}/mnt does not exist" >> ${rootmnt}/extend_user_data.log
@@ -42,15 +43,16 @@ fi
 if [ ! -d ${rootmnt}/mnt/persistent ]
 then
 	# create the directory where the persistency partition will be mounted
-	mkdir ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	mkdir ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir ${rootmnt}/mnt/persistent  EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 	# make sure all users (and applications) can write to the directory/partition
 	#chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
-	chown -R 1000 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	chown -R 1000 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod -R 1000 ${rootmnt}/mnt/persistent EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 
 else
 		echo "Directory ${rootmnt}/mnt/persistent already exists: $(ls -ld ${rootmnt}/mnt/persistent)" >> ${rootmnt}/extend_user_data.log
 fi
-file_system=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /^2$/ { print $5 }'`
+file_system=`parted --script /dev/sd${disk_letter} unit B print | awk '$1 ~ /^2$/ { print $6 }'`
+echo "Filesystem of /dev/sd${disk_letter}2: ${file_system}" >> ${rootmnt}/extend_user_data.log
 if [ $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
 then
 	# Check size of second partition.
@@ -102,7 +104,8 @@ else
 	e2fsck -pf /dev/sd${disk_letter}2 >> ${rootmnt}/extend_user_data.log 2>&1; echo "e2fsck EXIT ${?}" >> ${rootmnt}/extend_user_data.log
 fi
 # mount the persistent partition
-mount -t ${file_system} /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+mount -t ${file_system} /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "mount -t ${file_system} /dev/sd${disk_letter}2 ${rootmnt}/mnt/persistent EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+echo "Information final situation:" >> ${rootmnt}/extend_user_data.log
 echo "$(ls -l ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
 echo "" >> ${rootmnt}/extend_user_data.log
 echo "$(df -h ${rootmnt}/mnt/)" >> ${rootmnt}/extend_user_data.log
