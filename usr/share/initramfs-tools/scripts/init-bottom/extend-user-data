@@ -20,7 +20,8 @@ disk_letter=`ls -l /dev/disk/by-label | awk '$9 ~ /persistence/ {gsub(/[0-9]*$/,
 # if no partition with the label persistence was found, stop execution
 if [ -z ${disk_letter} ]
 then
-		exit 0
+	echo "No partition found" >> ${rootmnt}/extend_user_data.log
+	exit 0
 fi
 
 # write info of the partition before possible resize to log file
@@ -38,11 +39,19 @@ echo "Disk sd${disk_letter}" >> ${rootmnt}/extend_user_data.log
 if [ ! -d "${rootmnt}/mnt" ]
 then
 	echo "ERROR: ${rootmnt}/mnt does not exist" >> ${rootmnt}/extend_user_data.log
+	exit 0
 fi
-# create the directory where the persistency partition will be mounted
-mkdir --parents ${rootmnt}/mnt/persistent/ >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir EXIT ${?}" >> ${rootmnt}/extend_user_data.log
-# make sure all users (and applications) can write to the directory/partition
-chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+if [ ! -d ${rootmnt}/mnt/persistent ]
+then
+	# create the directory where the persistency partition will be mounted
+	mkdir ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "mkdir EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	# make sure all users (and applications) can write to the directory/partition
+	#chmod 777 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+	chown -R 1000 ${rootmnt}/mnt/persistent >> ${rootmnt}/extend_user_data.log 2>&1; echo "chmod EXIT ${?}" >> ${rootmnt}/extend_user_data.log
+
+else
+		echo "Directory ${rootmnt}/mnt/persistent already exists: $(ls -ld ${rootmnt}/mnt/persistent)" >> ${rootmnt}/extend_user_data.log
+fi
 if [ $(parted --script /dev/sd${disk_letter} unit B print free | grep 'Free Space' | wc -l) -gt 1 ]
 then
 	# Check size of second partition.
