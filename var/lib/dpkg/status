@@ -695,13 +695,12 @@ Package: xserver-xorg-video-intel
 Status: install ok installed
 Priority: optional
 Section: x11
-Installed-Size: 2770
+Installed-Size: 3331
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Architecture: i386
-Source: xserver-xorg-video-intel (2:2.21.15-2)
-Version: 2:2.21.15-2+b2
+Version: 2:2.99.917-1~exp1
 Provides: xorg-driver-video
-Depends: libc6 (>= 2.17), libdrm-intel1 (>= 2.4.38), libdrm2 (>= 2.4.30), libpciaccess0 (>= 0.8.0+git20071002), libpixman-1-0 (>= 0.30.0), libudev1 (>= 183), libx11-6, libx11-xcb1, libxcb-dri2-0, libxcb-util0 (>= 0.3.8), libxcb1, libxv1, libxvmc1, xorg-video-abi-18, xserver-xorg-core (>= 2:1.15.99.903)
+Depends: libc6 (>= 2.17), libdrm-intel1 (>= 2.4.38), libdrm2 (>= 2.4.25), libpciaccess0 (>= 0.8.0+git20071002), libpixman-1-0 (>= 0.30.0), libudev1 (>= 183), libx11-6, libx11-xcb1, libxcb-dri2-0, libxcb-dri3-0, libxcb-sync1, libxcb-util0 (>= 0.3.8), libxcb1, libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxinerama1, libxrandr2 (>= 2:1.2.99.2), libxrender1, libxshmfence1, libxtst6, libxv1, libxvmc1, xorg-video-abi-18, xserver-xorg-core (>= 2:1.15.99.903)
 Conffiles:
  /etc/modprobe.d/i915-kms.conf 2ea78dbb794e6f512da751d5a61c44e3 obsolete
 Description: X.Org X server -- Intel i8xx, i9xx display driver
