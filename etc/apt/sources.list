@@ -1,1 +1,2 @@
 deb http://http.debian.net/debian/ jessie main contrib non-free
+deb http://http.debian.net/debian/ stretch main contrib non-free

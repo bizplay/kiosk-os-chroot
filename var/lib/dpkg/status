@@ -5175,20 +5175,19 @@ Package: libgl1-mesa-dri
 Status: install ok installed
 Priority: optional
 Section: libs
-Installed-Size: 14468
+Installed-Size: 91871
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Architecture: i386
 Multi-Arch: same
 Source: mesa
-Version: 10.3.2-1
+Version: 10.5.7-1
 Replaces: libgl1-mesa-dri-experimental (<< 7.11.1), xlibmesa-dri (<< 1:7.0.0)
-Depends: libc6 (>= 2.17), libdrm-intel1 (>= 2.4.48), libdrm-nouveau2 (>= 2.4.38), libdrm-radeon1 (>= 2.4.31), libdrm2 (>= 2.4.38), libelf1 (>= 0.142), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.7), libllvm3.5, libstdc++6 (>= 4.9)
-Pre-Depends: multiarch-support
+Depends: libc6 (>= 2.17), libdrm-intel1 (>= 2.4.48), libdrm-nouveau2 (>= 2.4.38), libdrm-radeon1 (>= 2.4.31), libdrm2 (>= 2.4.38), libelf1 (>= 0.142), libexpat1 (>= 2.0.1), libgcc1 (>= 1:4.1.1), libllvm3.5, libstdc++6 (>= 4.9)
 Recommends: libtxc-dxtn-s2tc0 | libtxc-dxtn0
 Breaks: libgl1-mesa-dri-experimental (<< 7.11.1), libgl1-mesa-glx (<< 7.10.2-4), libgl1-mesa-glx-no-multiarch, xserver-xorg-core (<< 2:1.14.3-5), xserver-xorg-core-no-multiarch
 Conflicts: xlibmesa-dri (<< 1:7.0.0)
 Conffiles:
- /etc/drirc 4c85301b21785034745233dd43e6036e
+ /etc/drirc 270076ee56f99c23978c677ca1ac71e4
 Description: free implementation of the OpenGL API -- DRI modules
  This version of Mesa provides GLX and DRI capabilities: it is capable of
  both direct and indirect rendering.  For direct rendering, it can use DRI
@@ -6172,14 +6171,13 @@ Package: libglapi-mesa
 Status: install ok installed
 Priority: optional
 Section: libs
-Installed-Size: 138
+Installed-Size: 157
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Architecture: i386
 Multi-Arch: same
 Source: mesa
-Version: 10.3.2-1
+Version: 10.5.7-1
 Depends: libc6 (>= 2.4)
-Pre-Depends: multiarch-support
 Description: free implementation of the GL API -- shared library
  The Mesa GL API module is responsible for dispatching all the gl*
  functions. It is intended to be mainly used by both the libgles1-mesa
@@ -9434,16 +9432,15 @@ Package: libgl1-mesa-glx
 Status: install ok installed
 Priority: optional
 Section: libs
-Installed-Size: 722
+Installed-Size: 749
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Architecture: i386
 Multi-Arch: same
 Source: mesa
-Version: 10.3.2-1
+Version: 10.5.7-1
 Replaces: libgl1, libgl1-mesa-dri (<< 6.4.0)
 Provides: libgl1
-Depends: libc6 (>= 2.8), libdrm2 (>= 2.3.1), libexpat1 (>= 2.0.1), libglapi-mesa (= 10.3.2-1), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb-dri2-0 (>= 1.8), libxcb-dri3-0, libxcb-glx0 (>= 1.8), libxcb-present0, libxcb-sync1, libxcb1 (>= 1.9.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxshmfence1, libxxf86vm1, libudev1
-Pre-Depends: multiarch-support
+Depends: libc6 (>= 2.8), libdrm2 (>= 2.3.1), libexpat1 (>= 2.0.1), libglapi-mesa (= 10.5.7-1), libx11-6 (>= 2:1.4.99.1), libx11-xcb1, libxcb-dri2-0 (>= 1.8), libxcb-dri3-0, libxcb-glx0 (>= 1.8), libxcb-present0, libxcb-sync1, libxcb1 (>= 1.9.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxshmfence1, libxxf86vm1, libudev1
 Recommends: libgl1-mesa-dri (>= 7.2)
 Breaks: fglrx-glx (<< 1:11-6-1), glx-diversions (<< 0.4), libgl1-nvidia-alternatives (<= 275.09.07-1)
 Conflicts: libgl1, libgl1-mesa-dri (<< 6.4.0)
