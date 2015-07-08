@@ -1,6 +1,6 @@
-0e9e1fb2033270ef3f2f375e7bf228d9  usr/lib/xorg/modules/drivers/mga_drv.so
-81605b92d3f92484be54f537a471c5a6  usr/share/doc/xserver-xorg-video-mga/changelog.Debian.gz
-15f65748e10d3b81637e6fcdc1cfb54f  usr/share/doc/xserver-xorg-video-mga/changelog.Debian.i386.gz
-a4a22fbe03f2f0237b714ff94d7c91fd  usr/share/doc/xserver-xorg-video-mga/changelog.gz
+d4e35c3d207355da1a8225f0d7e4b2dc  usr/lib/xorg/modules/drivers/mga_drv.so
+5be7f356c6b295ffe5cc2edd747985cc  usr/share/doc/xserver-xorg-video-mga/changelog.Debian.gz
+03acc7331d792ced8ba7385d896a377e  usr/share/doc/xserver-xorg-video-mga/changelog.Debian.i386.gz
+7aff9f6662376265b0607c33955f9f15  usr/share/doc/xserver-xorg-video-mga/changelog.gz
 7d50879fbccdf5688b0e46800a48611f  usr/share/doc/xserver-xorg-video-mga/copyright
-0ef632b6fa5eeb52edb28387612f4c63  usr/share/man/man4/mga.4.gz
+034bfa99e541f0541e830db21a415141  usr/share/man/man4/mga.4.gz

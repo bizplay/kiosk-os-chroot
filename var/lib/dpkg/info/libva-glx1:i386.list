@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libva-glx1
+/usr/share/doc/libva-glx1/changelog.Debian.gz
+/usr/share/doc/libva-glx1/changelog.gz
+/usr/share/doc/libva-glx1/copyright
+/usr/lib
+/usr/lib/i386-linux-gnu
+/usr/lib/i386-linux-gnu/libva-glx.so.1.3800.0
+/usr/lib/i386-linux-gnu/libva-glx.so.1
