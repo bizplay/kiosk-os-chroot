@@ -89,13 +89,7 @@ setup_unionfs ()
 			if [ "${image##*.}" = "git" ]
 			then
 				_log_msg git
-				if [ "${UNIONTYPE}" != "unionmount" ]
-				then
-					mpoint="${croot}/${imagename}"
-					_log_msg mpoint: $mpoint
-				else
-					mpoint="${rootmnt}"
-				fi
+				mpoint="${croot}/${imagename}"
 				rootfslist="${mpoint} ${rootfslist}"
 
 				mkdir -p "${mpoint}"
