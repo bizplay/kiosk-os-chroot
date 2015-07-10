@@ -1,4 +1,4 @@
-a66c874b2460b2847f154076076bb2bc  usr/share/doc/live-boot-initramfs-tools/changelog.Debian.gz
-5c89e992491c7d056289a286fa378114  usr/share/doc/live-boot-initramfs-tools/copyright
-5578b858fc1b6b1f30fc90d7bb3cf0c3  usr/share/initramfs-tools/hooks/live
+56b8e07aded9f0d3014363db9439e53d  usr/share/doc/live-boot-initramfs-tools/changelog.Debian.gz
+0684cf5583bfdd30348725787765bb0c  usr/share/doc/live-boot-initramfs-tools/copyright
+733e76d5cac0766c23d498e0b3527edc  usr/share/initramfs-tools/hooks/live
 3b5d3a6649023af4830b4706b7731b3a  usr/share/initramfs-tools/scripts/live

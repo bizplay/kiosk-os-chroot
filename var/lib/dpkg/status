@@ -6449,7 +6449,7 @@ Installed-Size: 68
 Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
 Architecture: all
 Source: live-boot
-Version: 4.0.2-1
+Version: 5.0~a4-1
 Replaces: live-boot-backend
 Provides: live-boot-backend
 Depends: busybox | busybox-initramfs, initramfs-tools, udev
@@ -14758,13 +14758,13 @@ Package: live-boot
 Status: install ok installed
 Priority: optional
 Section: misc
-Installed-Size: 159
+Installed-Size: 158
 Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
 Architecture: all
-Version: 4.0.2-1
+Version: 5.0~a4-1
 Depends: live-boot-initramfs-tools | live-boot-backend
 Recommends: live-boot-doc, live-tools, rsync, uuid-runtime
-Suggests: curlftpfs, cryptsetup, httpfs2, unionfs-fuse, wget
+Suggests: curlftpfs, cryptsetup, httpfs2, wget
 Description: Live System Boot Components
  The Live Systems project maintains the components to build Debian based Live
  systems and the official Debian Live images themselves.

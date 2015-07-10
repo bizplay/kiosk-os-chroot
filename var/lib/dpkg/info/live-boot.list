@@ -23,6 +23,7 @@
 /lib/live/boot/9990-netbase.sh
 /lib/live/boot/9990-networking.sh
 /lib/live/boot/9990-toram-todisk.sh
+/lib/live/boot/2010-remove-persistence
 /lib/live/boot/0010-debug
 /lib/live/boot/9990-mount-iscsi.sh
 /usr
