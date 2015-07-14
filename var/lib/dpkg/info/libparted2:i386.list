@@ -1,0 +1,12 @@
+/.
+/lib
+/lib/i386-linux-gnu
+/lib/i386-linux-gnu/libparted.so.2.0.1
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libparted2
+/usr/share/doc/libparted2/changelog.Debian.gz
+/usr/share/doc/libparted2/changelog.gz
+/usr/share/doc/libparted2/copyright
+/lib/i386-linux-gnu/libparted.so.2
