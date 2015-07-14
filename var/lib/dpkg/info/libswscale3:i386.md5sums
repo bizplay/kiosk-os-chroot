@@ -1,0 +1,7 @@
+9b70726838dcfeacb6774c4c7624e1c9  usr/lib/i386-linux-gnu/i686/cmov/libswscale.so.3.0.0
+a3ccc83b6f5111bf8dd6d97fc23cd384  usr/lib/i386-linux-gnu/libswscale.so.3.0.0
+9d5d7912aa8a2987b4519c89ea04920a  usr/share/doc/libswscale3/NEWS.Debian.gz
+c3c80ffa5093c3e54faae1f0d01c8bc6  usr/share/doc/libswscale3/changelog.Debian.gz
+026b2db817e1ec0e0ca104e5454ef3b9  usr/share/doc/libswscale3/changelog.gz
+73be86b66721ef07b9c461e6a45a797b  usr/share/doc/libswscale3/copyright
+9fd30d13c5e5b836337935061c9e1a49  usr/share/lintian/overrides/libswscale3
