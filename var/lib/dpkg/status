@@ -1298,22 +1298,6 @@ Description: GTK+ graphical user interface library
  This package contains the shared libraries.
 Homepage: http://www.gtk.org/
 
-Package: xserver-xorg-input-all
-Status: install ok installed
-Priority: optional
-Section: x11
-Installed-Size: 39
-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Architecture: i386
-Source: xorg
-Version: 1:7.7+7
-Depends: xserver-xorg-input-evdev, xserver-xorg-input-vmmouse, xserver-xorg-input-synaptics
-Recommends: xserver-xorg-input-wacom
-Description: X.Org X server -- input driver metapackage
- This package depends on the full suite of input drivers for the X.Org X server
- (Xorg).  It does not provide any drivers itself, and may be removed if you wish
- to only have certain drivers installed.
-
 Package: libestr0
 Status: install ok installed
 Priority: extra
@@ -3691,7 +3675,7 @@ Description: Command line tools for the PulseAudio sound server
 Homepage: http://www.pulseaudio.org
 
 Package: linux-image-3.16.0-4-686-pae
-Status: install ok installed
+Status: deinstall ok config-files
 Priority: optional
 Section: kernel
 Installed-Size: 118150
@@ -3699,6 +3683,7 @@ Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
 Architecture: i386
 Source: linux
 Version: 3.16.7-ckt20-1+deb8u1
+Config-Version: 3.16.7-ckt20-1+deb8u1
 Provides: linux-modules-3.16.0-4-686-pae
 Depends: kmod | module-init-tools, linux-base (>= 3~), debconf (>= 0.5) | debconf-2.0, initramfs-tools (>= 0.110~) | linux-initramfs-tool
 Pre-Depends: debconf | debconf-2.0
@@ -6503,34 +6488,6 @@ Description: Live System Boot Components (initramfs-tools backend)
  .
  This package contains the initramfs-tools backend.
 Homepage: http://live-systems.org/devel/live-boot/
-
-Package: xserver-xorg-input-vmmouse
-Status: install ok installed
-Priority: optional
-Section: x11
-Installed-Size: 122
-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
-Architecture: i386
-Source: xserver-xorg-input-vmmouse (1:13.0.0-1)
-Version: 1:13.0.0-1+b3
-Provides: xorg-driver-input
-Depends: libc6 (>= 2.7), xorg-input-abi-21, xserver-xorg-core (>= 2:1.15.99.903), xserver-xorg-input-mouse, udev
-Description: X.Org X server -- VMMouse input driver to use with VMWare
- This package provides the driver for the X11 vmmouse input device.
- .
- The VMMouse driver enables support for the special VMMouse protocol
- that is provided by VMware virtual machines to give absolute pointer
- positioning.
- .
- The vmmouse driver is capable of falling back to the standard "mouse"
- driver if a VMware virtual machine is not detected. This allows for
- dual-booting of an operating system from a virtual machine to real hardware
- without having to edit xorg.conf every time.
- .
- More information about X.Org can be found at:
- <URL:http://www.X.org>
- .
- This package is built from the X.org xf86-input-vmmouse driver module.
 
 Package: fonts-droid
 Status: install ok installed
@@ -10057,6 +10014,34 @@ Description: converts between character sets in Perl
  package.
 Homepage: http://search.cpan.org/search?module=Text::Iconv
 
+Package: linux-image-4.3.0-1-686-pae
+Status: install ok installed
+Priority: optional
+Section: kernel
+Installed-Size: 128197
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: i386
+Source: linux
+Version: 4.3.3-5
+Provides: linux-modules-4.3.0-1-686-pae
+Depends: kmod, linux-base, debconf (>= 0.5) | debconf-2.0, initramfs-tools (>= 0.110~) | linux-initramfs-tool
+Pre-Depends: debconf | debconf-2.0
+Recommends: firmware-linux-free, irqbalance, libc6-i686
+Suggests: linux-doc-4.3, debian-kernel-handbook, grub-pc | extlinux
+Breaks: initramfs-tools (<< 0.110~), udev (<< 208-8~), xserver-xorg-input-vmmouse (<< 1:13.0.99)
+Description: Linux 4.3 for modern PCs
+ The Linux kernel 4.3 and modules for use on PCs with one or more
+ processors supporting PAE.
+ .
+ This kernel requires PAE (Physical Address Extension). This feature is
+ supported by the Intel Pentium Pro/II/III/4/4M/D, Xeon, Core and Atom; AMD
+ Geode NX, Athlon (K7), Duron, Opteron, Sempron, Turion or Phenom;
+ Transmeta Efficeon; VIA C7; and some other processors.
+ .
+ This kernel also runs on a Xen hypervisor.  It supports both privileged
+ (dom0) and unprivileged (domU) operation.
+Homepage: https://www.kernel.org/
+
 Package: mtools
 Status: install ok installed
 Priority: optional
@@ -11074,29 +11059,6 @@ Description: simple configuration storage system - runtime library
  .
  This package contains the runtime library.
 Homepage: https://wiki.gnome.org/dconf
-
-Package: linux-image-686-pae
-Status: install ok installed
-Priority: optional
-Section: kernel
-Installed-Size: 37
-Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
-Architecture: i386
-Source: linux-latest (63)
-Version: 3.16+63
-Provides: linux-latest-modules-3.16.0-4-686-pae
-Depends: linux-image-3.16.0-4-686-pae
-Description: Linux for modern PCs (meta-package)
- This package depends on the latest Linux kernel and modules for use on PCs
- with one or more processors supporting PAE.
- .
- This kernel requires PAE (Physical Address Extension). This feature is
- supported by the Intel Pentium Pro/II/III/4/4M/D, Xeon, Core and Atom; AMD
- Geode NX, Athlon (K7), Duron, Opteron, Sempron, Turion or Phenom;
- Transmeta Efficeon; VIA C7; and some other processors.
- .
- This kernel also runs on a Xen hypervisor.  It supports both privileged
- (dom0) and unprivileged (domU) operation.
 
 Package: firmware-atheros
 Status: install ok installed
