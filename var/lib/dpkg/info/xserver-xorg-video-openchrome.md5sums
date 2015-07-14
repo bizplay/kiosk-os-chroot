@@ -1,9 +1,9 @@
-a1152cf7d0da1b886e620a0b186c9264  usr/lib/libchromeXvMC.so.1.0.0
-7ed27a1fad916851ddc5f582bb07861b  usr/lib/libchromeXvMCPro.so.1.0.0
-1a98aea6db183c918c117315039e40ad  usr/lib/xorg/modules/drivers/openchrome_drv.so
+f34170ca7298719614d134460529a088  usr/lib/libchromeXvMC.so.1.0.0
+746e166b2036771253ef779d88ed17f0  usr/lib/libchromeXvMCPro.so.1.0.0
+a9acfdab9bd73e54f3a13dc63b80143f  usr/lib/xorg/modules/drivers/openchrome_drv.so
 33c3eddc657dc55ac04b7d12df38cdaf  usr/share/doc/xserver-xorg-video-openchrome/NEWS.gz
 94aa903a39b82e40a2300f014b0cd7ee  usr/share/doc/xserver-xorg-video-openchrome/changelog.Debian.gz
-6e71625ff968247b68917e7d680c598a  usr/share/doc/xserver-xorg-video-openchrome/changelog.Debian.i386.gz
+dbf8a0d9ba1d4d52acf1dcbed4c341b4  usr/share/doc/xserver-xorg-video-openchrome/changelog.Debian.i386.gz
 e29ac5c5b74467b567d4d8b1f9c04a53  usr/share/doc/xserver-xorg-video-openchrome/changelog.gz
 7fc0d72ae1b5393e8e29ea95f0b91df5  usr/share/doc/xserver-xorg-video-openchrome/copyright
 66731015614f06ac9df2cc04b551a945  usr/share/lintian/overrides/xserver-xorg-video-openchrome

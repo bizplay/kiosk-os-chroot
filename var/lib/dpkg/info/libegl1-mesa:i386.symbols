@@ -1,37 +1,4 @@
 libEGL.so.1 libegl1-mesa #MINVER# | libegl1-x11
- _eglBindContext@Base 7.8.1
- _eglBindTexImage@Base 7.8.1
- _eglCheckResource@Base 7.8.1
- _eglCleanupDisplay@Base 7.8.1
- _eglCompareConfigs@Base 7.8.1
- _eglDestroyArray@Base 7.8.1
- _eglError@Base 7.8.1
- _eglFilterArray@Base 7.8.1
- _eglFilterConfigArray@Base 7.8.1
- _eglGetAPIContext@Base 7.8.1
- _eglGetCurrentContext@Base 7.8.1
- _eglGetCurrentThread@Base 7.8.1
- _eglGetResource@Base 7.8.1
- _eglInitConfig@Base 7.8.1
- _eglInitContext@Base 7.8.1
- _eglInitDriverFallbacks@Base 7.8.1
- _eglInitImage@Base 7.8.1
- _eglInitScreen@Base 7.8.1
- _eglInitSurface@Base 7.8.1
- _eglInitSync@Base 7.8.1
- _eglLinkConfig@Base 7.8.1
- _eglLinkScreen@Base 7.8.1
- _eglLog@Base 7.8.1
- _eglMatchConfig@Base 7.8.1
- _eglParseConfigAttribList@Base 7.8.1
- _eglParseImageAttribList@Base 7.8.1
- _eglPutResource@Base 7.8.1
- _eglReleaseDisplayResources@Base 7.8.1
- _eglReleaseTexImage@Base 7.8.1
- _eglSearchPathForEach@Base 7.8.1
- _eglSetLogLevel@Base 7.8.1
- _eglSetLogProc@Base 7.8.1
- _eglValidateConfig@Base 7.8.1
  eglBindAPI@Base 7.8.1
  eglBindTexImage@Base 7.8.1
  eglBindWaylandDisplayWL@Base 7.11~0
