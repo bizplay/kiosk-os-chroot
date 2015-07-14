@@ -1,0 +1,5 @@
+libva-glx.so.1 libva-glx1 #MINVER#
+ vaCopySurfaceGLX@Base 1.0.3
+ vaCreateSurfaceGLX@Base 1.0.3
+ vaDestroySurfaceGLX@Base 1.0.3
+ vaGetDisplayGLX@Base 1.0.3

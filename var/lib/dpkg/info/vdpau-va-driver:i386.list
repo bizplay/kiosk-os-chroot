@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/vdpau-va-driver
+/usr/share/doc/vdpau-va-driver/changelog.Debian.gz
+/usr/share/doc/vdpau-va-driver/changelog.gz
+/usr/share/doc/vdpau-va-driver/copyright
+/usr/lib
+/usr/lib/i386-linux-gnu
+/usr/lib/i386-linux-gnu/dri
+/usr/lib/i386-linux-gnu/dri/vdpau_drv_video.so
+/usr/lib/i386-linux-gnu/dri/r600_drv_video.so
+/usr/lib/i386-linux-gnu/dri/radeonsi_drv_video.so
+/usr/lib/i386-linux-gnu/dri/nouveau_drv_video.so
+/usr/lib/i386-linux-gnu/dri/s3g_drv_video.so
+/usr/lib/i386-linux-gnu/dri/nvidia_drv_video.so
