@@ -5515,6 +5515,367 @@ Description: Interactive high-level object-oriented language (version 2.7)
  includes an extensive class library with lots of goodies for
  network programming, system administration, sounds and graphics.
 
+Package: firmware-amd-graphics
+Status: install ok installed
+Priority: optional
+Section: non-free/kernel
+Installed-Size: 11328
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: firmware-nonfree
+Version: 20151207-1
+Replaces: firmware-linux-nonfree (<< 20151018-1~)
+Suggests: initramfs-tools
+Breaks: firmware-linux-nonfree (<< 20151018-1~)
+Description: Binary firmware for AMD/ATI graphics chips
+ This package contains the binary firmware for AMD/ATI graphics chips
+ supported by the radeon, amdgpu and r128 drivers.
+ .
+ Contents:
+  * amdgpu/carrizo_ce.bin
+  * amdgpu/carrizo_me.bin
+  * amdgpu/carrizo_mec.bin
+  * amdgpu/carrizo_mec2.bin
+  * amdgpu/carrizo_pfp.bin
+  * amdgpu/carrizo_rlc.bin
+  * amdgpu/carrizo_sdma.bin
+  * amdgpu/carrizo_sdma1.bin
+  * amdgpu/carrizo_uvd.bin
+  * amdgpu/carrizo_vce.bin
+  * amdgpu/fiji_ce.bin
+  * amdgpu/fiji_mc.bin
+  * amdgpu/fiji_me.bin
+  * amdgpu/fiji_mec.bin
+  * amdgpu/fiji_mec2.bin
+  * amdgpu/fiji_pfp.bin
+  * amdgpu/fiji_rlc.bin
+  * amdgpu/fiji_sdma.bin
+  * amdgpu/fiji_sdma1.bin
+  * amdgpu/fiji_smc.bin
+  * amdgpu/fiji_uvd.bin
+  * amdgpu/fiji_vce.bin
+  * amdgpu/stoney_ce.bin
+  * amdgpu/stoney_me.bin
+  * amdgpu/stoney_mec.bin
+  * amdgpu/stoney_pfp.bin
+  * amdgpu/stoney_rlc.bin
+  * amdgpu/stoney_sdma.bin
+  * amdgpu/stoney_vce.bin
+  * amdgpu/stoney_uvd.bin
+  * amdgpu/tonga_ce.bin
+  * amdgpu/tonga_mc.bin
+  * amdgpu/tonga_me.bin
+  * amdgpu/tonga_mec.bin
+  * amdgpu/tonga_mec2.bin
+  * amdgpu/tonga_pfp.bin
+  * amdgpu/tonga_rlc.bin
+  * amdgpu/tonga_sdma.bin
+  * amdgpu/tonga_sdma1.bin
+  * amdgpu/tonga_smc.bin
+  * amdgpu/tonga_uvd.bin
+  * amdgpu/tonga_vce.bin
+  * amdgpu/topaz_ce.bin
+  * amdgpu/topaz_mc.bin
+  * amdgpu/topaz_me.bin
+  * amdgpu/topaz_mec.bin
+  * amdgpu/topaz_mec2.bin
+  * amdgpu/topaz_pfp.bin
+  * amdgpu/topaz_rlc.bin
+  * amdgpu/topaz_sdma.bin
+  * amdgpu/topaz_sdma1.bin
+  * amdgpu/topaz_smc.bin
+  * Rage 128 CCE microcode (r128/r128_cce.bin)
+  * Radeon HD IGP 7500/7600 series ME microcode (radeon/ARUBA_me.bin)
+  * Radeon HD IGP 7500/7600 series PFP microcode (radeon/ARUBA_pfp.bin)
+  * Radeon HD IGP 7500/7600 series RLC microcode (radeon/ARUBA_rlc.bin)
+  * Radeon HD 6800 series MC microcode (radeon/BARTS_mc.bin)
+  * Radeon HD 6800 series ME microcode (radeon/BARTS_me.bin)
+  * Radeon HD 6800 series PFP microcode (radeon/BARTS_pfp.bin)
+  * Radeon HD 6800 series SMC microcode (radeon/BARTS_smc.bin)
+  * Radeon HD 7790/8770/8950 CE microcode (radeon/bonaire_ce.bin)
+  * Radeon HD 7790/8770/8950 CE microcode (radeon/BONAIRE_ce.bin)
+  * Radeon HD 7790/8770/8950 MC microcode (radeon/bonaire_mc.bin)
+  * Radeon HD 7790/8770/8950 MC microcode, version 1
+    (radeon/BONAIRE_mc.bin)
+  * Radeon HD 7790/8770/8950 MC microcode, version 2
+    (radeon/BONAIRE_mc2.bin)
+  * Radeon HD 7790/8770/8950 ME microcode (radeon/bonaire_me.bin)
+  * Radeon HD 7790/8770/8950 ME microcode (radeon/BONAIRE_me.bin)
+  * Radeon HD 7790/8770/8950 MEC microcode (radeon/bonaire_mec.bin)
+  * Radeon HD 7790/8770/8950 MEC microcode (radeon/BONAIRE_mec.bin)
+  * Radeon HD 7790/8770/8950 PFP microcode (radeon/bonaire_pfp.bin)
+  * Radeon HD 7790/8770/8950 PFP microcode (radeon/BONAIRE_pfp.bin)
+  * Radeon HD 7790/8770/8950 RLC microcode (radeon/bonaire_rlc.bin)
+  * Radeon HD 7790/8770/8950 RLC microcode (radeon/BONAIRE_rlc.bin)
+  * Radeon HD 7790/8770/8950 SDMA microcode (radeon/bonaire_sdma.bin)
+  * Radeon HD 7790/8770/8950 SDMA microcode (radeon/BONAIRE_sdma.bin)
+  * Radeon HD 7790/8770/8950 SDMA1 microcode (radeon/bonaire_sdma1.bin)
+  * Radeon HD 7790/8770/8950 series SMC microcode
+    (radeon/bonaire_smc.bin)
+  * Radeon HD 7790/8770/8950 series SMC microcode
+    (radeon/BONAIRE_smc.bin)
+  * Radeon HD 7790/8770/8950, 8100/8200/8300/8400 series, and
+    "Mullins"/"Beema" IGP UVD microcode (radeon/BONAIRE_uvd.bin)
+  * Radeon HD 7790/8770/8950 UVD microcode (radeon/bonaire_uvd.bin)
+  * Radeon HD VCE microcode (radeon/BONAIRE_vce.bin)
+  * Radeon HD 7790/8770/8950 VCE microcode (radeon/bonaire_vce.bin)
+  * Radeon HD 6300/6500/6800 series RLC microcode (radeon/BTC_rlc.bin)
+  * Radeon HD 6300 series MC microcode (radeon/CAICOS_mc.bin)
+  * Radeon HD 6300 series ME microcode (radeon/CAICOS_me.bin)
+  * Radeon HD 6300 series PFP microcode (radeon/CAICOS_pfp.bin)
+  * Radeon HD 6300 series SMC microcode (radeon/CAICOS_smc.bin)
+  * Radeon HD 6900 series MC microcode (radeon/CAYMAN_mc.bin)
+  * Radeon HD 6900 series ME microcode (radeon/CAYMAN_me.bin)
+  * Radeon HD 6900 series PFP microcode (radeon/CAYMAN_pfp.bin)
+  * Radeon HD 6900 series RLC microcode (radeon/CAYMAN_rlc.bin)
+  * Radeon HD 6900 series SMC microcode (radeon/CAYMAN_smc.bin)
+  * Radeon HD 5400 series ME microcode (radeon/CEDAR_me.bin)
+  * Radeon HD 5400 series PFP microcode (radeon/CEDAR_pfp.bin)
+  * Radeon HD 5400 series RLC microcode (radeon/CEDAR_rlc.bin)
+  * Radeon HD 5400 series SMC microcode (radeon/CEDAR_smc.bin)
+  * Radeon HD 5800/5900 series ME microcode (radeon/CYPRESS_me.bin)
+  * Radeon HD 5800/5900 series PFP microcode (radeon/CYPRESS_pfp.bin)
+  * Radeon HD 5800/5900 series RLC microcode (radeon/CYPRESS_rlc.bin)
+  * Radeon HD 5800/5900 series SMC microcode (radeon/CYPRESS_smc.bin)
+  * Radeon HD 5x00 series UVD microcode (radeon/CYPRESS_uvd.bin)
+  * Radeon HD 8500M series and R5 M200 CE microcode
+    (radeon/hainan_ce.bin)
+  * Radeon HD 8500M series and R5 M200 CE microcode
+    (radeon/HAINAN_ce.bin)
+  * Radeon HD 8500M series and R5 M200 MC microcode
+    (radeon/hainan_mc.bin)
+  * Radeon HD 8500M series and R5 M200 MC microcode, version 1
+    (radeon/HAINAN_mc.bin)
+  * Radeon HD 8500M series and R5 M200 MC microcode, version 2
+    (radeon/HAINAN_mc2.bin)
+  * Radeon HD 8500M series and R5 M200 ME microcode
+    (radeon/hainan_me.bin)
+  * Radeon HD 8500M series and R5 M200 ME microcode
+    (radeon/HAINAN_me.bin)
+  * Radeon HD 8500M series and R5 M200 PFP microcode
+    (radeon/hainan_pfp.bin)
+  * Radeon HD 8500M series and R5 M200 PFP microcode
+    (radeon/HAINAN_pfp.bin)
+  * Radeon HD 8500M series and R5 M200 RLC microcode
+    (radeon/hainan_rlc.bin)
+  * Radeon HD 8500M series and R5 M200 RLC microcode
+    (radeon/HAINAN_rlc.bin)
+  * Radeon HD 8500M series and R5 M200 SMC microcode
+    (radeon/hainan_smc.bin)
+  * Radeon HD 8500M series and R5 M200 SMC microcode
+    (radeon/HAINAN_smc.bin)
+  * Radeon R9 290 series CE microcode (radeon/hawaii_ce.bin)
+  * Radeon R9 290 series CE microcode (radeon/HAWAII_ce.bin)
+  * Radeon R9 290 series MC microcode (radeon/hawaii_mc.bin)
+  * Radeon R9 290 series MC microcode, version 1 (radeon/HAWAII_mc.bin)
+  * Radeon R9 290 series MC microcode, version 2 (radeon/HAWAII_mc2.bin)
+  * Radeon R9 290 series ME microcode (radeon/hawaii_me.bin)
+  * Radeon R9 290 series ME microcode (radeon/HAWAII_me.bin)
+  * Radeon R9 290 series MEC microcode (radeon/hawaii_mec.bin)
+  * Radeon R9 290 series MEC microcode (radeon/HAWAII_mec.bin)
+  * Radeon R9 290 series PFP microcode (radeon/hawaii_pfp.bin)
+  * Radeon R9 290 series PFP microcode (radeon/HAWAII_pfp.bin)
+  * Radeon R9 290 series RLC microcode (radeon/hawaii_rlc.bin)
+  * Radeon R9 290 series RLC microcode (radeon/HAWAII_rlc.bin)
+  * Radeon R9 290 series SDMA microcode (radeon/hawaii_sdma.bin)
+  * Radeon R9 290 series SDMA microcode (radeon/HAWAII_sdma.bin)
+  * Radeon R9 290 series SDMA microcode (radeon/hawaii_sdma1.bin)
+  * Radeon R9 290 series SMC microcode (radeon/HAWAII_smc.bin)
+  * Radeon R9 290 series SMC microcode (radeon/hawaii_smc.bin)
+  * Radeon R9 290 series UVD microcode (radeon/hawaii_uvd.bin)
+  * Radeon R9 290 series VCE microcode (radeon/hawaii_vce.bin)
+  * Radeon HD 5700 series ME microcode (radeon/JUNIPER_me.bin)
+  * Radeon HD 5700 series PFP microcode (radeon/JUNIPER_pfp.bin)
+  * Radeon HD 5700 series RLC microcode (radeon/JUNIPER_rlc.bin)
+  * Radeon HD 5700 series SMC microcode (radeon/JUNIPER_smc.bin)
+  * Radeon HD 8100/8200/8300/8400 series CE microcode
+    (radeon/kabini_ce.bin)
+  * Radeon HD 8100/8200/8300/8400 series CE microcode
+    (radeon/KABINI_ce.bin)
+  * Radeon HD 8100/8200/8300/8400 series ME microcode
+    (radeon/kabini_me.bin)
+  * Radeon HD 8100/8200/8300/8400 series ME microcode
+    (radeon/KABINI_me.bin)
+  * Radeon HD 8100/8200/8300/8400 series MEC microcode
+    (radeon/kabini_mec.bin)
+  * Radeon HD 8100/8200/8300/8400 series MEC microcode
+    (radeon/KABINI_mec.bin)
+  * Radeon HD 8100/8200/8300/8400 series PFP microcode
+    (radeon/kabini_pfp.bin)
+  * Radeon HD 8100/8200/8300/8400 series PFP microcode
+    (radeon/KABINI_pfp.bin)
+  * Radeon HD 8100/8200/8300/8400 series RLC microcode
+    (radeon/kabini_rlc.bin)
+  * Radeon HD 8100/8200/8300/8400 series RLC microcode
+    (radeon/KABINI_rlc.bin)
+  * Radeon HD 8100/8200/8300/8400 series SDMA microcode
+    (radeon/kabini_sdma.bin)
+  * Radeon HD 8100/8200/8300/8400 series SDMA microcode
+    (radeon/KABINI_sdma.bin)
+  * Radeon HD 8100/8200/8300/8400 series SDMA1 microcode
+    (radeon/kabini_sdma1.bin)
+  * Radeon HD 8100/8200/8300/8400 series UVD microcode
+    (radeon/kabini_uvd.bin)
+  * Radeon HD 8100/8200/8300/8400 series VCE microcode
+    (radeon/kabini_vce.bin)
+  * Radeon R5/R7 IGP 200 series CE microcode (radeon/kaveri_ce.bin)
+  * Radeon R5/R7 IGP 200 series CE microcode (radeon/KAVERI_ce.bin)
+  * Radeon R5/R7 IGP 200 series ME microcode (radeon/kaveri_me.bin)
+  * Radeon R5/R7 IGP 200 series ME microcode (radeon/KAVERI_me.bin)
+  * Radeon R5/R7 IGP 200 series MEC microcode, version 396
+    (radeon/kaveri_mec.bin)
+  * Radeon R5/R7 IGP 200 series MEC microcode (radeon/KAVERI_mec.bin)
+  * Radeon R5/R7 IGP 200 series MEC microcode, version 396
+    (radeon/kaveri_mec2.bin)
+  * Radeon R5/R7 IGP 200 series PFP microcode (radeon/kaveri_pfp.bin)
+  * Radeon R5/R7 IGP 200 series PFP microcode (radeon/KAVERI_pfp.bin)
+  * Radeon R5/R7 IGP 200 series RLC microcode (radeon/kaveri_rlc.bin)
+  * Radeon R5/R7 IGP 200 series RLC microcode (radeon/KAVERI_rlc.bin)
+  * Radeon R5/R7 IGP 200 series SDMA microcode (radeon/kaveri_sdma.bin)
+  * Radeon R5/R7 IGP 200 series SDMA microcode (radeon/KAVERI_sdma.bin)
+  * Radeon R5/R7 IGP 200 series SDMA1 microcode
+    (radeon/kaveri_sdma1.bin)
+  * Radeon R5/R7 IGP 200 series UVD microcode (radeon/kaveri_uvd.bin)
+  * Radeon R5/R7 IGP 200 series VCE microcode (radeon/kaveri_vce.bin)
+  * Radeon "Mullins"/"Beema" IGP CE microcode (radeon/mullins_ce.bin)
+  * Radeon "Mullins"/"Beema" IGP CE microcode (radeon/MULLINS_ce.bin)
+  * Radeon "Mullins"/"Beema" IGP ME microcode (radeon/mullins_me.bin)
+  * Radeon "Mullins"/"Beema" IGP ME microcode (radeon/MULLINS_me.bin)
+  * Radeon "Mullins"/"Beema" IGP MEC microcode (radeon/mullins_mec.bin)
+  * Radeon "Mullins"/"Beema" IGP MEC microcode (radeon/MULLINS_mec.bin)
+  * Radeon "Mullins"/"Beema" IGP PFP microcode (radeon/mullins_pfp.bin)
+  * Radeon "Mullins"/"Beema" IGP PFP microcode (radeon/MULLINS_pfp.bin)
+  * Radeon "Mullins"/"Beema" IGP RLC microcode (radeon/mullins_rlc.bin)
+  * Radeon "Mullins"/"Beema" IGP RLC microcode (radeon/MULLINS_rlc.bin)
+  * Radeon "Mullins"/"Beema" IGP SDMA microcode
+    (radeon/mullins_sdma.bin)
+  * Radeon "Mullins"/"Beema" IGP SDMA microcode
+    (radeon/MULLINS_sdma.bin)
+  * Radeon "Mullins"/"Beema" IGP SDMA1 microcode
+    (radeon/mullins_sdma1.bin)
+  * Radeon "Mullins"/"Beema" IGP UVD microcode (radeon/mullins_uvd.bin)
+  * Radeon "Mullins"/"Beema" IGP VCE microcode (radeon/mullins_vce.bin)
+  * Radeon HD 8500/8600/8700 series CE microcode (radeon/oland_ce.bin)
+  * Radeon HD 8500/8600/8700 series CE microcode (radeon/OLAND_ce.bin)
+  * Radeon HD 8500/8600/8700 series MC microcode (radeon/oland_mc.bin)
+  * Radeon HD 8500/8600/8700 series MC microcode, version 1
+    (radeon/OLAND_mc.bin)
+  * Radeon HD 8500/8600/8700 series MC microcode, version 2
+    (radeon/OLAND_mc2.bin)
+  * Radeon HD 8500/8600/8700 series ME microcode (radeon/oland_me.bin)
+  * Radeon HD 8500/8600/8700 series ME microcode (radeon/OLAND_me.bin)
+  * Radeon HD 8500/8600/8700 series PFP microcode (radeon/oland_pfp.bin)
+  * Radeon HD 8500/8600/8700 series PFP microcode (radeon/OLAND_pfp.bin)
+  * Radeon HD 8500/8600/8700 series RLC microcode (radeon/oland_rlc.bin)
+  * Radeon HD 8500/8600/8700 series RLC microcode (radeon/OLAND_rlc.bin)
+  * Radeon HD 8500/8600/8700 series SMC microcode (radeon/oland_smc.bin)
+  * Radeon HD 8500/8600/8700 series SMC microcode (radeon/OLAND_smc.bin)
+  * Radeon HD IGP 6200/6300/7300 series ME microcode
+    (radeon/PALM_me.bin)
+  * Radeon HD IGP 6200/6300/7300 series PFP microcode
+    (radeon/PALM_pfp.bin)
+  * Radeon HD 7800 series CE microcode (radeon/pitcairn_ce.bin)
+  * Radeon HD 7800 series CE microcode (radeon/PITCAIRN_ce.bin)
+  * Radeon HD 7800 series MC microcode (radeon/pitcairn_mc.bin)
+  * Radeon HD 7800 series MC microcode, version 1
+    (radeon/PITCAIRN_mc.bin)
+  * Radeon HD 7800 series MC microcode, version 2
+    (radeon/PITCAIRN_mc2.bin)
+  * Radeon HD 7800 series ME microcode (radeon/pitcairn_me.bin)
+  * Radeon HD 7800 series ME microcode (radeon/PITCAIRN_me.bin)
+  * Radeon HD 7800 series PFP microcode (radeon/pitcairn_pfp.bin)
+  * Radeon HD 7800 series PFP microcode (radeon/PITCAIRN_pfp.bin)
+  * Radeon HD 7800 series RLC microcode (radeon/pitcairn_rlc.bin)
+  * Radeon HD 7800 series RLC microcode (radeon/PITCAIRN_rlc.bin)
+  * Radeon HD 7800 series SMC microcode (radeon/pitcairn_smc.bin)
+  * Radeon HD 7800 series SMC microcode (radeon/PITCAIRN_smc.bin)
+  * Radeon R100-family CP microcode (radeon/R100_cp.bin)
+  * Radeon R200-family CP microcode (radeon/R200_cp.bin)
+  * Radeon R300-family CP microcode (radeon/R300_cp.bin)
+  * Radeon R400-family CP microcode (radeon/R420_cp.bin)
+  * Radeon R500-family CP microcode (radeon/R520_cp.bin)
+  * Radeon R600 ME microcode (radeon/R600_me.bin)
+  * Radeon R600 PFP microcode (radeon/R600_pfp.bin)
+  * Radeon R600-family RLC microcode (radeon/R600_rlc.bin)
+  * Radeon R600 UVD microcode (radeon/R600_uvd.bin)
+  * Radeon R700-family RLC microcode (radeon/R700_rlc.bin)
+  * Radeon HD 5500/5600 series ME microcode (radeon/REDWOOD_me.bin)
+  * Radeon HD 5500/5600 series PFP microcode (radeon/REDWOOD_pfp.bin)
+  * Radeon HD 5500/5600 series RLC microcode (radeon/REDWOOD_rlc.bin)
+  * Radeon HD 5500/5600 series SMC microcode (radeon/REDWOOD_smc.bin)
+  * Radeon RS600 CP microcode (radeon/RS600_cp.bin)
+  * Radeon RS690 CP microcode (radeon/RS690_cp.bin)
+  * Radeon RS780 ME microcode (radeon/RS780_me.bin)
+  * Radeon RS780 PFP microcode (radeon/RS780_pfp.bin)
+  * Radeon RS780 UVD microcode (radeon/RS780_uvd.bin)
+  * Radeon RV610 ME microcode (radeon/RV610_me.bin)
+  * Radeon RV610 PFP microcode (radeon/RV610_pfp.bin)
+  * Radeon RV620 ME microcode (radeon/RV620_me.bin)
+  * Radeon RV620 PFP microcode (radeon/RV620_pfp.bin)
+  * Radeon RV630 ME microcode (radeon/RV630_me.bin)
+  * Radeon RV630 PFP microcode (radeon/RV630_pfp.bin)
+  * Radeon RV635 ME microcode (radeon/RV635_me.bin)
+  * Radeon RV635 PFP microcode (radeon/RV635_pfp.bin)
+  * Radeon RV670 ME microcode (radeon/RV670_me.bin)
+  * Radeon RV670 PFP microcode (radeon/RV670_pfp.bin)
+  * Radeon RV710 ME microcode (radeon/RV710_me.bin)
+  * Radeon RV710 PFP microcode (radeon/RV710_pfp.bin)
+  * Radeon RV710 SMC microcode (radeon/RV710_smc.bin)
+  * Radeon RV710/RV730/RV740 UVD microcode (radeon/RV710_uvd.bin)
+  * Radeon RV730/RV740 ME microcode (radeon/RV730_me.bin)
+  * Radeon RV730/RV740 PFP microcode (radeon/RV730_pfp.bin)
+  * Radeon RV730 SMC microcode (radeon/RV730_smc.bin)
+  * Radeon RV740 SMC microcode (radeon/RV740_smc.bin)
+  * Radeon RV770 ME microcode (radeon/RV770_me.bin)
+  * Radeon RV770 PFP microcode (radeon/RV770_pfp.bin)
+  * Radeon RV770 SMC microcode (radeon/RV770_smc.bin)
+  * Radeon RV770 UVD microcode (radeon/RV770_uvd.bin)
+  * Radeon HD IGP 6400/6500/6600 series ME microcode
+    (radeon/SUMO_me.bin)
+  * Radeon HD IGP 6400/6500/6600 series PFP microcode
+    (radeon/SUMO_pfp.bin)
+  * Radeon HD IGP 6200/6300/6400/6500/6600/7300 series RLC microcode
+    (radeon/SUMO_rlc.bin)
+  * Radeon HD 6x00/7500 series and IGP 6x00/7300 series UVD microcode
+    (radeon/SUMO_uvd.bin)
+  * Radeon HD 6370D/6380G/6410D ME microcode (radeon/SUMO2_me.bin)
+  * Radeon HD 6370D/6380G/6410D PFP microcode (radeon/SUMO2_pfp.bin)
+  * Radeon HD 7900 series CE microcode (radeon/tahiti_ce.bin)
+  * Radeon HD 7900 series CE microcode (radeon/TAHITI_ce.bin)
+  * Radeon HD 7900 series MC microcode (radeon/tahiti_mc.bin)
+  * Radeon HD 7900 series MC microcode, version 1 (radeon/TAHITI_mc.bin)
+  * Radeon HD 7900 series MC microcode, version 2
+    (radeon/TAHITI_mc2.bin)
+  * Radeon HD 7900 series ME microcode (radeon/tahiti_me.bin)
+  * Radeon HD 7900 series ME microcode (radeon/TAHITI_me.bin)
+  * Radeon HD 7900 series PFP microcode (radeon/tahiti_pfp.bin)
+  * Radeon HD 7900 series PFP microcode (radeon/TAHITI_pfp.bin)
+  * Radeon HD 7900 series RLC microcode (radeon/tahiti_rlc.bin)
+  * Radeon HD 7900 series RLC microcode (radeon/TAHITI_rlc.bin)
+  * Radeon HD 7900 series SMC microcode (radeon/tahiti_smc.bin)
+  * Radeon HD 7900 series SMC microcode (radeon/TAHITI_smc.bin)
+  * Radeon HD 7900 series UVD microcode (radeon/TAHITI_uvd.bin)
+  * Radeon HD 7900 series VCE microcode (radeon/TAHITI_vce.bin)
+  * Radeon HD 6500/6600/7500 series MC microcode (radeon/TURKS_mc.bin)
+  * Radeon HD 6500/6600/7500 series ME microcode (radeon/TURKS_me.bin)
+  * Radeon HD 6500/6600/7500 series PFP microcode (radeon/TURKS_pfp.bin)
+  * Radeon HD 6500/6600/7500 series SMC microcode (radeon/TURKS_smc.bin)
+  * Radeon HD 7700 series CE microcode (radeon/verde_ce.bin)
+  * Radeon HD 7700 series CE microcode (radeon/VERDE_ce.bin)
+  * Radeon HD 7700 series MC microcode (radeon/verde_mc.bin)
+  * Radeon HD 7700 series MC microcode, version 1 (radeon/VERDE_mc.bin)
+  * Radeon HD 7700 series MC microcode, version 2 (radeon/VERDE_mc2.bin)
+  * Radeon HD 7700 series ME microcode (radeon/verde_me.bin)
+  * Radeon HD 7700 series ME microcode (radeon/VERDE_me.bin)
+  * Radeon HD 7700 series PFP microcode (radeon/verde_pfp.bin)
+  * Radeon HD 7700 series PFP microcode (radeon/VERDE_pfp.bin)
+  * Radeon HD 7700 series RLC microcode (radeon/verde_rlc.bin)
+  * Radeon HD 7700 series RLC microcode (radeon/VERDE_rlc.bin)
+  * Radeon HD 7700 series SMC microcode (radeon/verde_smc.bin)
+  * Radeon HD 7700 series SMC microcode (radeon/VERDE_smc.bin)
+Homepage: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
+
 Package: libvdpau1
 Status: install ok installed
 Priority: optional
@@ -9002,28 +9363,36 @@ Package: firmware-iwlwifi
 Status: install ok installed
 Priority: optional
 Section: non-free/kernel
-Installed-Size: 13251
+Installed-Size: 27310
 Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
 Architecture: all
 Multi-Arch: foreign
 Source: firmware-nonfree
-Version: 0.43
+Version: 20151207-1
 Suggests: initramfs-tools
 Description: Binary firmware for Intel Wireless cards
  This package contains the binary firmware for Intel Wireless cards
  supported by the iwlegacy/iwl3945 and iwlwifi/iwlagn drivers.
  .
  Contents:
-  * Intel Wireless 3160 rev 10 Bluetooth firmware patch
+  * Intel Wireless 8260 Bluetooth configuration (intel/ibt-11-5.ddc)
+  * Intel Wireless 8260 Bluetooth firmware (intel/ibt-11-5.sfi)
+  * Intel Wireless 3160 (B6) Bluetooth firmware patch, version 34
+    (intel/ibt-hw-37.7.10-fw-1.0.1.2d.d.bseq)
+  * Intel Wireless 3160 (B4) Bluetooth firmware patch, version 83
     (intel/ibt-hw-37.7.10-fw-1.0.2.3.d.bseq)
-  * Intel Wireless 7260 rev 10 WP2 B5 Bluetooth firmware path
+  * Intel Wireless 7260 (B5) Bluetooth firmware patch, version 34
     (intel/ibt-hw-37.7.10-fw-1.80.1.2d.d.bseq)
-  * Intel Wireless 7260 rev 10 Bluetooth firmware patch
+  * Intel Wireless 7260 (B3) Bluetooth firmware patch, version 83
     (intel/ibt-hw-37.7.10-fw-1.80.2.3.d.bseq)
   * Intel Wireless 7260 Bluetooth firmware generic patch
     (intel/ibt-hw-37.7.bseq)
-  * Intel Wireless 7265 rev 10 Bluetooth firmware generic patch
+  * Intel Wireless 7265 (C0) Bluetooth firmware patch, version 55
     (intel/ibt-hw-37.8.10-fw-1.10.2.27.d.bseq)
+  * Intel Wireless 7265 (D0) Bluetooth firmware patch, version 32
+    (intel/ibt-hw-37.8.10-fw-1.10.3.11.e.bseq)
+  * Intel Wireless 7265 (D1) Bluetooth firmware patch, version 09
+    (intel/ibt-hw-37.8.10-fw-22.50.19.14.f.bseq)
   * Intel Wireless 7265 Bluetooth firmware generic patch
     (intel/ibt-hw-37.8.bseq)
   * Intel Wireless 100 firmware, version 39.31.5.1 (iwlwifi-100-5.ucode)
@@ -9037,12 +9406,14 @@ Description: Binary firmware for Intel Wireless cards
     (iwlwifi-2000-6.ucode)
   * Intel Wireless 2230 firmware, version 18.168.6.1
     (iwlwifi-2030-6.ucode)
-  * Intel Wireless 3160 firmware, version 22.1.7.0
-    (iwlwifi-3160-7.ucode)
-  * Intel Wireless 3160 firmware, version 22.24.8.0
-    (iwlwifi-3160-8.ucode)
-  * Intel Wireless 3160 firmware, version 23.214.9.0
+  * Intel Wireless 3160 firmware, version 25.228.9.0
     (iwlwifi-3160-9.ucode)
+  * Intel Wireless 3160 firmware, version 25.17.12.0
+    (iwlwifi-3160-12.ucode)
+  * Intel Wireless 3160 firmware, version 25.30.14.0
+    (iwlwifi-3160-14.ucode)
+  * Intel Wireless 3160 firmware, version 16.242414.0
+    (iwlwifi-3160-16.ucode)
   * Intel Wireless 3945 firmware, version 15.32.2.9
     (iwlwifi-3945-2.ucode)
   * Intel Wireless 4965 firmware, version 228.61.2.24
@@ -9065,17 +9436,33 @@ Description: Binary firmware for Intel Wireless cards
     (iwlwifi-6050-4.ucode)
   * Intel Wireless 6250 firmware, version 41.28.5.1
     (iwlwifi-6050-5.ucode)
-  * Intel Wireless 7260 firmware, version 22.1.7.0
-    (iwlwifi-7260-7.ucode)
-  * Intel Wireless 7260 firmware, version 22.24.8.0
-    (iwlwifi-7260-8.ucode)
-  * Intel Wireless 7260 firmware, version 23.214.9.0
+  * Intel Wireless 7260 firmware, version 25.228.9.0
     (iwlwifi-7260-9.ucode)
-  * Intel Wireless 7265 firmware, version 22.24.8.0
-    (iwlwifi-7265-8.ucode)
-  * Intel Wireless 7265 firmware, version 23.214.9.0
+  * Intel Wireless 7260 firmware, version 25.17.12.0
+    (iwlwifi-7260-12.ucode)
+  * Intel Wireless 7260 firmware, version 25.30.14.0
+    (iwlwifi-7260-14.ucode)
+  * Intel Wireless 7260 firmware, version 16.242414.0
+    (iwlwifi-7260-16.ucode)
+  * Intel Wireless 7265 firmware, version 25.228.9.0
     (iwlwifi-7265-9.ucode)
-Homepage: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
+  * Intel Wireless 7265 firmware, version 25.17.12.0
+    (iwlwifi-7265-12.ucode)
+  * Intel Wireless 7265 firmware, version 25.30.14.0
+    (iwlwifi-7265-14.ucode)
+  * Intel Wireless 7265 firmware, version 16.242414.0
+    (iwlwifi-7265-16.ucode)
+  * Intel Wireless 7265D firmware, version 25.17.12.0
+    (iwlwifi-7265D-12.ucode)
+  * Intel Wireless 7265D firmware, version 25.30.14.0
+    (iwlwifi-7265D-14.ucode)
+  * Intel Wireless 7265D firmware, version 16.242414.0
+    (iwlwifi-7265D-16.ucode)
+  * Intel Wireless 8000C firmware, version 25.30.14.0
+    (iwlwifi-8000C-14.ucode)
+  * Intel Wireless 8000C firmware, version 16.242414.0
+    (iwlwifi-8000C-16.ucode)
+Homepage: https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git
 
 Package: libdbusmenu-glib4
 Status: install ok installed
@@ -10105,42 +10492,6 @@ Description: manipulating sets and relations of integer points bounded by linear
  This package contains the runtime library.
 Homepage: http://freecode.com/projects/isl
 
-Package: firmware-ralink
-Status: install ok installed
-Priority: optional
-Section: non-free/kernel
-Installed-Size: 101
-Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
-Architecture: all
-Multi-Arch: foreign
-Source: firmware-nonfree
-Version: 0.43
-Suggests: initramfs-tools
-Description: Binary firmware for Ralink wireless cards
- This package contains the binary firmware for wireless network cards with
- the Ralink RT2501 [Turbo], RT2600, RT5201 [Turbo], RT5600, RT5201USB,
- RT2800P[D], RT2700P[D], RT2700E[D], RT2800E[D], RT2800U[D] or RT3000E[D]
- chipsets or RT3070/RT3071/RT3072 chips, supported by the rt61/rt61pci,
- rt73/rt73usb, rt2860sta, rt2870sta/rt2870, rt3070sta or rt3090sta drivers.
- .
- Contents:
-  * Ralink RT2561 (RT2501/RT5201 chipset) firmware, version 1.2
-    (rt2561.bin)
-  * Ralink RT2561S (RT2501 Turbo/RT5201 Turbo chipset) firmware, version
-    1.2 (rt2561s.bin)
-  * Ralink RT2661 (RT2600/RT5600 chipset) firmware, version 1.2
-    (rt2661.bin)
-  * Ralink RT2760/RT2790/RT2860/RT2890/RT3090
-    (RT2700P[D]/RT2700E[D]/RT2800P[D]/RT2800E[D]/RT3000E[D] chipset)
-    firmware, version 34 (rt2860.bin, rt3090.bin)
-  * Ralink RT2870/RT3070/RT3071/RT3072 (RT2800U[D] chipset) firmware,
-    version 29 (rt2870.bin, rt3070.bin)
-  * Ralink RT3071/RT3072 firmware, version 29 (rt3071.bin)
-  * Ralink RT3290 firmware, version 1 (rt3290.bin)
-  * Ralink RT2571W/RT2671 (RT2501USB/RT5201USB chipset) firmware,
-    version 1.8 (rt73.bin)
-Homepage: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
-
 Package: glib-networking
 Status: install ok installed
 Priority: optional
@@ -10616,12 +10967,12 @@ Package: firmware-linux-free
 Status: install ok installed
 Priority: optional
 Section: kernel
-Installed-Size: 88
+Installed-Size: 68
 Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
 Architecture: all
 Multi-Arch: foreign
 Source: firmware-free
-Version: 3.3
+Version: 3.4
 Suggests: initramfs-tools
 Description: Binary firmware for various drivers in the Linux kernel
  This package contains firmware which was previously included in the Linux
@@ -10741,6 +11092,156 @@ Description: control IEEE 1394 audio/video devices
  This package includes the libraries needed to run executables using
  libavc1394.
 Homepage: http://sourceforge.net/projects/libavc1394/
+
+Package: firmware-misc-nonfree
+Status: install ok installed
+Priority: optional
+Section: non-free/kernel
+Installed-Size: 5554
+Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: firmware-nonfree
+Version: 20151207-1
+Replaces: firmware-adi, firmware-ivtv (<< 0.38~), firmware-linux (<< 0.19), firmware-linux-nonfree (<< 20151018-1~), firmware-ralink
+Provides: firmware-adi, firmware-ralink
+Suggests: initramfs-tools
+Breaks: firmware-adi, firmware-ivtv (<< 0.38~), firmware-linux (<< 0.19), firmware-linux-nonfree (<< 20151018-1~), firmware-ralink
+Description: Binary firmware for various drivers in the Linux kernel
+ This package contains the binary firmware for  various drivers in the
+ Linux kernel.  This is a collection of firmware blobs which are not
+ individually large enough to warrant a standalone package.
+ .
+ Contents:
+  * 3Com Typhoon firmware, version 03.001.008 (3com/typhoon.bin)
+  * AdvanSys ASC-3550 firmware (advansys/3550.bin)
+  * AdvanSys ASC-38C0800 firmware (advansys/38C0800.bin)
+  * AdvanSys ASC-38C1600 firmware (advansys/38C1600.bin)
+  * AdvanSys SCSI controller microcode (advansys/mcode.bin)
+  * Agere/Prism/Symbol Orinoco firmware (AP mode), version 9.48 Hermes I
+    (agere_ap_fw.bin)
+  * Agere/Prism/Symbol Orinoco firmware (STA mode), version 9.48 Hermes
+    I (agere_sta_fw.bin)
+  * Abilis Systems AS102 stage 1 firmware (as102_data1_st.hex)
+  * Abilis Systems AS102 stage 2 firmware (as102_data2_st.hex)
+  * Creative CA0132 DSP firmware (ctefx.bin)
+  * Creative CA0132 SpeakerEQ firmware (ctspeq.bin)
+  * Chelsio T3 optical EDC firmware (AEL2005 PHY)
+    (cxgb3/ael2005_opt_edc.bin)
+  * Chelsio T3 twinax EDC firmware (AEL2005 PHY)
+    (cxgb3/ael2005_twx_edc.bin)
+  * Chelsio T3 twinax EDC firmware (AEL2020 PHY)
+    (cxgb3/ael2020_twx_edc.bin)
+  * Chelsio T3B protocol engine firmware, version 1.1.0
+    (cxgb3/t3b_psram-1.1.0.bin)
+  * Chelsio T3C protocol engine firmware, version 1.1.0
+    (cxgb3/t3c_psram-1.1.0.bin)
+  * Chelsio T3 main firmware, version 7.4.0 (cxgb3/t3fw-7.4.0.bin)
+  * Chelsio T3 main firmware, version 7.10.0 (cxgb3/t3fw-7.10.0.bin)
+  * Chelsio T3 main firmware, version 7.12.0 (cxgb3/t3fw-7.12.0.bin)
+  * Chelsio T4 10GBASE-T firmware (AQ1202 PHY) (cxgb4/aq1202_fw.cld)
+  * Chelsio T4 10GBASE-T firmware (BCM84834 PHY) (cxgb4/bcm8483.bin)
+  * Chelsio T4 firmware, version 1.14.4.0 (cxgb4/t4fw-1.14.4.0.bin,
+    cxgb4/t4fw.bin)
+  * Chelsio T5 firmware, version 1.14.4.0 (cxgb4/t5fw-1.14.4.0.bin,
+    cxgb4/t5fw.bin)
+  * DAB-USB FPGA bitfile (dabusb/bitstream.bin)
+  * DAB-USB firmware (dabusb/firmware.fw)
+  * Xceive 4000 tuner firmware, version 1.4.1 (dvb-fe-xc4000-1.4.1.fw)
+  * Xceive 5000 tuner firmware, version 1.6.114
+    (dvb-fe-xc5000-1.6.114.fw)
+  * Xceive 5000c tuner firmware, version 4.1.30.7
+    (dvb-fe-xc5000c-4.1.30.7.fw)
+  * DiBcom dib0700 USB DVB bridge firmware, version 1.20
+    (dvb-usb-dib0700-1.20.fw)
+  * DiBcom dib9135 DVB-T USB firmware (dvb-usb-it9135-01.fw)
+  * DiBcom dib9135 DVB-T USB firmware (dvb-usb-it9135-02.fw)
+  * Intel 82559 D101M microcode (e100/d101m_ucode.bin)
+  * Intel 82559 D101S microcode (e100/d101s_ucode.bin)
+  * Intel 82551-F and 82551-10 microcode (e100/d102e_ucode.bin)
+  * ENE UB6250 MS Pro read/write firmware (ene-ub6250/msp_rdwr.bin)
+  * ENE UB6250 MS init firmware (ene-ub6250/ms_init.bin)
+  * ENE UB6250 MS read/write firmware (ene-ub6250/ms_rdwr.bin)
+  * ENE UB6250 SD init stage 1 firmware (ene-ub6250/sd_init1.bin)
+  * ENE UB6250 SD init stage 2 firmware (ene-ub6250/sd_init2.bin)
+  * ENE UB6250 SD read/write firmware (ene-ub6250/sd_rdwr.bin)
+  * Micronas GO7007SB encoder stage 1 firmware (go7007/go7007fw.bin)
+  * Micronas GO7007SB encoder stage 2 firmware (go7007/go7007tv.bin)
+  * WISchip WinFast WalkieTV firmware (go7007/lr192.fw)
+  * Plextor ConvertX M402U firmware (go7007/px-m402u.fw)
+  * Plextor ConvertX TV402U firmware (go7007/px-tv402u.fw)
+  * Sensoray S2250 stage 1 firmware (go7007/s2250-1.fw, s2250_loader.fw)
+  * Sensoray S2250 stage 2 firmware (go7007/s2250-2.fw, s2250.fw)
+  * WISchip WinFast WalkieTV firmware (go7007/wis-startrek.fw)
+  * Intel "Broxton" DMC firmware, version 1.04
+    (i915/bxt_dmc_ver1_04.bin)
+  * Intel "Broxton" DMC firmware, version 1.05
+    (i915/bxt_dmc_ver1_05.bin)
+  * Intel "Broxton" DMC firmware, version 1.06
+    (i915/bxt_dmc_ver1_06.bin, i915/bxt_dmc_ver1.bin)
+  * Intel "Skylake" DMC firmware, version 1.23
+    (i915/skl_dmc_ver1_23.bin, i915/skl_dmc_ver1.bin)
+  * Intel "Skylake" GuC firmware, version 1.1059
+    (i915/skl_guc_ver1_1059.bin, i915/skl_guc_ver1.bin)
+  * Intel "Skylake" GuC firmware, version 4.3 (i915/skl_guc_ver4_3.bin,
+    i915/skl_guc_ver4.bin)
+  * kaweth/new_code.bin
+  * kaweth/new_code_fix.bin
+  * kaweth/trigger_code.bin
+  * kaweth/trigger_code_fix.bin
+  * Matrox G200 WARP engine microcode (matrox/g200_warp.fw)
+  * Matrox G400/G550 WARP engine microcode (matrox/g400_warp.fw)
+  * MediaTek MT7601U firmware, version 34 (mt7601u.bin)
+  * MediaTek MT7630/MT7650 Bluetooth firmware (mt7650.bin)
+  * Multi-Tech USB CDMA modem firmware (mts_cdma.fw)
+  * Multi-Tech USB EDGE modem firmware (mts_edge.fw)
+  * Multi-Tech USB GPRS modem firmware (mts_gsm.fw)
+  * Nvidia GK20A FECS firmware data (nvidia/gk20a/fecs_data.bin)
+  * Nvidia GK20A FECS firmware instructions (nvidia/gk20a/fecs_inst.bin)
+  * Nvidia GK20A GPCCS firmware data (nvidia/gk20a/gpccs_data.bin)
+  * Nvidia GK20A GPCCS firmware instructions
+    (nvidia/gk20a/gpccs_inst.bin)
+  * Nvidia GK20A bundle init data (nvidia/gk20a/sw_bundle_init.bin)
+  * Nvidia GK20A ctx init data (nvidia/gk20a/sw_ctx.bin)
+  * Nvidia GK20A method init data (nvidia/gk20a/sw_method_init.bin)
+  * Nvidia GK20A non-ctx init data (nvidia/gk20a/sw_nonctx.bin)
+  * Nvidia Tegra 124 XHCI firmware, version 45.46
+    (nvidia/tegra124/xusb.bin)
+  * Nvidia Tegra 210 XHCI firmware, version 50.10
+    (nvidia/tegra210/xusb.bin)
+  * Intel QAT DH895xCC UOF firmware (qat_895xcc.bin)
+  * Intel QAT DH895xCC MMP firmware (qat_mmp.bin)
+  * Ralink RT2561 (RT2501/RT5201 chipset) firmware, version 1.2
+    (rt2561.bin)
+  * Ralink RT2561S (RT2501 Turbo/RT5201 Turbo chipset) firmware, version
+    1.2 (rt2561s.bin)
+  * Ralink RT2661 (RT2600/RT5600 chipset) firmware, version 1.2
+    (rt2661.bin)
+  * Ralink RT2760/RT2790/RT2860/RT2890/RT3090
+    (RT2700P[D]/RT2700E[D]/RT2800P[D]/RT2800E[D]/RT3000E[D] chipset)
+    firmware, version 34 (rt2860.bin, rt3090.bin)
+  * Ralink RT2870/RT3070/RT3071/RT3072 (RT2800U[D] chipset) firmware,
+    version 29 (rt2870.bin, rt3070.bin)
+  * Ralink RT3071/RT3072 firmware, version 29 (rt3071.bin)
+  * Ralink RT3290 firmware, version 1 (rt3290.bin)
+  * Ralink RT2571W/RT2671 (RT2501USB/RT5201USB chipset) firmware,
+    version 1.8 (rt73.bin)
+  * Tehuti network card firmware (tehuti/bdx.bin)
+  * Broadcom BCM5703/BCM5704 TSO firmware (tigon/tg3_tso.bin)
+  * Broadcom BCM5701A0 firmware (tigon/tg3.bin)
+  * Broadcom BCM5705 TSO firmware (tigon/tg3_tso5.bin)
+  * Broadcom BCM57766 firmware (tigon/tg357766.bin)
+  * ADI Eagle IV ADSL configuration, generic (ueagle-atm/CMV4p.bin.v2)
+  * ADI Eagle IV ADSL DSP firmware (ueagle-atm/DSP4p.bin)
+  * ADI Eagle IV firmware (ueagle-atm/eagleIV.fw)
+  * Conexant CX231xx core firmware (v4l-cx231xx-avcore-01.fw)
+  * Conexant CX23418 APU firmware (v4l-cx23418-apu.fw)
+  * Conexant CX23418 CPU firmware (v4l-cx23418-cpu.fw)
+  * Conexant CX23418 ADEC firmware (v4l-cx23418-dig.fw)
+  * Conexant CX25840 firmware (v4l-cx25840.fw)
+  * Conexant CX23885 core firmware (v4l-cx23885-avcore-01.fw)
+  * VIA VT6656 firmware (vntwusb.fw)
+Homepage: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
 
 Package: libclucene-core1
 Status: install ok installed
@@ -12463,269 +12964,17 @@ Homepage: http://e2fsprogs.sourceforge.net
 Package: firmware-linux-nonfree
 Status: install ok installed
 Priority: optional
-Section: non-free/kernel
-Installed-Size: 5008
+Section: non-free/metapackages
+Installed-Size: 18
 Maintainer: Debian Kernel Team <debian-kernel@lists.debian.org>
 Architecture: all
-Multi-Arch: foreign
 Source: firmware-nonfree
-Version: 0.43
-Replaces: firmware-ivtv (<< 0.38~), firmware-linux (<< 0.19)
-Suggests: initramfs-tools
-Breaks: firmware-ivtv (<< 0.38~), firmware-linux (<< 0.19)
-Description: Binary firmware for various drivers in the Linux kernel
- This package contains the binary firmware for  various drivers in the
- Linux kernel.  This is a collection of firmware blobs which are not
- individually large enough to warrant a standalone package.
- .
- Contents:
-  * 3Com Typhoon firmware, version 03.001.008 (3com/typhoon.bin)
-  * AdvanSys ASC-3550 firmware (advansys/3550.bin)
-  * AdvanSys ASC-38C0800 firmware (advansys/38C0800.bin)
-  * AdvanSys ASC-38C1600 firmware (advansys/38C1600.bin)
-  * AdvanSys SCSI controller microcode (advansys/mcode.bin)
-  * Agere/Prism/Symbol Orinoco firmware (AP mode), version 9.48 Hermes I
-    (agere_ap_fw.bin)
-  * Agere/Prism/Symbol Orinoco firmware (STA mode), version 9.48 Hermes
-    I (agere_sta_fw.bin)
-  * Chelsio T3 optical EDC firmware (AEL2005 PHY)
-    (cxgb3/ael2005_opt_edc.bin)
-  * Chelsio T3 twinax EDC firmware (AEL2005 PHY)
-    (cxgb3/ael2005_twx_edc.bin)
-  * Chelsio T3 twinax EDC firmware (AEL2020 PHY)
-    (cxgb3/ael2020_twx_edc.bin)
-  * Chelsio T3B protocol engine firmware, version 1.1.0
-    (cxgb3/t3b_psram-1.1.0.bin)
-  * Chelsio T3C protocol engine firmware, version 1.1.0
-    (cxgb3/t3c_psram-1.1.0.bin)
-  * Chelsio T3 main firmware, version 7.4.0 (cxgb3/t3fw-7.4.0.bin)
-  * Chelsio T3 main firmware, version 7.10.0 (cxgb3/t3fw-7.10.0.bin)
-  * Chelsio T3 main firmware, version 7.12.0 (cxgb3/t3fw-7.12.0.bin)
-  * Chelsio T4 firmware, version 1.9.23.0 (cxgb4/t4fw-1.9.23.0.bin,
-    cxgb4/t4fw.bin)
-  * Chelsio T5 firmware, version 1.9.23.0 (cxgb4/t5fw-1.9.23.0.bin,
-    cxgb4/t5fw.bin)
-  * DAB-USB FPGA bitfile (dabusb/bitstream.bin)
-  * DAB-USB firmware (dabusb/firmware.fw)
-  * Xceive 5000 tuner firmware, version 1.6.114
-    (dvb-fe-xc5000-1.6.114.fw)
-  * DiBcom dib0700 USB DVB bridge firmware, version 1.20
-    (dvb-usb-dib0700-1.20.fw)
-  * Intel 82559 D101M microcode (e100/d101m_ucode.bin)
-  * Intel 82559 D101S microcode (e100/d101s_ucode.bin)
-  * Intel 82551-F and 82551-10 microcode (e100/d102e_ucode.bin)
-  * ENE UB6250 MS Pro read/write firmware (ene-ub6250/msp_rdwr.bin)
-  * ENE UB6250 MS init firmware (ene-ub6250/ms_init.bin)
-  * ENE UB6250 MS read/write firmware (ene-ub6250/ms_rdwr.bin)
-  * ENE UB6250 SD init stage 1 firmware (ene-ub6250/sd_init1.bin)
-  * ENE UB6250 SD init stage 2 firmware (ene-ub6250/sd_init2.bin)
-  * ENE UB6250 SD read/write firmware (ene-ub6250/sd_rdwr.bin)
-  * kaweth/new_code.bin
-  * kaweth/new_code_fix.bin
-  * kaweth/trigger_code.bin
-  * kaweth/trigger_code_fix.bin
-  * Matrox G200 WARP engine microcode (matrox/g200_warp.fw)
-  * Matrox G400/G550 WARP engine microcode (matrox/g400_warp.fw)
-  * Multi-Tech USB CDMA modem firmware (mts_cdma.fw)
-  * Multi-Tech USB EDGE modem firmware (mts_edge.fw)
-  * Multi-Tech USB GPRS modem firmware (mts_gsm.fw)
-  * Rage 128 CCE microcode (r128/r128_cce.bin)
-  * Radeon HD IGP 7500/7600 series ME microcode (radeon/ARUBA_me.bin)
-  * Radeon HD IGP 7500/7600 series PFP microcode (radeon/ARUBA_pfp.bin)
-  * Radeon HD IGP 7500/7600 series RLC microcode (radeon/ARUBA_rlc.bin)
-  * Radeon HD 6800 series MC microcode (radeon/BARTS_mc.bin)
-  * Radeon HD 6800 series ME microcode (radeon/BARTS_me.bin)
-  * Radeon HD 6800 series PFP microcode (radeon/BARTS_pfp.bin)
-  * Radeon HD 6800 series SMC microcode (radeon/BARTS_smc.bin)
-  * Radeon HD 7790/8770/8950 CE microcode (radeon/BONAIRE_ce.bin)
-  * Radeon HD 7790/8770/8950 MC microcode, version 1
-    (radeon/BONAIRE_mc.bin)
-  * Radeon HD 7790/8770/8950 MC microcode, version 2
-    (radeon/BONAIRE_mc2.bin)
-  * Radeon HD 7790/8770/8950 ME microcode (radeon/BONAIRE_me.bin)
-  * Radeon HD 7790/8770/8950 MEC microcode (radeon/BONAIRE_mec.bin)
-  * Radeon HD 7790/8770/8950 PFP microcode (radeon/BONAIRE_pfp.bin)
-  * Radeon HD 7790/8770/8950 RLC microcode (radeon/BONAIRE_rlc.bin)
-  * Radeon HD 7790/8770/8950 SDMA microcode (radeon/BONAIRE_sdma.bin)
-  * Radeon HD 7790/8770/8950 series SMC microcode
-    (radeon/BONAIRE_smc.bin)
-  * Radeon HD 7790/8770/8950, 8100/8200/8300/8400 series, and
-    "Mullins"/"Beema" IGP UVD microcode (radeon/BONAIRE_uvd.bin)
-  * Radeon HD VCE microcode (radeon/BONAIRE_vce.bin)
-  * Radeon HD 6300/6500/6800 series RLC microcode (radeon/BTC_rlc.bin)
-  * Radeon HD 6300 series MC microcode (radeon/CAICOS_mc.bin)
-  * Radeon HD 6300 series ME microcode (radeon/CAICOS_me.bin)
-  * Radeon HD 6300 series PFP microcode (radeon/CAICOS_pfp.bin)
-  * Radeon HD 6300 series SMC microcode (radeon/CAICOS_smc.bin)
-  * Radeon HD 6900 series MC microcode (radeon/CAYMAN_mc.bin)
-  * Radeon HD 6900 series ME microcode (radeon/CAYMAN_me.bin)
-  * Radeon HD 6900 series PFP microcode (radeon/CAYMAN_pfp.bin)
-  * Radeon HD 6900 series RLC microcode (radeon/CAYMAN_rlc.bin)
-  * Radeon HD 6900 series SMC microcode (radeon/CAYMAN_smc.bin)
-  * Radeon HD 5400 series ME microcode (radeon/CEDAR_me.bin)
-  * Radeon HD 5400 series PFP microcode (radeon/CEDAR_pfp.bin)
-  * Radeon HD 5400 series RLC microcode (radeon/CEDAR_rlc.bin)
-  * Radeon HD 5400 series SMC microcode (radeon/CEDAR_smc.bin)
-  * Radeon HD 5800/5900 series ME microcode (radeon/CYPRESS_me.bin)
-  * Radeon HD 5800/5900 series PFP microcode (radeon/CYPRESS_pfp.bin)
-  * Radeon HD 5800/5900 series RLC microcode (radeon/CYPRESS_rlc.bin)
-  * Radeon HD 5800/5900 series SMC microcode (radeon/CYPRESS_smc.bin)
-  * Radeon HD 5x00 series UVD microcode (radeon/CYPRESS_uvd.bin)
-  * Radeon HD 8500M series and R5 M200 CE microcode
-    (radeon/HAINAN_ce.bin)
-  * Radeon HD 8500M series and R5 M200 MC microcode, version 1
-    (radeon/HAINAN_mc.bin)
-  * Radeon HD 8500M series and R5 M200 MC microcode, version 2
-    (radeon/HAINAN_mc2.bin)
-  * Radeon HD 8500M series and R5 M200 ME microcode
-    (radeon/HAINAN_me.bin)
-  * Radeon HD 8500M series and R5 M200 PFP microcode
-    (radeon/HAINAN_pfp.bin)
-  * Radeon HD 8500M series and R5 M200 RLC microcode
-    (radeon/HAINAN_rlc.bin)
-  * Radeon HD 8500M series and R5 M200 SMC microcode
-    (radeon/HAINAN_smc.bin)
-  * Radeon R9 290 series CE microcode (radeon/HAWAII_ce.bin)
-  * Radeon R9 290 series MC microcode, version 1 (radeon/HAWAII_mc.bin)
-  * Radeon R9 290 series MC microcode, version 2 (radeon/HAWAII_mc2.bin)
-  * Radeon R9 290 series ME microcode (radeon/HAWAII_me.bin)
-  * Radeon R9 290 series MEC microcode (radeon/HAWAII_mec.bin)
-  * Radeon R9 290 series PFP microcode (radeon/HAWAII_pfp.bin)
-  * Radeon R9 290 series RLC microcode (radeon/HAWAII_rlc.bin)
-  * Radeon R9 290 series SDMA microcode (radeon/HAWAII_sdma.bin)
-  * Radeon R9 290 series SMC microcode (radeon/HAWAII_smc.bin)
-  * Radeon HD 5700 series ME microcode (radeon/JUNIPER_me.bin)
-  * Radeon HD 5700 series PFP microcode (radeon/JUNIPER_pfp.bin)
-  * Radeon HD 5700 series RLC microcode (radeon/JUNIPER_rlc.bin)
-  * Radeon HD 5700 series SMC microcode (radeon/JUNIPER_smc.bin)
-  * Radeon HD 8100/8200/8300/8400 series CE microcode
-    (radeon/KABINI_ce.bin)
-  * Radeon HD 8100/8200/8300/8400 series ME microcode
-    (radeon/KABINI_me.bin)
-  * Radeon HD 8100/8200/8300/8400 series MEC microcode
-    (radeon/KABINI_mec.bin)
-  * Radeon HD 8100/8200/8300/8400 series PFP microcode
-    (radeon/KABINI_pfp.bin)
-  * Radeon HD 8100/8200/8300/8400 series RLC microcode
-    (radeon/KABINI_rlc.bin)
-  * Radeon HD 8100/8200/8300/8400 series SDMA microcode
-    (radeon/KABINI_sdma.bin)
-  * Radeon R5/R7 IGP 200 series CE microcode (radeon/KAVERI_ce.bin)
-  * Radeon R5/R7 IGP 200 series ME microcode (radeon/KAVERI_me.bin)
-  * Radeon R5/R7 IGP 200 series MEC microcode (radeon/KAVERI_mec.bin)
-  * Radeon R5/R7 IGP 200 series PFP microcode (radeon/KAVERI_pfp.bin)
-  * Radeon R5/R7 IGP 200 series RLC microcode (radeon/KAVERI_rlc.bin)
-  * Radeon R5/R7 IGP 200 series SDMA microcode (radeon/KAVERI_sdma.bin)
-  * Radeon "Mullins"/"Beema" IGP CE microcode (radeon/MULLINS_ce.bin)
-  * Radeon "Mullins"/"Beema" IGP ME microcode (radeon/MULLINS_me.bin)
-  * Radeon "Mullins"/"Beema" IGP MEC microcode (radeon/MULLINS_mec.bin)
-  * Radeon "Mullins"/"Beema" IGP PFP microcode (radeon/MULLINS_pfp.bin)
-  * Radeon "Mullins"/"Beema" IGP RLC microcode (radeon/MULLINS_rlc.bin)
-  * Radeon "Mullins"/"Beema" IGP SDMA microcode
-    (radeon/MULLINS_sdma.bin)
-  * Radeon HD 8500/8600/8700 series CE microcode (radeon/OLAND_ce.bin)
-  * Radeon HD 8500/8600/8700 series MC microcode, version 1
-    (radeon/OLAND_mc.bin)
-  * Radeon HD 8500/8600/8700 series MC microcode, version 2
-    (radeon/OLAND_mc2.bin)
-  * Radeon HD 8500/8600/8700 series ME microcode (radeon/OLAND_me.bin)
-  * Radeon HD 8500/8600/8700 series PFP microcode (radeon/OLAND_pfp.bin)
-  * Radeon HD 8500/8600/8700 series RLC microcode (radeon/OLAND_rlc.bin)
-  * Radeon HD 8500/8600/8700 series SMC microcode (radeon/OLAND_smc.bin)
-  * Radeon HD IGP 6200/6300/7300 series ME microcode
-    (radeon/PALM_me.bin)
-  * Radeon HD IGP 6200/6300/7300 series PFP microcode
-    (radeon/PALM_pfp.bin)
-  * Radeon HD 7800 series CE microcode (radeon/PITCAIRN_ce.bin)
-  * Radeon HD 7800 series MC microcode, version 1
-    (radeon/PITCAIRN_mc.bin)
-  * Radeon HD 7800 series MC microcode, version 2
-    (radeon/PITCAIRN_mc2.bin)
-  * Radeon HD 7800 series ME microcode (radeon/PITCAIRN_me.bin)
-  * Radeon HD 7800 series PFP microcode (radeon/PITCAIRN_pfp.bin)
-  * Radeon HD 7800 series RLC microcode (radeon/PITCAIRN_rlc.bin)
-  * Radeon HD 7800 series SMC microcode (radeon/PITCAIRN_smc.bin)
-  * Radeon R100-family CP microcode (radeon/R100_cp.bin)
-  * Radeon R200-family CP microcode (radeon/R200_cp.bin)
-  * Radeon R300-family CP microcode (radeon/R300_cp.bin)
-  * Radeon R400-family CP microcode (radeon/R420_cp.bin)
-  * Radeon R500-family CP microcode (radeon/R520_cp.bin)
-  * Radeon R600 ME microcode (radeon/R600_me.bin)
-  * Radeon R600 PFP microcode (radeon/R600_pfp.bin)
-  * Radeon R600-family RLC microcode (radeon/R600_rlc.bin)
-  * Radeon R700-family RLC microcode (radeon/R700_rlc.bin)
-  * Radeon HD 5500/5600 series ME microcode (radeon/REDWOOD_me.bin)
-  * Radeon HD 5500/5600 series PFP microcode (radeon/REDWOOD_pfp.bin)
-  * Radeon HD 5500/5600 series RLC microcode (radeon/REDWOOD_rlc.bin)
-  * Radeon HD 5500/5600 series SMC microcode (radeon/REDWOOD_smc.bin)
-  * Radeon RS600 CP microcode (radeon/RS600_cp.bin)
-  * Radeon RS690 CP microcode (radeon/RS690_cp.bin)
-  * Radeon RS780 ME microcode (radeon/RS780_me.bin)
-  * Radeon RS780 PFP microcode (radeon/RS780_pfp.bin)
-  * Radeon RV610 ME microcode (radeon/RV610_me.bin)
-  * Radeon RV610 PFP microcode (radeon/RV610_pfp.bin)
-  * Radeon RV620 ME microcode (radeon/RV620_me.bin)
-  * Radeon RV620 PFP microcode (radeon/RV620_pfp.bin)
-  * Radeon RV630 ME microcode (radeon/RV630_me.bin)
-  * Radeon RV630 PFP microcode (radeon/RV630_pfp.bin)
-  * Radeon RV635 ME microcode (radeon/RV635_me.bin)
-  * Radeon RV635 PFP microcode (radeon/RV635_pfp.bin)
-  * Radeon RV670 ME microcode (radeon/RV670_me.bin)
-  * Radeon RV670 PFP microcode (radeon/RV670_pfp.bin)
-  * Radeon RV710 ME microcode (radeon/RV710_me.bin)
-  * Radeon RV710 PFP microcode (radeon/RV710_pfp.bin)
-  * Radeon RV710 SMC microcode (radeon/RV710_smc.bin)
-  * Radeon RV710/RV730/RV740 UVD microcode (radeon/RV710_uvd.bin)
-  * Radeon RV730/RV740 ME microcode (radeon/RV730_me.bin)
-  * Radeon RV730/RV740 PFP microcode (radeon/RV730_pfp.bin)
-  * Radeon RV730 SMC microcode (radeon/RV730_smc.bin)
-  * Radeon RV740 SMC microcode (radeon/RV740_smc.bin)
-  * Radeon RV770 ME microcode (radeon/RV770_me.bin)
-  * Radeon RV770 PFP microcode (radeon/RV770_pfp.bin)
-  * Radeon RV770 SMC microcode (radeon/RV770_smc.bin)
-  * Radeon HD IGP 6400/6500/6600 series ME microcode
-    (radeon/SUMO_me.bin)
-  * Radeon HD IGP 6400/6500/6600 series PFP microcode
-    (radeon/SUMO_pfp.bin)
-  * Radeon HD IGP 6200/6300/6400/6500/6600/7300 series RLC microcode
-    (radeon/SUMO_rlc.bin)
-  * Radeon HD 6x00/7500 series and IGP 6x00/7300 series UVD microcode
-    (radeon/SUMO_uvd.bin)
-  * Radeon HD 6370D/6380G/6410D ME microcode (radeon/SUMO2_me.bin)
-  * Radeon HD 6370D/6380G/6410D PFP microcode (radeon/SUMO2_pfp.bin)
-  * Radeon HD 7900 series CE microcode (radeon/TAHITI_ce.bin)
-  * Radeon HD 7900 series MC microcode, version 1 (radeon/TAHITI_mc.bin)
-  * Radeon HD 7900 series MC microcode, version 2
-    (radeon/TAHITI_mc2.bin)
-  * Radeon HD 7900 series ME microcode (radeon/TAHITI_me.bin)
-  * Radeon HD 7900 series PFP microcode (radeon/TAHITI_pfp.bin)
-  * Radeon HD 7900 series RLC microcode (radeon/TAHITI_rlc.bin)
-  * Radeon HD 7900 series SMC microcode (radeon/TAHITI_smc.bin)
-  * Radeon HD 7900 series UVD microcode (radeon/TAHITI_uvd.bin)
-  * Radeon HD 6500/6600/7500 series MC microcode (radeon/TURKS_mc.bin)
-  * Radeon HD 6500/6600/7500 series ME microcode (radeon/TURKS_me.bin)
-  * Radeon HD 6500/6600/7500 series PFP microcode (radeon/TURKS_pfp.bin)
-  * Radeon HD 6500/6600/7500 series SMC microcode (radeon/TURKS_smc.bin)
-  * Radeon HD 7700 series CE microcode (radeon/VERDE_ce.bin)
-  * Radeon HD 7700 series MC microcode, version 1 (radeon/VERDE_mc.bin)
-  * Radeon HD 7700 series MC microcode, version 2 (radeon/VERDE_mc2.bin)
-  * Radeon HD 7700 series ME microcode (radeon/VERDE_me.bin)
-  * Radeon HD 7700 series PFP microcode (radeon/VERDE_pfp.bin)
-  * Radeon HD 7700 series RLC microcode (radeon/VERDE_rlc.bin)
-  * Radeon HD 7700 series SMC microcode (radeon/VERDE_smc.bin)
-  * Tehuti network card firmware (tehuti/bdx.bin)
-  * Broadcom BCM5703/BCM5704 TSO firmware (tigon/tg3_tso.bin)
-  * Broadcom BCM5701A0 firmware (tigon/tg3.bin)
-  * Broadcom BCM5705 TSO firmware (tigon/tg3_tso5.bin)
-  * Broadcom BCM57766 firmware (tigon/tg357766.bin)
-  * Conexant CX231xx core firmware (v4l-cx231xx-avcore-01.fw)
-  * Conexant CX23418 APU firmware (v4l-cx23418-apu.fw)
-  * Conexant CX23418 CPU firmware (v4l-cx23418-cpu.fw)
-  * Conexant CX23418 ADEC firmware (v4l-cx23418-dig.fw)
-  * Conexant CX25840 firmware (v4l-cx25840.fw)
-  * Conexant CX23885 core firmware (v4l-cx23885-avcore-01.fw)
-  * VIA VT6656 firmware (vntwusb.fw)
-Homepage: http://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git
+Version: 20151207-1
+Depends: firmware-misc-nonfree (= 20151207-1), firmware-amd-graphics (= 20151207-1)
+Recommends: intel-microcode, amd64-microcode
+Description: Binary firmware for various drivers in the Linux kernel (meta-package)
+ This package depends on non-free firmware which may be used with drivers
+ in the Linux kernel.
 
 Package: iw
 Status: install ok installed
