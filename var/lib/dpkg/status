@@ -2253,6 +2253,27 @@ Description: x264 video coding library
  This package contains the libx264 shared library.
 Homepage: http://www.videolan.org/developers/x264.html
 
+Package: libmspack0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 98
+Maintainer: Marc Dequènes (Duck) <Duck@DuckCorp.org>
+Architecture: i386
+Multi-Arch: same
+Source: libmspack
+Version: 0.5-1
+Depends: libc6 (>= 2.4)
+Pre-Depends: multiarch-support
+Description: library for Microsoft compression formats (shared library)
+ The purpose of libmspack is to provide both compression and decompression of
+ some loosely related file formats used by Microsoft. The intention is to
+ support all of the following formats: COMPRESS.EXE [SZDD],
+ Microsoft Help (.HLP), COMPRESS.EXE [KWAJ], Microsoft Cabinet (.CAB),
+ HTML Help (.CHM), Microsoft eBook (.LIT), Windows Imaging Format (.WIM),
+ Exchange Offline Address Book (.LZX).
+Homepage: http://www.cabextract.org.uk/libmspack/
+
 Package: psmisc
 Status: install ok installed
 Priority: optional
@@ -9068,6 +9089,22 @@ Description: Multiprecision arithmetic library
  interface.
 Homepage: http://gmplib.org/
 
+Package: cabextract
+Status: install ok installed
+Priority: optional
+Section: utils
+Installed-Size: 107
+Maintainer: Eric Sharkey <sharkey@debian.org>
+Architecture: i386
+Multi-Arch: foreign
+Version: 1.4-5
+Depends: libc6 (>= 2.3.4), libmspack0 (>= 0.4)
+Enhances: konqueror
+Description: Microsoft Cabinet file unpacker
+ Cabextract is a program which unpacks cabinet (.cab) files, which
+ are a form of archive Microsoft uses to distribute their software
+ and things like Windows Font Packs.
+
 Package: sensible-utils
 Status: install ok installed
 Priority: required
@@ -13704,6 +13741,42 @@ Description: Linux PCI Utilities (shared library)
  The libpci library provides portable access to configuration
  registers of devices connected to the PCI bus.
 Homepage: http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
+
+Package: ttf-mscorefonts-installer
+Status: install ok installed
+Priority: optional
+Section: contrib/fonts
+Installed-Size: 125
+Maintainer: Thijs Kinkhorst <thijs@debian.org>
+Architecture: all
+Multi-Arch: foreign
+Source: msttcorefonts
+Version: 3.6
+Provides: msttcorefonts
+Depends: wget, cabextract, xfonts-utils, debconf (>= 0.5) | debconf-2.0
+Recommends: fonts-liberation
+Description: Installer for Microsoft TrueType core fonts
+ This package allows for easy installation of the Microsoft True Type
+ Core Fonts for the Web including:
+ .
+   Andale Mono
+   Arial Black
+   Arial (Bold, Italic, Bold Italic)
+   Comic Sans MS (Bold)
+   Courier New (Bold, Italic, Bold Italic)
+   Georgia (Bold, Italic, Bold Italic)
+   Impact
+   Times New Roman (Bold, Italic, Bold Italic)
+   Trebuchet (Bold, Italic, Bold Italic)
+   Verdana (Bold, Italic, Bold Italic)
+   Webdings
+ .
+ You will need an Internet connection to download these fonts if you
+ don't already have them.
+ .
+ NOTE: the package fonts-liberation contains free variants of the Times,
+ Arial and Courier fonts. It's better to use those instead unless you
+ specifically need one of the other fonts from this package.
 
 Package: lockfile-progs
 Status: install ok installed

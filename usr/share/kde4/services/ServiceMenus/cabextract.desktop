@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/vnd.ms-cab-compressed;application/x-ms-dos-executable;
+Actions=list;extract;
+
+[Desktop Action list]
+Name=List contents
+Icon=/usr/share/icons/cab_view.png
+Exec=konsole --geometry 80x24 --caption CabExtract --noclose -e /usr/bin/cabextract -l "%F"
+
+[Desktop Action extract]
+Name=Extract here
+Icon=/usr/share/icons/cab_extract.png
+Exec=/usr/bin/cabextract -d "%d" "%F"
+

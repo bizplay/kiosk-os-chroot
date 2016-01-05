@@ -1,0 +1,13 @@
+[Desktop Entry]
+ServiceTypes=application/x-mscabinet,application/x-msdos-program
+Actions=list;extract;
+
+[Desktop Action list]
+Name=List Contents
+Icon=cab_view
+Exec=konsole --vt_sz 80x25 -T CabExtract --noclose --nomenubar --notabbar -e cabextract -l "%F"
+
+[Desktop Action extract]
+Name=Extract Here
+Icon=cab_extract
+Exec=cabextract -d "%d" "%F"

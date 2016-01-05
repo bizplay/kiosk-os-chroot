@@ -1469,6 +1469,30 @@ Template: man-db/install-setuid
 Value: false
 Owners: man-db
 
+Name: msttcorefonts/baddldir
+Template: msttcorefonts/baddldir
+Owners: ttf-mscorefonts-installer
+
+Name: msttcorefonts/dldir
+Template: msttcorefonts/dldir
+Value: 
+Owners: ttf-mscorefonts-installer
+
+Name: msttcorefonts/dlurl
+Template: msttcorefonts/dlurl
+Value: 
+Owners: ttf-mscorefonts-installer
+
+Name: msttcorefonts/http_proxy
+Template: msttcorefonts/http_proxy
+Value: 
+Owners: ttf-mscorefonts-installer
+
+Name: msttcorefonts/savedir
+Template: msttcorefonts/savedir
+Value: 
+Owners: ttf-mscorefonts-installer
+
 Name: passwd/make-user
 Template: passwd/make-user
 Owners: user-setup

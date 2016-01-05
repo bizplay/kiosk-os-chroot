@@ -1,0 +1,17 @@
+/.
+/var
+/var/lib
+/var/lib/msttcorefonts
+/var/lib/msttcorefonts/cabfiles.sha256sums
+/usr
+/usr/share
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/ttf-mscorefonts-installer
+/usr/share/fonts
+/usr/share/fonts/truetype
+/usr/share/doc
+/usr/share/doc/ttf-mscorefonts-installer
+/usr/share/doc/ttf-mscorefonts-installer/copyright
+/usr/share/doc/ttf-mscorefonts-installer/changelog.gz
+/usr/share/doc/ttf-mscorefonts-installer/README.Debian

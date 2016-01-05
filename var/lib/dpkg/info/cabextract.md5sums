@@ -1,0 +1,14 @@
+0f2ebe8d02a53feabde5e9018132105a  usr/bin/cabextract
+c6248dd9c81723fc46a9877847192901  usr/share/apps/konqueror/servicemenus/cabextract.desktop
+5b5df7c6f18c51e280741e9896604960  usr/share/doc/cabextract/AUTHORS
+f26db851538e0b4aeefe0464903973f7  usr/share/doc/cabextract/NEWS.gz
+3d38db14bb931803b1f639a5039d16ef  usr/share/doc/cabextract/README
+ec7bbf38a475fc01643284dee4d67559  usr/share/doc/cabextract/README.Debian
+198cb892396b137d10010175d132f12d  usr/share/doc/cabextract/TODO
+d7651e6b09e9c62a040e7bf88bdd6c0a  usr/share/doc/cabextract/changelog.Debian.gz
+0e8ec24ece3e87e9c9befa516f92b158  usr/share/doc/cabextract/changelog.gz
+e94e4051da4abaee3400c0aa473c4ed9  usr/share/doc/cabextract/copyright
+c5815ad137ccbc18744a46260d4302f9  usr/share/icons/cab_extract.png
+5e7863fba8726cf792889d8ee79863e2  usr/share/icons/cab_view.png
+1cd082ca4d81e11809a77bb32f98d26a  usr/share/kde4/services/ServiceMenus/cabextract.desktop
+a6d8b0e284dce07052558297e5ac6c2e  usr/share/man/man1/cabextract.1.gz

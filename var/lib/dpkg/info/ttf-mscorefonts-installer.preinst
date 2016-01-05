@@ -1,0 +1,12 @@
+#! /bin/sh
+
+set -e
+
+if dpkg --compare-versions "$2" lt 3.4; then
+	if [ -x "which defoma-font 2>/dev/null" ]; then
+		defoma-font purge /etc/defoma/hints/ttf-mscorefonts-installer.hints
+	fi
+fi
+
+
+

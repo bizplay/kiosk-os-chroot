@@ -1,0 +1,390 @@
+Template: msttcorefonts/dldir
+Type: string
+Description: Directory holding MS fonts (if already downloaded):
+ If you have already downloaded Microsoft's TrueType Core Fonts for the web,
+ type the name of the directory which contains them. Those files are in the
+ Microsoft Windows self-installing format, and are named andale32.exe,
+ arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe,
+ impact32.exe, times32.exe, trebuc32.exe, verdan32.exe and webdin32.exe.
+ .
+ If you haven't yet downloaded these fonts, leave this blank and the fonts
+ will be downloaded for you. Approximately 4 MB will need to be downloaded.
+ .
+ If you are not connected to the internet or do not wish to download these
+ fonts now, enter "none" to abort. 
+Description-be.UTF-8: Каталог, што ўтрымлівае шрыфты MS (калі яны ўжо спампаваны):
+ Калі Вы ўжо спампавалі "Шрыфты Microsoft TrueType для сеціва", увядзіце назву каталога, дзе яны знаходзяцца. Гэта файлы ў сама-ўсталявальным файрмаце Microsoft Windows і найменаваныя andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe ды webdin32.exe
+ .
+ Калі Вы яшчэ не спампавалі гэтых шрыфтоў, пакіньце поле пустым і шрыфты спампуюцца. Будзе спампавана прыблізна 4 MB.
+ .
+ Калі не злучаны з інтэрнэтам або не хочаце спампоўваць шрыфтоў, увядзіце "none" для сканчэння.
+Description-cs.UTF-8: Adresář obsahující MS fonty (jsou-li už staženy):
+ Pokud už máte staženy Microsoft TrueType Core Fonty z webu, zadejte jméno adresáře, kde jsou uloženy. Tyto soubory jsou v samoinstalačním formátu Microsoft Windows a mají jména andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe a webdin32.exe.
+ .
+ Pokud zatím tyto fonty staženy nemáte, nechte toto pole prázdné a fonty budou automaticky staženy. Bude potřeba stáhnout přibližne 4 MB.
+ .
+ Pokud nejste připojeni k Internetu nebo nechcete stahovat tyto fonty nyní, zadejte "none".
+Description-da.UTF-8: Mappe der indeholder MS-skrifttyper (hvis allerede hentet):
+ Hvis du allerede har hentet Microsofts »TrueType Core Fonts« for internettet, indtast da navnet på den mappe, som indeholder dem. Disse filer er i Microsoft Windows' selvudpakkende format, og er navngivet andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe og webdin32.exe.
+ .
+ Hvis du endnu ikke har hentet disse skrifttyper, så lad feltet være tomt og skrifttyperne vil blive hentet for dig. Omkring 4 MB vil blive hentet.
+ .
+ Hvis du ikke er forbundet til internettet, eller ikke ønsker at hente disse skrifttyper nu, så indtast »none« for at afbryde.
+Description-de.UTF-8: Verzeichnis, in dem die MS-Schriftarten liegen (falls bereits heruntergeladen):
+ Falls Sie bereits die TrueType-Schriftarten von Microsoft heruntergeladen haben, geben Sie den Namen des Verzeichnisses an, wo sie jetzt liegen. Diese Dateien liegen im selbst-entpackenden Format von Microsoft Windows vor und heißen andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32. exe, times32.exe, trebuc32.exe, verdan32.exe und webdin32.exe.
+ .
+ Falls Sie sie noch nicht heruntergeladen haben, lassen Sie das Textfeld frei, die Schriften werden dann für Sie heruntergeladen. Ungefähr 4 MB müssen dafür übertragen werden.
+ .
+ Wenn Sie nicht mit dem Internet verbunden sind oder es nicht wollen, dass die Schriften heruntergeladen werden, dann geben Sie zum Abbrechen »none« ein.
+Description-es.UTF-8: Directorio que contiene los tipos de letra MS (si ya están descargados):
+ Introduzca el nombre del directorio que los contiene si ya descargó los tipos de letra «Microsoft TrueType Core» de un sitio web. Estos archivos están en el formato de instalación de Microsoft Windows, y se llaman andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe y webdin32.exe.
+ .
+ Deje este campo en blanco si aún no ha descargado estos tipos de letra, y el sistema descargará los tipos de letra automáticamente. Se necesitará descargar aproximadamente 4 MB.
+ .
+ Escriba «ninguna» para cancelar si no está conectado a internet o no desea descargar ahora estos tipos de letra.
+Description-eu.UTF-8: MS letra-tipoak dituen direktorioa (dagoeneko deskargatu badituzu):
+ Dagoeneko webgunetik " Microsoft's TrueType Core Fonts" deskargatu baduzu, hauek dauden direktorioaren kokalekua idatzi. Fitxategi hauek Microsoft Windows auto instalatze formatuan daude, eta andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe eta webdin32.exe izenak dituzte.
+ .
+ Ez badituzu deskargatu hutsik utzi eta letra-tipoak automatikoki deskargatuko dira. Gutxigorabehera 4 MB deskargatu behar dira.
+ .
+ Ez bazaude internetera konektaturik edo beranduago deskargatu nahi izan ezkero "none" idatzi konfigurazioa uzteko.
+Description-fi.UTF-8: Hakemisto, jossa MS-fontit ovat (jos ne on jo ladattu):
+ Jos Microsoftin TrueType-perusverkkofontit on jo ladattu, anna hakemiston nimi, jossa ne ovat. Tiedostot ovat Microsoft Windowsin itsestään asentuvassa muodossa ja ovat nimeltään andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe ja webdin32.exe.
+ .
+ Jos fontteja ei ole vielä ladattu, jätä kenttä tyhjäksi. Tällöin fontit ladataan automaattisesti. Ladattavaa on noin 4 MB.
+ .
+ Jos koneessa ei ole Internet-yhteyttä tai et halua ladata fontteja nyt, syötä ”none” keskeyttääksesi asennuksen.
+Description-fr.UTF-8: Répertoire contenant les polices MS (si elles ont déjà été téléchargées) :
+ Si vous avez déjà téléchargé les polices TrueType de base de Microsoft (« Microsoft's TrueType Core Fonts ») sur Internet, veuillez indiquer le répertoire où elles se trouvent. Il s'agit des archives d'installation pour Windows nommées andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe et webdin32.exe.
+ .
+ Si vous n'avez pas encore téléchargé ces polices, laissez ce champ vide et le téléchargement sera automatique. Environ 8 Mo seront alors téléchargés.
+ .
+ Si vous n'êtes pas connecté à l'Internet, ou si vous ne souhaitez pas télécharger ces polices maintenant, indiquez « none » (aucun) pour interrompre l'installation.
+Description-gl.UTF-8: Directorio que contén os tipos de letra de MS (se xa se descargaron):
+ Se xa descargou os «TrueType Core Fonts» de Microsoft, escriba o nome do directorio que os contén. Eses ficheiros están no formato autoinstalábel de Microsoft Windows, e teñen os nomes andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe e webdin32.exe.
+ .
+ Se aínda non descargou estes tipos de letra, deixe isto en branco e hanse descargar os tipos por vostede. Hase ter que descargar uns 4 MB, aproximadamente.
+ .
+ Se non está conectado a Internet ou non quere descargar agora os tipos, introduza "none" para abortar.
+Description-it.UTF-8: Directory contenente i caratteri MS (se già scaricati):
+ Se i Microsoft TrueType Core Fonts sono già stati scaricati, inserire il nome della directory che li contiene. I file sono nel formato auto-installante di Microsoft Windows e i loro nomi sono: andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe e webdin32.exe.
+ .
+ Se i caratteri non sono stati ancora scaricati lasciare vuoto questo campo, i file saranno scaricati automaticamente. Saranno scaricati circa 4 MB di dati.
+ .
+ Se non si è connessi a internet oppure se adesso non si vogliono scaricare i caratteri inserire "none" per interrompere l'installazione.
+Description-ja.UTF-8: MS font があるディレクトリ (すでにダウンロードされている場合):
+ すでに Microsoft TrueType Core Fonts for the web をダウンロードしている場合、そのファイルが存在するディレクトリ名を入力してください。ファイルは Microsoft Windows 自己解凍形式で、andale32.exe、arial32.exe、arialb32.exe、comic32.exe、courie32.exe、georgi32.exe、impact32.exe、times32.exe、trebuc32.exe、verdan32.exe、webdin32.exe という名前になっています。
+ .
+ まだフォントをダウンロードしていない場合、ここで何も入力しないままにしておけばフォントをダウンロードします。ダウンロードにはおおよそ 4 MB の容量が必要です。
+ .
+ インターネットに接続していない、またはフォントを今はダウンロードしたくないという場合、"none" と入力して終了してください。
+Description-lt.UTF-8: Katalogas, kuriame yra MS šriftai (jei iš kur nors atsiuntėte ar įsirašėte anksčiau):
+ Jei Jūs anksčiau atsisiuntėte ar iš kur nors nusikopijavote bazinius MS TrueType šriftus, nurodykite katalogą, kuriame jie yra. Jie turi būti automatiškai išsipakuojančių MS Windows archyvų (cab) formate, pavadinti andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe ir webdin32.exe.
+ .
+ Jei šriftų nesate atsisiuntę anksčiau - palikite šį lauką tuščią ir šriftai bus automatiškai atsiųsti. Šriftų paketai užima apie 4 MB.
+ .
+ Jei negalite prisijungti prie interneto arba nenorite siųstis ir įdiegti šių šriftų dabar, įrašykite "none" ir šriftai nebus įdiegti ( galėsite įdiegti vėliau, įvykdę dpkg-reconfigure msttcorefonts ).
+Description-nl.UTF-8: De map met de MS-lettertypen (indien reeds gedownload):
+ Als u de Microsoft TrueType-basislettertypen voor het web reeds gedownload heeft, voer dan hier de naam in van de map waar ze zijn opgeslagen. Deze bestanden zijn in het Microsoft Windows zelf-installerende formaat en hebben de volgende namen: andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe en webdin32.exe.
+ .
+ Als u de lettertypen nog niet heeft gedownload laat u dit leeg, de lettertypen worden dan voor u gedownload. Er wordt dan ongeveer 4 MB gedownload.
+ .
+ Als u geen verbinding heeft met het internet of de lettertypen nu niet wilt downloaden, voert u "none" (geen) in om de installatie stop te zetten.
+Description-pl.UTF-8: Katalog zawierający fonty MS (jeżeli masz je już na dysku):
+ Jeżeli masz już na dysku fonty TrueType z Microsoftu podaj katalog w którym się one znajdują. Pliki są w samorozpakowującym się formacie Microsoft Windows o nazwach: andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe i webdin32.exe. 
+ .
+ Jeżeli nie masz tych fontów na dysku pozostaw to pole pustym. Odpowiednie pliki (około 8MB) zostaną pobrane z internetu.
+ .
+ Jeżeli nie masz teraz połączenia z internetem, albo nie chcesz teraz pobierać tych fontów, to możesz wpisać "none" aby przerwać ten proces.
+Description-pt.UTF-8: Directório contendo os tipos de letra MS (se tiver já descarregado algum):
+ Se tiver já descarregado alguns tipos de letra Microsoft's TrueType Core Fonts for the web, introduza o nome do directório que os contém. Estes ficheiros estarão no formato auto-instalável Microsoft Windows, e têm como nome andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe e webdin32.exe.
+ .
+ Se ainda não tiver descarregado nenhum destes tipos de letras, deixe em branco e todos os tipos de letra serão descarregados. Serão transferidos cerca de 4 MB.
+ .
+ Se não estiver ligado à internet ou não desejar descarregar os tipos de letra neste momento, introduza "none" para cancelar.
+Description-pt_BR.UTF-8: Diretórios que contém as fontes MS (caso já feito o download) :
+ Caso você já tenha feito o download das TrueType Core Fonts para web da Microsoft, informe o nome do diretório onde você armazena essas fontes. Esses arquivos estão no formato de auto-instalação do Microsft Windows e são nomeados andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courier32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe e webdin32.exe.
+ .
+ Caso você ainda não tenha feito o download dessas fontes, mantenha este campo em branco e o download das mesmas será feito automaticamente para você. Será necessário fazer o download de aproximadamente 8MB.
+ .
+ Caso você não esteja conectado a Internet ou não deseja fazer o download dessas fontes agora, informe "none" para abortar.
+Description-ro.UTF-8: Directorul care conține fonturile MS (dacă sunt deja descărcate):
+ Dacă ați descărcat deja fonturile Microsoft TrueType Core, introduceți numele directorului care le conține. Aceste fișiere sunt în formatul de auto-instalare Microsoft Windows și sunt numite andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe și webdin32.exe.
+ .
+ Dacă nu ați descărcat deja aceste fonturi, lăsați liber acest câmp și fonturile vor fi descărcate. Vor trebui descărcați aproximativ 8MO.
+ .
+ Dacă nu aveți activă o conexiune la internet sau nu doriți să descărcați acum aceste fonturi, introduceți „none” pentru a abandona.
+Description-ru.UTF-8: Каталог, содержащий шрифты MS (если они уже загружены):
+ Если вы уже загрузили Microsoft's TrueType Core Fonts из Интернет, то укажите имя каталога, где они находятся. Эти файлы в самоустанавливающемся формате Microsoft Windows с именами andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe и webdin32.exe.
+ .
+ Если вы ещё не загрузили эти шрифты, оставьте поле пустым и шрифты будут загружены для вас. Нужно загрузить приблизительно 8 МБ.
+ .
+ Если у вас нет соединения с Интернет или вы не хотите загружать шрифты сейчас, то введите "none" для отмены.
+Description-sk.UTF-8: Adresár s fontmi MS (ak už sú stiahnuté):
+ Ak už máte stiahnuté základné fonty Microsoft TrueType pre web, napíšte meno adresára, v ktorom sú uložené. Tieto súbory sú v samoinštalačnom formáte Microsoft Windows a volajú sa andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe a webdin32.exe.
+ .
+ Ak ešte tieto fonty nemáte stiahnuté, nechajte toto pole prázdne a fonty budú stiahnuté. Bude treba stiahnuť približne 4 MB.
+ .
+ Ak nie ste pripojený na internet alebo tieto fonty nechcete teraz sťahovať, zadajte "none" pre zrušenie.
+Description-sv.UTF-8: Katalog som innehåller MS-typsnitt (om de redan är hämtade):
+ Om du redan hämtat ner Microsofts TrueType Core Fonts för webben, ange namnet på katalogen där de finns lagrade. Dessa filer är i ett självuppackande Microsoft Windows-format och har namnen andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe och webdin32.exe.
+ .
+ Om du inte redan har hämtat ner dessa typsnitt, lämna då detta blankt och typsnitten kommer att hämtas ner åt dig. Ungefär 4 MB kommer att hämtas.
+ .
+ Om du inte är ansluten till Internet eller att du inte vill hämta ner dessa typsnitt nu, ange "none" för att avbryta.
+Description-tr.UTF-8: Microsoft yazı tiplerinin bulunduğu dizin (eğer önceden indirildiyse):
+ Microsoft'un TrueType Temel Yazı Tipleri'ni daha önce indirdiyseniz yazı tiplerinin bulunduğu dizini burada belirtin. Bu dosyalar Microsoft Windows kendiliğinden kurulabilir dosya biçimindedir ve adları andale32.exe, arial32.exe, arialb32.exe, comic32.exe, courie32.exe, georgi32.exe, impact32.exe, times32.exe, trebuc32.exe, verdan32.exe and webdin32.exe şeklindedir.
+ .
+ Bu yazı tiplerini daha önce indirmediyseniz burayı boş bırakın, yazı tipleri indirilecektir. Yaklaşık 4 MB boyutunda bir indirme yapılacaktır.
+ .
+ İnternete bağlı değilseniz ya da yazı tiplerini daha sonra indirmek isterseniz bu işlemi iptal etmek için "none" yazın.
+
+Template: msttcorefonts/baddldir
+Type: error
+Description: Font files not found
+ The directory you entered either did not exist, did not contain the
+ Microsoft TrueType Core Fonts for the Web Microsoft Windows 9x self
+ installing executables, or those executables did not match the versions
+ expected by this script.  Please re-enter the directory containing the
+ Microsoft font files or enter "none" to abort.
+Description-be.UTF-8: Файлы шрыфтоў не знойдзены
+ Каталог, які вы ўвялі, або не існуе, або не змяшчае самаўсталявальных выканальных файлаў "Шрыфтоў Microsoft TrueType", або версіі файлаў не адпавядаюць патрабаванням гэтага скрыпта. Калі ласка, паўторна вызначце каталог, дзе знаходзяцца файлы шрыфтоў Microsoft, або ўвядзіце "none" для сканчэння.
+Description-cs.UTF-8: Soubory s fonty nenalezeny
+ Adresář, který jste zadali, buď neexistuje, nebo neobsahuje samoinstalační soubory Microsoft Windows 9x obsahující Microsoft TrueType Core Fonty, nebo se u těchto souborů neshoduje verze s tou, kterou předpokládá tento sktript. Prosím zadejte znovu adresář obsahující soubory s fonty Microsoft nebo napište "none" k ukončení instalace.
+Description-da.UTF-8: Skrifttypefiler ikke fundet
+ Mappen du indtastede findes enten ikke, eller indeholdte ikke »Microsoft TrueType Core Fonts« for internettet i Microsoft Windows' selvudpakkende format, eller filerne havde ikke de versionsnumre, der var forventet. Indtast en ny mappe der indeholder skrifttypefilerne, eller indtast »none« for at afbryde.
+Description-de.UTF-8: Schriftartendateien nicht gefunden
+ Das Verzeichnis, welches Sie eingegeben haben, existiert nicht oder es enthält nicht die TrueType-Schriftarten von Microsoft im selbst-entpackendem Format oder die Dateien haben nicht die von diesem Skript erwarteten Versionsnummern. Geben Sie erneut das Verzeichnis ein, in dem die Schriftarten liegen oder »none« zum Abbrechen.
+Description-es.UTF-8: No se encontraron los archivos con los tipos de letra
+ No se encontraron los tipos de letra «Microsoft TrueType Core» para los instaladores ejecutables Web-Microsoft Windows 9x en el directorio que indicó, o estos ejecutables no se ajustaron a las versiones esperadas por este programa. Vuelva a introducir el directorio que contiene los archivos con los tipos de letra Microsoft o ingrese «ninguna» para cancelar.
+Description-eu.UTF-8: Ez dira letra-tipo fitxategiak aurkitu
+ Zuk emandako direktorioa edo ez da zuzena edo ez ditu "Microsoft TrueType Core" letra-tipoak Microsoft Windows 9x auto instalatze exekutagarriak, edo fitxategi hauek ez dira script honek espero dituen bertsio berdinekoak.  Mesedez idatzi berriz Microsoft letra-tipo fitxategiak dituen direktorioaren bidea edo "none" uzteko.
+Description-fi.UTF-8: Fonttitiedostoja ei löytynyt
+ Antamaasi hakemistoa ei ollut olemassa, se ei sisältänyt itsestään asentuvia Microsoftin TrueType-perusverkkofonttiohjelmia tai ohjelmien versiot eivät täsmänneet siihen, mitä tämä komentosarja odotti. Anna uudelleen hakemisto, jossa Microsoftin fonttitiedostot ovat, tai syötä ”none” keskeyttääksesi.
+Description-fr.UTF-8: Fichiers de police introuvables
+ Le répertoire indiqué n'existe pas, ne contient pas les polices TrueType de base de Microsoft (« Microsoft's TrueType Core Fonts ») sous le format d'archive d'installation automatique pour Microsoft Windows 9x ou les archives trouvées ne correspondent pas à la version attendue par ce script. Veuillez indiquer le répertoire où se trouvent les fichiers de police, ou « none » pour interrompre l'installation.
+Description-gl.UTF-8: Non se atoparon os ficheiros dos tipos de letra
+ O directorio que introduciu non existe, ou non contén os executábeis autoinstalábeis dos «TrueType Core Fonts» de Microsoft para a Web, ou os executábeis non coinciden coas versións que agardaba este script. Volva introducir o directorio que contén os tipos de letra de Microsoft ou introduza "none" para abortar.
+Description-it.UTF-8: File con i caretteri non trovati
+ La directory inserita non esiste oppure non contiene i Microsoft TrueType Core Fonts nel formato eseguibile con installazione automatica per Microsoft Windows 9x oppure i file presenti non sono quelli che questo script si aspetta. Inserire nuovamente la directory contenente i file con i caratteri Microsoft oppure "none" per interrompere l'installazione.
+Description-ja.UTF-8: フォントのファイルが見つかりません
+ 入力されたディレクトリが存在しないか、Microsoft Windows 9x 自己インストール実行可能形式の Microsoft TrueType Core Fonts for the web を含んでいない、または、これらの実行ファイルが、このスクリプトが期待しているバージョンに一致していません。Microsoft のフォントファイルを含むディレクトリを再入力するか、"none" と入力して終了してください。
+Description-lt.UTF-8: Šriftų bylos nerastos
+ Katalogas, kurį jūs nurodėte neegzistuoja, arba kataloge nerasti bazinių MS TrueType šriftų paketai, arba paketų formatas nėra "automatiškai išsipakuojantis MS Windows archyvas", arba paketų versija nėra palaikoma šio įdiegėjo. Prašome nurodyti katalogą, kuriame yra bazinių MS TrueType šriftų paketai arba įrašykite "none", kad nutraukti įdiegimą.
+Description-nl.UTF-8: Lettertypebestanden niet gevonden
+ De map die u heeft ingevoerd bestaat niet, of bevat niet de Windows 9x versie van de zelf-installerende uitvoerbare bestanden voor de 'Microsoft TrueType-basislettertypen voor het web', of bevat een versie van die bestanden die dit script niet ondersteunt. Voer de map in waar de Microsoft lettertypebestanden in staan of voer "none" (geen) in om te stoppen.
+Description-pl.UTF-8: Nie odnaleziono plików z fontami
+ Wybrany katalog nie istnieje, lub nie zawierał plików z fontami Microsoft TrueType w odpowiednim formacie. Podaj właściwy katalog z fontami albo wpisz "none", aby przerwać tę operację.
+Description-pt.UTF-8: Tipos de letra não encontrados
+ Este directório que introduziu ou não existe, ou não contem os ficheiros de instalação executáveis Microsoft TrueType Core Fonts for the Web Windows 9x, ou os executáveis não possuem a versão que seria de esperar por este 'script'.  Introduza novamente o directório que contém os ficheiros de tipos de letra Microsoft ou "none" para cancelar.
+Description-pt_BR.UTF-8: Arquivos de fontes não encontrados
+ O diretório que você informou não existe, não contém as fontes TrueType Core para a Web auto-instaláveis da Microsoft para Windows 9x ou esses executáveis não fornecem as mesmas versôes esperadas por este script. Por favor, informe novamente o diretório onde estão armazenados os arquivos de fontes Microsoft ou informe "none" para abortar.
+Description-ro.UTF-8: Fișierele cu fonturi nu au fost găsite
+ Directorul introdus fie nu există, fie nu conține fonturile Microsoft TrueType Core pentru executabilele de auto-instalare Microsoft Windows 9x sau acele executabile nu conțin versiunile la care se așteaptă acest script. Reintroduceți directorul care conține fișierele cu fonturile Microsoft sau introduceți „none” pentru a abandona.
+Description-ru.UTF-8: Файлы шрифтов не найдены
+ Указанный вами каталог не существует или не содержит самоустанавливающиеся файлы Microsoft TrueType Core Fonts для Web Microsoft Windows 9x, или версии этих файлов не совпадают с ожидаемыми этим сценарием. Пожалуйста, введите другое название каталога с файлами шрифтов Microsoft или введите "none", для отмены.
+Description-sk.UTF-8: Súbory fontov nenájdené
+ Adresár, ktorý ste zadali buď neexistuje, alebo neobsahuje samoinštalačné súbory Microsoft Windows 9x so základnými fontmi Microsoft TrueType pre web, alebo sa verzia týchto súborov nezhoduje s tou, ktorú očakáva tento skript. Prosím zadajte znova meno adresára so súbormi s fontmi alebo napíšte "none" pre prerušenie inštalácie.
+Description-sv.UTF-8: Typsnittsfilerna hittades inte
+ Katalogen du angav finns antagligen inte, innehöll inte Microsoft TrueType Core Fonts för Web Microsoft Windows 9x självuppackande binärer eller så matchade inte de binärerna det som detta skript förväntade sig.  Vänligen ange katalogen som innehåller Microsofts typsnittsfiler eller ange "none" för att avbryta.
+Description-tr.UTF-8: Yazı tipi dosyaları bulunamadı
+ Girdiğiniz dizin mevcut değil, Microsoft TrueType Temel Web Yazı Tiplerine ait kendiliğinden kurulabilir dosyaları içermiyor ya da bulunan kurulum dosyaları bu betiğin beklediği sürümde değiller.  Lütfen Microsoft Yazı Tiplerinin bulunduğu dizini tekrar girin ya da işlemi iptal etmek için "none" yazın.
+Description-vi.UTF-8: Không tìm thấy tập tin phông
+ Bạn đã nhập một thư mục không tồn tại, đã nhập thư mục không chứa các tập tin tự cài đặt có khả năng thực hiện trên MS™ Windows 9x Phông Lõi TrueType Microsoft™ cho Mạng, hoặc các tập tin thực hiện được này không khớp với những phiên bản trông đợi trong văn lệnh này. Hãy gõ lại tên thư mục chứa các tập tin phông MS™, hoặc gõ « không có » để hủy bỏ.
+
+Template: msttcorefonts/savedir
+Type: string
+Description: Where should these files be archived (optional):
+ If you would like to keep a permanent archive of the compressed Windows
+ self extracting files, enter the directory where you'd like them stored. 
+ If you leave this blank, the files will be deleted after installation.
+Description-be.UTF-8: Дзе будуць захоўвацца гэтыя файлы (неабавязкова):
+ Калі жадаеце трымаць пастаянны архіў са сціснутымі самаўсталявальнымі файламі Windows, увядзіце каталог, дзе яны будуць захоўвацца. Калі пакінеце поле пустым, файлы будуць выдалены пасля ўстаноўкі.
+Description-cs.UTF-8: Kde mají být tyto soubory archivovány (volitelné):
+ Pokud chcete uchovat komprimované samorozbalovací soubory, zadejte adresář, do kterého mají být uloženy. Pokud necháte toto pole prázdné, soubory budou po instalaci smazány.
+Description-da.UTF-8: Hvor skal filerne gemmes (valgfrit):
+ Hvis du vil beholde et permanent arkiv af de selvudpakkende filer, indtast da mappen hvor du vil have dem gemt. Hvis du lader dette være tomt, vil filerne blive slettet efter installationen.
+Description-de.UTF-8: Wo sollen diese Dateien archiviert werden (optional):
+ Falls Sie möchten, dass die Dateien im komprimierten selbst-entpackenden Windows-Format archiviert werden, geben Sie das Verzeichnis ein, in welches die Dateien gespeichert werden sollen. Lassen Sie das Feld leer, falls sie danach gelöscht werden sollen.
+Description-es.UTF-8: Lugar donde deben almacenarse estos archivos (opcional):
+ Indique el directorio donde quiere almacenar los ficheros de Windows comprimidos auto extraíbles si quiere archivarlos de forma permanente. Se borrarán los ficheros después de la instalación si deja este valor en blanco.
+Description-eu.UTF-8: Fitxategi hauek non gorde beharko diren (aukerakoa):
+ Konprimituriko Windows auto instalazio fitxategien kopia bat mantendu nahi baduzu. hauek gordetzea nahi duzun direktorioaren bidea idatzi.  Hutsi utzi ezkero, instalazioaren ondoren fitxategi horiek ezabatu egingo dira.
+Description-fi.UTF-8: Mihin nämä tiedostot tulisi arkistoida (vapaaehtoista):
+ Jos itsestään asentuvat Windows-tiedostot halutaan arkistoida pysyvästi, anna tiedosto, johon ne tallennetaan. Jos kenttä jätetään tyhjäksi, tiedostot poistetaan asennuksen jälkeen.
+Description-fr.UTF-8: Emplacement d'archivage des fichiers (optionnel) :
+ Si vous souhaitez conserver une archive des fichiers Windows téléchargés, veuillez indiquer le répertoire où ils doivent être placés. Si vous laissez ce champ vide, les fichiers seront effacés après usage.
+Description-gl.UTF-8: Onde se teñen que archivar estes ficheiros (opcional):
+ Se quere gardar un arquivo permanente dos ficheiros autoextraíbeis de Windows, introduza o directorio no que os quere gardar. Se o deixa en branco, hanse borrar os ficheiros tras a instalación.
+Description-it.UTF-8: Dove devono essere archiviati i file (opzionale):
+ Se si desidera conservare in un archivio i file compressi e auto-estraenti per Windows, inserire la directory in cui si vogliono salvare. Se si lascia vuoto questo campo i file saranno eliminati al termine dell'installazione.
+Description-ja.UTF-8: どこにファイルを保存しますか (オプションです):
+ Windows 自己解凍形式ファイルのアーカイブを保持したいという場合、保存しておきたいディレクトリを入力してください。空のままにしておくと、ファイルはインストール後に削除されます。
+Description-lt.UTF-8: Vieta, kur šios bylos turi būti išsaugotos (nebūtina):
+ Jeigu norite išsaugoti atsiųstus šriftų paketus (savaime išsipakuojančio Windows archyvo formate), nurodykite katalogą, kur norite juos padėti. Jei paliksite šį lauką tuščią, šriftų paketai bus ištrinti po įdiegimo.
+Description-nl.UTF-8: Waar moeten de bestanden gearchiveerd worden (dit is optioneel):
+ Als u graag een permanent archief zou willen hebben van de gecomprimeerde zelf-installerende bestanden, voer dan hier de map in waar u deze zou willen opslaan. Als u dit leeg laat, zullen de bestanden worden verwijderd na installatie.
+Description-pl.UTF-8: Katalog z dodatkową kopią tych plików (opcjonalny):
+ Możesz wybrać katalog, w którym zostanie zapisana kopia fontów w skompresowanych samorozpakowującym się archiwach.  Jeżeli nie potrzebujesz dodatkowej kopii możesz pozostawić, to pole puste.
+Description-pt.UTF-8: Onde deverão ser armazenados os ficheiros (opcional):
+ Se desejar manter um arquivo permanente dos ficheiros Windows comprimidos com extracção automática introduza o directório para onde deseja que sejam guardados os mesmos.  Se deixar em branco os ficheiros serão apagados depois da instalação.
+Description-pt_BR.UTF-8: Onde esses arquivos devem ser armazenados (opcional) :
+ Se você deseja manter um arquivo permanente dos arquivos auto-descompactáveis Windows, informe o diretório onde você gostaria de armazená-los. Caso você mantenha este campo em branco, os arquivos serão apagados após serem usados para instalação.
+Description-ro.UTF-8: Unde se arhivează aceste fonturi (opțional):
+ Dacă doriți să păstrați o copie a fișierelor de auto-instalare Windows comprimate, introduceți directorul unde le doriți stocate. Dacă lăsați gol acest câmp, fișierele vor fi șterse după instalare.
+Description-ru.UTF-8: Каталог, в котором должны храниться файлы (не обязательно):
+ Если вы хотите постоянно хранить сжатые самораспаковывающиеся файлы Windows, укажите каталог хранения. Если вы ничего не введёте, то после установки эти сжатые файлы будут удалены.
+Description-sk.UTF-8: Kde majú byť tieto súbory archivované (voliteľné):
+ Ak si chcete uchovať trvalý archív komprimovaných samorozbaľovacích súborov Windows s fontmi, zadajte adresár, do ktorého majú byť uložené. Ak necháte toto pole prázdne, budú súbory po inštalácii zmazané.
+Description-sv.UTF-8: Var ska dessa filer arkiveras (valfritt):
+ Om du vill behålla ett arkiv med de komprimerade självuppackande Windows-filerna, ange katalogen dit du vill spara dem.  Om du lämnar detta alternativ blankt kommer filerna att raderas när installationen är klar.
+Description-tr.UTF-8: Dosyalar nerede saklansın (isteğe bağlı):
+ Sıkıştırılmış haldeki 'Windows kendiliğinden kurulabilir dosyaları'nı kalıcı olarak saklamak istiyorsanız bu dosyaları tutmak istediğiniz dizini giriniz.  Burayı boş bırakırsanız, indirilen dosyalar kurulumdan sonra silinirler.
+Description-vi.UTF-8: (Tùy chọn) Các tập tin này nên được nén lưu ở :
+ Bạn muốn giữ kho nén bền bỉ của các tập tin tự giải nén Windows đã nén này thì gõ tên thư mục vào đó cần nén lưu chúng. Bỏ trống nên các tập tin được xoá sau khi cài đặt.
+
+Template: msttcorefonts/dlurl
+Type: string
+Description: Mirror to download from:
+ This package already contains a built-in set of mirrors, which should
+ be sufficient for most people. However, if you'd like to use a
+ different (possibly local) mirror instead, please enter the full URL
+ to the directory containing the relevant files here. If not, just
+ leave the field blank.
+Description-be.UTF-8: Люстэрка, адкуль спампаваць:
+ Гэты пакет ужо змяшчае ўбудуваны набор люстэркаў, што ёсць дастатковым для большасці карыстальнікаў. Аднак, калі замест гэтага жадаеце выкарыстаць іншае(верагодна, лакальнае) люстэрка, то ўвядзіце поўны URL да каталога з патрэбнымі файламі. Інакш пакіньце поле пустым.
+Description-cs.UTF-8: Zrcadlo, ze kterého chcete stahovat:
+ Tento balíček obsahuje seznam zrcadel, který je pro většinu lidí postačující. Pokud však chcete použít jiné zrcadlo (např. lokální), prosím uveďte zde celé URL k adresáři, který obsahuje příslušné soubory. V opačném případě ponechte pole prázdné.
+Description-da.UTF-8: Spejl som der skal hentes fra:
+ Denne pakke indeholder allerede en indbygget liste af spejle hvilket burde være tilstrækkeligt for de fleste. Hvis du alligevel gerne vil bruge et andet spejl (muligvis lokalt), så indtast adressen til mappen der indeholder de relevante filer her. Hvis du ikke vil det så lad feltet være tomt.
+Description-de.UTF-8: Spiegel, von dem heruntergeladen werden soll:
+ Dieses Paket enthält bereits einen eingebauten Satz an Spiegeln, die für die meisten Personen ausreichen sollten. Falls Sie allerdings einen anderen (lokalen) Spiegel verwenden möchten, geben Sie hier die komplette URL zu dem Verzeichnis mit den relevanten Dateien ein. Falls nicht, lassen Sie dieses Feld einfach leer.
+Description-es.UTF-8: Réplica desde la cual descargar:
+ Este paquete ya contiene réplicas definidas, que son suficientes para la mayoría de personas. Sin embargo, si quisiera usar una réplica distinta (posiblemente una local) en vez de ésta, por favor ingrese aquí la URL completa al directorio que contiene los archivos necesarios. Si no, sólo deje el campo en blanco.
+Description-eu.UTF-8: Deskargatzeko erabiliko de ispilua:
+ Pakete honek baditu jende gehienarentzat aski izan beharko lirateken ispilu bilduma bat ezarririk. Hala ere, hauek beharrean beste ispilu bat (lokala posibleki) erabili nahi izanez gero, mesedez idatzi fitxategiak dituen direktorioaren URL helbide osoa. Bestela hutsik utzi ezazu.
+Description-fi.UTF-8: Ladattaessa käytettävä peilipalvelin:
+ Paketti sisältää jo joukon peilipalvelimia, joiden tulisi riittää useimmissa tapauksissa. Jos kuitenkin haluat käyttää jotain muuta (mahdollisesti paikallista) peiliä, anna tiedostot sisältävän hakemiston täydellinen URL tähän. Jos et halua, jätä kenttä tyhjäksi.
+Description-fr.UTF-8: Miroir :
+ Ce paquet contient une liste de miroirs qui devrait être suffisante pour la plupart des utilisateurs. Toutefois, si vous désirez utiliser un autre miroir (par exemple un miroir local), veuillez indiquer l'URL complète vers le répertoire contenant les fichiers des polices. Sinon, veuillez laisser ce champ vide.
+Description-gl.UTF-8: Réplica da que descargar:
+ Este paquete xa contén un xogo de réplicas que debería ser dabondo para a maioría da xente. Porén, se quere empregar outra réplica (posibelmente local), introduza aquí o URL completo do directorio que contén os ficheiros relevantes. Se non, deixe o campo en branco.
+Description-it.UTF-8: Mirror dal quale scaricare:
+ Questo pacchetto già contiene un elenco preimpostato di mirror che dovrebbe essere adatto per la maggior parte degli utenti. Se si vuole usare un mirror diverso (se possibile locale), inserire la URL completa alla directory contenente i file in questione. Altrimenti lasciare il campo vuoto.
+Description-ja.UTF-8: ダウンロード先のミラー:
+ このパッケージは独自のミラーリストを持っており、ほとんどの人が問題なく利用できます。しかし、異なる (おそらくローカルの) ミラーを代わりに使いたい場合、ここで関連するファイルが置かれているディレクトリの URL を全て入力してください。そうでない場合は何も入力しないでください。
+Description-nl.UTF-8: Download van spiegelserver:
+ Dit pakket bevat een vooringestelde set spiegelservers (mirrors), die toereikend zou moeten zijn voor de meeste gevallen. Wilt u echter een andere (bijvoorbeeld lokale) server gebruiken, geef hier dan de volledige URL die de relevante bestanden bevat. Indien niet, laat het veld dan leeg.
+Description-pl.UTF-8: Wybierz serwer z którego chcesz pobrać pliki:
+ Ten pakiet zawiera wbudowaną listę kilku serwerów z których można pobrać fonty. W razie potrzeby można jednak użyć własnego (lokalnego) serwera. Proszę podać URL do katalogu w którym znajdują się odpowiednie pliki.
+ Możesz zostawić to pole puste.
+Description-pt.UTF-8: Mirror para fazer download:
+ Este pacote contém já um conjunto de mirrors, os quais deverão ser suficientes para a maioria das pessoas. No entanto, se quiser utilizar um mirror diferente (possivelmente local), por favor introduza o URL completo para o directório contendo os ficheiros relevantes agora. Em caso negativo, deixe apenas o campo em branco.
+Description-pt_BR.UTF-8: Espelho a partir de onde fazer o download:
+ Este pacote já contém um conjunto de espelhos embutido, os quais devem ser suficientes para a maioria das pessoas. Porém, caso você deseje utilizar um espelho diferente (e possivelmente local), por favor, informe aqui a URL completa para o diretório que contém os arquivos relevantes. Caso não esteja interessado em fornecer um espelho diferente, simplesmente deixe o campo em branco.
+Description-ro.UTF-8: Sit alternativ pentru descărcare:
+ Acest pachet conține deja un set de site-uri alternative, care ar trebui să fie suficiente pentru majoritatea utilizatorilor. Totuși, dacă doriți să folosiți un sit alternativ pentru descărcare diferit (posibil local), introduceți aici adresa completă a directorului care conține fișierele relevante.
+Description-ru.UTF-8: Зеркало загрузки:
+ Этот пакет уже содержит встроенный набор зеркал, которых должно быть достаточно для большинства. Однако, если вы предпочтёте использовать другое (возможно, локальное) зеркало, пожалуйста, введите полный URL каталога содержащего соответствующие файлы. В противном случае, оставьте поле пустым.
+Description-sk.UTF-8: Zrkadlo pre sťahovanie:
+ Tento balík obsahuje zabudovaný zoznam zrkadiel, ktorý by mal byť pre väčšinu ľudí postačujúci. Ak chcete použiť iné (napr. lokálne) zrkadlo, zadajte prosím úplnú URL adresára, ktorý obsahuje príslušné súbory. Inak ponechajte toto pole prázdne.
+Description-sv.UTF-8: Spegelserver att hämta från:
+ Det här paketet innehåller redan en uppsättning spegelservrar som bör räcka för de flesta. Dock, om du vill använda en annan (kanske lokal) spegelserver istället, kan du ange den fullständiga url:en här till den katalog som innehåller de relevanta filerna. Om inte, lämna fältet blankt.
+Description-tr.UTF-8: Kullanılacak yansı:
+ Bu paket halihazırda yerleşik bir yansı listesini içerir. Bu liste çoğu kullanıcı için yeterlidir. Ancak farklı (muhtemelen yerel) bir yansı kullanmak isterseniz lütfen ilgili dosyaların bulunduğu dizinin tam URL'sini buraya giriniz.
+Description-vi.UTF-8: Máy nhân bản từ đó cần tải xuống:
+ Gói này có sẵn một bộ máy nhân bản nên đủ cho phần lớn người. Tuy nhiên, nếu bạn muốn sử dụng máy nhân bản khác (có lẽ cục bộ), hãy nhập vào đây địa chỉ URL đầy đủ đến thư mục chứa những thư mục thích hợp. Không thì bỏ rỗng.
+
+Template: msttcorefonts/http_proxy
+Type: string
+Description: HTTP proxy to use:
+ If you need to use a proxy server, please enter it here (example:
+ http://192.168.0.1:8080). This will cause the font files to be
+ downloaded using your proxy.
+ .
+ Leave this option blank if you don't use a proxy server.
+Description-be.UTF-8: Проксі для HTTP:
+ Калі вы карыстаецеся проксі, увядзіце яго адрас тут (прыклад: http://192.168.0.1:8080). Гэта спрычыніць тое, што файлы шрыфтоў будуць спампаваныя праз проксі.
+ .
+ Пакіньце поле пустым, калі не карыстаецеся проксі-серверам.
+Description-cs.UTF-8: HTTP proxy:
+ Pokud potřebujete pro stažení souborů s fonty využít proxy server, uveďte zde jeho adresu (napříkad: http://192.168.0.1:8080).
+ .
+ Pokud nepoužíváte proxy server, ponechte toto pole prázdné.
+Description-da.UTF-8: HTTP-proxy som skal bruges:
+ Hvis du har brug for at anvende en proxyserver så indtast dens adresse her (f.eks. http://192.168.0.1:8080). Det vil resultere i at skrifttypefilerne vil blive hentet ned via din proxy.
+ .
+ Lad dette felt være tomt hvis du ikke bruger en proxy.
+Description-de.UTF-8: HTTP-Proxy, der verwendet werden soll:
+ Falls Sie einen Proxy-Server benutzen müssen, geben Sie ihn hier ein (Beispiel: http://192.168.0.1:8080). Dies führt dazu, dass die Schrift-Dateien über Ihren Proxy heruntergeladen werden.
+ .
+ Lassen Sie diese Option leer, falls Sie keinen Proxy-Server benutzen.
+Description-es.UTF-8: Proxy HTTP a usar:
+ Por favor, ingrese aquí si necesita usar un servidor proxy (por ejemplo: http://192.168.0.1:8080). De esta forma los archivos de tipos de letra se descargarán a través del proxy.
+ .
+ Si no va usar un servidor proxy, deje en blanco esta opción.
+Description-eu.UTF-8: Erabiliko den HTTP proxy-a:
+ Proxy zerbitzari bat erabili behar baduzu, idatzi ezazu hemen (adibidez: http://192.168.0.1:8080). Honek letra-tipoak proxy zerbitzarian bidez deskargatzea eragingo du.
+ .
+ Aukera hau hutsik dezakezu proxy zerbitzaririk erabili nahi ez baduzu.
+Description-fi.UTF-8: Käytettävä HTTP-välityspalvelin:
+ Jos sinun tarvitsee käyttää välityspalvelinta, syötä se tähän (esimerkiksi: http://192.168.0.1:8080). Tällöin fonttitiedostot ladataan välityspalvelimen kautta.
+ .
+ Jätä kenttä tyhjäksi, jos et käytä välityspalvelinta.
+Description-fr.UTF-8: Mandataire HTTP :
+ Si vous devez utiliser un mandataire HTTP (« proxy »), veuillez indiquer son adresse (par exemple : http://192.168.0.1:8080). Les fichiers des polices seront alors téléchargés via ce serveur mandataire.
+ .
+ Vous pouvez laisser ce champ vide si vous n'utilisez pas de mandataire.
+Description-gl.UTF-8: Proxy HTTP a empregar:
+ Se precisa de empregar un servidor proxy, introdúzao aquí (exemplo: http://192.168.0.1:8080). Isto ha facer que os ficheiros de tipos de letras se descarguen empregando o proxy.
+ .
+ Deixe esta opción en branco se non emprega un servidor proxy.
+Description-it.UTF-8: Proxy HTTP da usare:
+ Se è necessario passare per un proxy, inserire il proxy da usare (esempio: http://192.168.0.1:8080). Questo permette di scaricare i file dei caratteri tramite il proprio proxy.
+ .
+ Se non si usa un proxy, lasciare questo campo vuoto.
+Description-ja.UTF-8: 利用するプロキシ:
+ プロキシサーバを使う必要がある場合、ここで入力をしてください (例: http://192.168.0.1:8080)。フォントファイルをプロキシを使ってダウンロードするようになります。
+ .
+ プロキシを使わないという人はここで何も入力しないでください。
+Description-nl.UTF-8: Te gebruiken HTTP-proxy:
+ Als u een proxyserver moet gebruiken, geef die dan hier op (b.v.: http://192.168.0.1:8080). De lettertypes zullen dan via de proxy gedownload worden.
+ .
+ Als u geen proxyserver wilt gebruiken, laat dit dan leeg.
+Description-pl.UTF-8: Serwer pośredniczący (proxy) do HTTP:
+ Jeżeli do połączeń HTTP potrzebujesz serwera pośredniczącego (proxy), podaj jego adres (np. http://192.168.0.1:8080).
+ .
+ Jeżeli nie potrzebujesz serwera proxy, zostaw to pole puste.
+Description-pt.UTF-8: Proxy HTTP a utilizar:
+ Se necessitar de um servidor proxy, por favor introduza-o aqui (exemplo: http://192.168.0.1:8080). Isto irá causar a que os ficheiros de tipos de letra sejam descarregados do seu proxy.
+ .
+ Deixa esta opção em branco se não quiser utilizar um servidor proxy.
+Description-pt_BR.UTF-8: Proxy HTTP a ser utilizado:
+ Caso você precise utilizar um servidor proxy, por favor, informe-o aqui (exemplo: http://192.168.0.1:8080). Isto fará com que os arquivos de fontes sejam obtidos utilizando seu proxy.
+ .
+ Mantenha esta opção em branco caso você não utilize um servidor proxy.
+Description-ro.UTF-8: Proxy-ul HTTP folosit:
+ Dacă trebuie folosiți un server proxy, introduceți-l aici (de exemplu: http://192.168.0.1:8080). Fișierele cu fonturi vor fi descărcate folosind acest server proxy.
+ .
+ Lăsați acest câmp gol dacă nu folosiți un server proxy.
+Description-ru.UTF-8: HTTP-прокси:
+ Если вам нужно использовать прокси-сервер, пожалуйста, укажите его здесь (например, http://192.168.0.1:8080). Это приведёт к загрузке файлов шрифтов с использованием прокси.
+ .
+ Оставьте пустым, если вы не используете прокси-сервер.
+Description-sk.UTF-8: HTTP proxy:
+ Ak potrebujete použiť proxy server, zadajte ho prosím tu (napr. http://192.168.0.1:8080).
+ .
+ Ak nepoužívate proxy server, nechajte toto pole prázdne.
+Description-sv.UTF-8: HTTP-proxyserver att använda:
+ Om du behöver använda en proxyserver, ange den här (exempelvis: http://192.168.0.1:8080). Det här innebär att typsnittsfilerna kommer att hämtas med hjälp av din proxyserver.
+ .
+ Lämna det här alternativet blankt om du inte använder en proxyserver.
+Description-tr.UTF-8: Kullanılacak HTTP vekili:
+ Eğer vekil sunucusu kullanmanız gerekiyorsa lütfen buraya yazın (örnek: http://192.168.0.1:8080). Yazdığınız takdirde yazı tipi dosyaları vekil aracılığıyla indirilecektir.
+ .
+ Vekil sunucusu kullanmıyorsanız burayı boş bırakın.
+Description-vi.UTF-8: Ủy nhiệm HTTP cần dùng:
+ Cần sử dụng máy phục vụ ủy nhiệm thì nhập vào đây (thí dụ : http://192.168.0.1:8080). Sau đó, các tập tin phông sẽ được tải về qua máy ủy nhiệm.
+ .
+ Bỏ rỗng nếu bạn không sử dụng máy phục vụ ủy nhiệm.
+
