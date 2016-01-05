@@ -1,7 +1,8 @@
-1f747f9555ce9112da42de4e32d1ced2  usr/share/doc/systemd-sysv/changelog.Debian.gz
-9b44da71731b94cb1b136501d33a2e23  usr/share/doc/systemd-sysv/copyright
+214c181d063379d3d9b5ceacf48dfad8  usr/share/doc/systemd-sysv/changelog.Debian.gz
+5884dc23b1abfde0734b11d49d4b0fba  usr/share/doc/systemd-sysv/changelog.Debian.i386.gz
+0314d5cb1a26a298c7e02cf3384cd3fc  usr/share/doc/systemd-sysv/copyright
 c5bd68f61f152a4a9e6994d54353f464  usr/share/man/man1/init.1.gz
-3930b825a76c8c0c11cfca60d5b0aad4  usr/share/man/man8/halt.8.gz
-28c11cf607ef15aa4ad5cac80e9ac154  usr/share/man/man8/runlevel.8.gz
-b61e65fa1d4f5b2d00a345e825b82740  usr/share/man/man8/shutdown.8.gz
-15f35308a892557df162bbf5fcdeb51d  usr/share/man/man8/telinit.8.gz
+867e175a0cd25e60f2b4bc2329131c46  usr/share/man/man8/halt.8.gz
+9fbd444676a6109a1f3947de41a98ac1  usr/share/man/man8/runlevel.8.gz
+0f55230c593a5b299fe6f8de5bf3dda5  usr/share/man/man8/shutdown.8.gz
+d7d8bf0e8f091d38abc939e054581fb6  usr/share/man/man8/telinit.8.gz

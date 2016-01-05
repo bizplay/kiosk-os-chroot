@@ -3,8 +3,8 @@ sendsigs: dnsmasq alsa-utils plymouth
 rsyslog: sendsigs dnsmasq cups
 umountnfs.sh: rsyslog dnsmasq sendsigs alsa-utils plymouth
 hwclock.sh: rsyslog
-networking: dnsmasq umountnfs.sh
-umountfs: urandom dnsmasq alsa-utils hwclock.sh networking plymouth umountnfs.sh
+networking: umountnfs.sh dnsmasq
+umountfs: urandom umountnfs.sh networking dnsmasq hwclock.sh alsa-utils plymouth
 umountroot: umountfs
 halt: umountroot
 reboot: umountroot

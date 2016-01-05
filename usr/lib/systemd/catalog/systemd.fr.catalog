@@ -1,7 +1,7 @@
 #  This file is part of systemd.
 #
 #  Copyright 2012 Lennart Poettering
-#  Copyright 2013 Sylvain Plantefève
+#  Copyright 2013-2015 Sylvain Plantefève
 #
 #  systemd is free software; you can redistribute it and/or modify it
 #  under the terms of the GNU Lesser General Public License as published by
@@ -23,7 +23,7 @@
 # http://www.freedesktop.org/wiki/Software/systemd/catalog
 
 -- f77379a8490b408bbe5f6940505a777b
-Subject: Le Journal a été démarré
+Subject: Le journal a été démarré
 Defined-By: systemd
 Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
 
@@ -31,7 +31,7 @@ Le processus du journal système a démarré, ouvert ses fichiers en écriture
 et est prêt à traiter les requêtes.
 
 -- d93fb3c9c24d451a97cea615ce59c00b
-Subject: Le Journal a été arrêté
+Subject: Le journal a été arrêté
 Defined-By: systemd
 Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
 
@@ -55,12 +55,12 @@ paramètres RateLimitInterval= et RateLimitBurst= dans le fichier
 /etc/systemd/journald.conf. Voir journald.conf(5) pour plus de détails.
 
 -- e9bf28e6e834481bb6f48f548ad13606
-Subject: Des messages du Journal ont été manqués
+Subject: Des messages du journal ont été manqués
 Defined-By: systemd
 Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
 
 Des messages du noyau ont été manqués car le journal système n'a pas été
-capable de les traiter suffisament vite.
+capable de les traiter suffisamment vite.
 
 -- fc2e22bc6ee647b6b90729ab34a250b1
 Subject: Le processus @COREDUMP_PID@ (@COREDUMP_COMM@) a généré un fichier « core »
@@ -217,7 +217,7 @@ Subject: Le processus @EXECUTABLE@ n'a pas pu être exécuté
 Defined-By: systemd
 Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
 
-Le processus @EXECUTABLE@ n'a pas pu être exécuté, et a donc echoué.
+Le processus @EXECUTABLE@ n'a pas pu être exécuté, et a donc échoué.
 
 Le code d'erreur renvoyé est @ERRNO@.
 

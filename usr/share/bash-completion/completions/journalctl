@@ -27,8 +27,8 @@ __contains_word () {
 __journal_fields=(MESSAGE{,_ID} PRIORITY CODE_{FILE,LINE,FUNC}
                   ERRNO SYSLOG_{FACILITY,IDENTIFIER,PID} COREDUMP_EXE
                   _{P,U,G}ID _COMM _EXE _CMDLINE
-                  _AUDIT_{SESSION,LOGINUID}
-                  _SYSTEMD_{CGROUP,SESSION,UNIT,OWNER_UID}
+                  _CAP_EFFECTIVE _AUDIT_{SESSION,LOGINUID}
+                  _SYSTEMD_{CGROUP,SESSION,{,USER_}UNIT,OWNER_UID,SLICE}
                   _SELINUX_CONTEXT _SOURCE_REALTIME_TIMESTAMP
                   _{BOOT,MACHINE}_ID _HOSTNAME _TRANSPORT
                   _KERNEL_{DEVICE,SUBSYSTEM}
@@ -44,11 +44,16 @@ _journalctl() {
                               --disk-usage -f --follow --header
                               -h --help -l --local --new-id128 -m --merge --no-pager
                               --no-tail -q --quiet --setup-keys --this-boot --verify
-                              --version --list-catalog --update-catalog --list-boots'
+                              --version --list-catalog --update-catalog --list-boots
+                              --show-cursor --dmesg -k --pager-end -e -r --reverse
+                              --utc -x --catalog --no-full --force --dump-catalog
+                              --flush --rotate --sync'
                        [ARG]='-b --boot --this-boot -D --directory --file -F --field
-                              -o --output -u --unit --user-unit -p --priority'
-                [ARGUNKNOWN]='-c --cursor --interval -n --lines --since --until
-                              --verify-key'
+                              -o --output -u --unit --user-unit -p --priority
+                              --vacuum-size --vacuum-time'
+                [ARGUNKNOWN]='-c --cursor --interval -n --lines -S --since -U --until
+                              --after-cursor --verify-key -t --identifier
+                              --root -M --machine'
         )
 
         if __contains_word "$prev" ${OPTS[ARG]} ${OPTS[ARGUNKNOWN]}; then
@@ -65,7 +70,7 @@ _journalctl() {
                                 compopt -o filenames
                         ;;
                         --output|-o)
-                                comps='short short-monotonic verbose export json cat'
+                                comps='short short-iso short-precise short-monotonic verbose export json json-pretty json-sse cat'
                         ;;
                         --field|-F)
                                 comps=${__journal_fields[*]}

@@ -1,3 +1,4 @@
-6394c9a84f92bb8cf6e04fc7e45224d7  lib/i386-linux-gnu/libsystemd.so.0.3.1
-1f747f9555ce9112da42de4e32d1ced2  usr/share/doc/libsystemd0/changelog.Debian.gz
-9b44da71731b94cb1b136501d33a2e23  usr/share/doc/libsystemd0/copyright
+ceb996715cfeca6b0c498d17c168cdef  lib/i386-linux-gnu/libsystemd.so.0.13.0
+214c181d063379d3d9b5ceacf48dfad8  usr/share/doc/libsystemd0/changelog.Debian.gz
+5884dc23b1abfde0734b11d49d4b0fba  usr/share/doc/libsystemd0/changelog.Debian.i386.gz
+0314d5cb1a26a298c7e02cf3384cd3fc  usr/share/doc/libsystemd0/copyright

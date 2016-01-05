@@ -6,8 +6,8 @@
 /usr/share/doc
 /usr/share/doc/xserver-xorg-video-radeon
 /usr/share/doc/xserver-xorg-video-radeon/changelog.Debian.gz
-/usr/share/doc/xserver-xorg-video-radeon/NEWS.Debian.gz
 /usr/share/doc/xserver-xorg-video-radeon/changelog.gz
+/usr/share/doc/xserver-xorg-video-radeon/NEWS.Debian.gz
 /usr/share/doc/xserver-xorg-video-radeon/copyright
 /usr/share/man
 /usr/share/man/man4

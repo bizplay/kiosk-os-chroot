@@ -1,11 +1,11 @@
-TARGETS = rsyslog networking motd killprocs dnsmasq cups acpid dbus bootlogs cron plymouth single rmnologin rc.local
+TARGETS = rsyslog networking motd killprocs dnsmasq cups dbus acpid bootlogs cron plymouth single rmnologin rc.local
 INTERACTIVE =
 dnsmasq: networking rsyslog
 cups: rsyslog
-acpid: rsyslog
 dbus: rsyslog
+acpid: rsyslog
 cron: rsyslog dnsmasq
-plymouth: rsyslog dnsmasq networking motd bootlogs cups acpid dbus cron
+plymouth: rsyslog networking dnsmasq motd cups bootlogs dbus acpid cron
 single: killprocs motd bootlogs
-rmnologin: rsyslog dnsmasq networking motd bootlogs acpid dbus
-rc.local: rsyslog dnsmasq networking motd bootlogs cups acpid dbus cron
+rmnologin: rsyslog networking dnsmasq motd bootlogs dbus acpid
+rc.local: rsyslog networking dnsmasq motd cups bootlogs dbus acpid cron

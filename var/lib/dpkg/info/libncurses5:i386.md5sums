@@ -1,4 +1,4 @@
-4e3227716bfeddef251a490baf84702b  lib/i386-linux-gnu/libncurses.so.5.9
-da1babb49266421a60598f34b811f739  usr/lib/i386-linux-gnu/libform.so.5.9
-e5aaf52132aaa556955db42fbadaa399  usr/lib/i386-linux-gnu/libmenu.so.5.9
-a4f40b025defcd5ebacb67b2d439ac0e  usr/lib/i386-linux-gnu/libpanel.so.5.9
+1d301c9b5c4ebfd7a5c5d92c49d1f63e  lib/i386-linux-gnu/libncurses.so.5.9
+79ba5a4176ccebc05cc26c8ddae16224  usr/lib/i386-linux-gnu/libform.so.5.9
+79fd3c8a6e07f3daffeb16a763b3b1e8  usr/lib/i386-linux-gnu/libmenu.so.5.9
+06bbd6a3684dd7d7990106f88b6c0558  usr/lib/i386-linux-gnu/libpanel.so.5.9

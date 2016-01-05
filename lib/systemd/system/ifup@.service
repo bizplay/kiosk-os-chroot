@@ -1,12 +1,13 @@
 [Unit]
 Description=ifup for %I
-After=local-fs.target network-pre.target networking.service
+After=local-fs.target network-pre.target networking.service apparmor.service
 Before=network.target
 BindsTo=sys-subsystem-net-devices-%i.device
 ConditionPathIsDirectory=/run/network
 DefaultDependencies=no
+IgnoreOnIsolate=yes
 
 [Service]
-ExecStart=/sbin/ifup --allow=hotplug %I
+ExecStart=/bin/sh -ec 'ifup --allow=hotplug %I; ifquery --state %I'
 ExecStop=/sbin/ifdown %I
 RemainAfterExit=true
