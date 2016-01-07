@@ -13986,28 +13986,28 @@ Package: x11-common
 Status: install ok installed
 Priority: optional
 Section: x11
-Installed-Size: 466
+Installed-Size: 304
 Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Architecture: all
 Multi-Arch: foreign
 Source: xorg
-Version: 1:7.7+7
-Depends: debconf (>= 0.5) | debconf-2.0, lsb-base (>= 1.3-9ubuntu2)
+Version: 1:7.7+12
+Depends: lsb-base (>= 1.3-9ubuntu2)
 Conffiles:
- /etc/X11/rgb.txt 09ee098b83d94c7c046d6b55ebe84ae1
+ /etc/X11/Xreset 05d188ccac2f3360af8fe0c216640233
+ /etc/X11/Xreset.d/README b344c222b5daf81926fd3270df374b5f
  /etc/X11/Xresources/x11-common b640adb1cd646ec097f8df5b6deca9f0
+ /etc/X11/Xsession 8662d290adffe530016ebf825b9af06f
  /etc/X11/Xsession.d/20x11-common_process-args b3365bc1fd7637dc237eda93533d0fe9
- /etc/X11/Xsession.d/99x11-common_start 3874d5e8f3ec888f69adb126e223e168
+ /etc/X11/Xsession.d/30x11-common_xresources 61cebe25ee0c64e981b88958dfee6f9c
  /etc/X11/Xsession.d/35x11-common_xhost-local 3080616d080574d7b06c2b2a20af53dd
  /etc/X11/Xsession.d/40x11-common_xsessionrc db544c8543d1cb3762b9859288e77040
- /etc/X11/Xsession.d/30x11-common_xresources 61cebe25ee0c64e981b88958dfee6f9c
  /etc/X11/Xsession.d/50x11-common_determine-startup b4570043736ae7f22947067b6d28ab8d
  /etc/X11/Xsession.d/90x11-common_ssh-agent ae74aadf705c5fccf841ef921b45ca72
- /etc/X11/Xreset.d/README b344c222b5daf81926fd3270df374b5f
- /etc/X11/Xreset 05d188ccac2f3360af8fe0c216640233
+ /etc/X11/Xsession.d/99x11-common_start 3874d5e8f3ec888f69adb126e223e168
  /etc/X11/Xsession.options 210cd520efa87a5197cac01e10b3a84a
- /etc/X11/Xsession 8662d290adffe530016ebf825b9af06f
- /etc/init.d/x11-common aacceda738fb4e684ff00b5ac3fb6c0a
+ /etc/X11/rgb.txt 09ee098b83d94c7c046d6b55ebe84ae1
+ /etc/init.d/x11-common 4bf46072f9f13b2e38d58a053def37d5
 Description: X Window System (X.Org) infrastructure
  x11-common contains the filesystem infrastructure required for further
  installation of the X Window System in any configuration; it does not
@@ -14019,6 +14019,7 @@ Description: X Window System (X.Org) infrastructure
  Debian is derived from the version released by the X.Org Foundation, and
  is thus often also referred to as "X.Org".  All of the preceding quoted
  terms are functionally interchangeable in an Debian system.
+Homepage: http://www.x.org/
 
 Package: libcwidget3
 Status: install ok installed
@@ -15011,6 +15012,23 @@ Description: reliable system and kernel logging daemon
  .
  It is the default syslogd on Debian systems.
 Homepage: http://www.rsyslog.com/
+
+Package: xserver-xorg-legacy
+Status: install ok installed
+Priority: extra
+Section: x11
+Installed-Size: 1970
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Architecture: i386
+Source: xorg-server
+Version: 2:1.17.3-2
+Replaces: x11-common (<< 1:7.7+10~), xserver-xorg-core (<< 2:1.17.2-3~)
+Depends: xserver-common (>= 2:1.17.3-2), libaudit1 (>= 1:2.2.1), libc6 (>= 2.3.4), debconf (>= 0.5) | debconf-2.0
+Breaks: x11-common (<< 1:7.7+10~), xserver-xorg-core (<< 2:1.17.2-3~)
+Description: setuid root Xorg server wrapper
+ This package provides a wrapper for the Xorg X server, which is
+ necessary for legacy drivers and non-Linux kernels.
+Homepage: http://www.x.org/
 
 Package: libxrandr2
 Status: install ok installed

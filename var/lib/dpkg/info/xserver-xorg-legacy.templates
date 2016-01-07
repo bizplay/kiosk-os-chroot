@@ -1,5 +1,5 @@
 
-Template: x11-common/xwrapper/allowed_users
+Template: xserver-xorg-legacy/xwrapper/allowed_users
 Type: select
 Choices: Root Only, Console Users Only, Anybody
 Choices-ar.UTF-8: المستخدم root فقط, مستخدمي الطرفية فقط, أي أحد
@@ -171,7 +171,7 @@ Description-zh_CN.UTF-8: 允许启动 X 服务器的用户：
 Description-zh_TW.UTF-8: 可以啟動 X Server 的使用者：
  因為 X Server 是以管理者的權限在運行的，所以從安全角度而言，允許任何使用者啟動它並非明智之舉。但從另一角度而言，若在此設定為只有 root 才能啟動 X Server，那麼將會導致所有一般用途的 X 用戶端程式都會是以 root 身份執行，而這可是更為不智的做法。折衷的方案是只允許那些能登入到虛擬主控台 (Virtual console) 的使用者才能啟動 X Server。
 
-Template: x11-common/xwrapper/actual_allowed_users
+Template: xserver-xorg-legacy/xwrapper/actual_allowed_users
 Type: string
 Description: for internal use
  This template is never shown to the user and does not require translation.

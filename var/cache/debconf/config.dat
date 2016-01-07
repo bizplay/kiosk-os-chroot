@@ -1665,3 +1665,13 @@ Value: Anybody
 Owners: x11-common
 Flags: seen
 
+Name: xserver-xorg-legacy/xwrapper/actual_allowed_users
+Template: xserver-xorg-legacy/xwrapper/actual_allowed_users
+Value: anybody
+Owners: xserver-xorg-legacy
+
+Name: xserver-xorg-legacy/xwrapper/allowed_users
+Template: xserver-xorg-legacy/xwrapper/allowed_users
+Value: Anybody
+Owners: xserver-xorg-legacy
+
